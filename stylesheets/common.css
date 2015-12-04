@@ -1,0 +1,44 @@
+/****************************************/
+/* Common
+/****************************************/
+
+@charset "utf-8";
+
+@font-face {
+    font-family: PixcelMplus12;
+    src: url("../font/PixelMplus12-Regular.eot");
+    src: url("../font/PixelMplus12-Regular.eot?#iefix") format("embedded-opentype"), url("../font/PixelMplus12-Regular.woff") format("woff"), url("../font/PixelMplus12-Regular.ttf") format("truetype"), url("../font/Pixelmplus12-Regular.svg#svgFontName") format("svg");
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: #555555;
+}
+
+body {
+    font-family: PixcelMplus12;
+    color: #d9edf7;
+}
+
+#wp {
+    width: 100%;
+    position: relative;
+    height: auto !important;
+    height: 100%;
+    min-height: 100%;
+}
+
+#main {
+    padding-bottom: 80px;
+}
+
+footer {
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
