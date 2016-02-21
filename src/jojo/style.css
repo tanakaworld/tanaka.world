@@ -1,0 +1,16 @@
+body {
+     background-color: whitesmoke;
+ }
+
+table, td, th {
+    text-align: left;
+    border: 1px solid;
+}
+
+th {
+    background-color: darkgray;
+}
+
+td {
+    background-color: lightgray;
+}
