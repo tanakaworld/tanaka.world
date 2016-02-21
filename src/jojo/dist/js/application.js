@@ -1,0 +1,1 @@
+(function(){var n;n=function(){function n(){}return n.prototype.test=function(){return console.log("aa")},n}()}).call(this);
