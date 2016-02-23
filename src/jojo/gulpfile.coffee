@@ -1,4 +1,5 @@
 gulp = require 'gulp'
+bower = require 'gulp-bower'
 coffee = require 'gulp-coffee'
 sass = require 'gulp-sass'
 slim = require 'gulp-slim'
@@ -9,10 +10,21 @@ minifyCss = require 'gulp-minify-css'
 concat = require 'gulp-concat'
 runSequence = require 'run-sequence'
 
+libs =
+  js: [
+    'jquery/dist/jquery.min.js',
+    'angular/angualr.min.js'
+  ]
+
 gulp.task 'compile-coffee', () ->
-  gulp.src('src/scripts/**/*.coffee')
-  .pipe coffee()
+  gulp.src 'src/scripts/**/*.coffee'
+  .pipe coffee({bare: true})
   .pipe gulp.dest('src/tmp/js')
+
+gulp.task 'compile-vendor', () ->
+  gulp.src libs.js.map (e) -> "bower_components/#{e}"
+  .pipe concat 'vendor.js'
+  .pipe gulp.dest 'dist/js'
 
 gulp.task 'compile-sass', () ->
   gulp.src('src/styles/**/*.sass')
@@ -20,7 +32,13 @@ gulp.task 'compile-sass', () ->
   .pipe gulp.dest('src/tmp/css')
 
 gulp.task 'compile-js', () ->
-  gulp.src 'src/tmp/js/**/*.js'
+  gulp.src [
+    'src/tmp/js/AndSearchService.js'
+    'src/tmp/js/AndSearchFilter.js'
+    'src/tmp/js/AndSearchController.js'
+
+    'src/tmp/js/main.js'
+  ]
   .pipe concat('application.js')
   .pipe uglify()
   .pipe gulp.dest('dist/js')
@@ -50,7 +68,8 @@ gulp.task 'reload', ->
   .pipe connect.reload()
 
 gulp.task 'compile', -> runSequence(
-  ['compile-coffee', 'compile-sass', 'compile-slim'],
+  ['compile-vendor']
+  ['compile-coffee', 'compile-sass', 'compile-slim']
   ['compile-js', 'compile-css']
 )
 

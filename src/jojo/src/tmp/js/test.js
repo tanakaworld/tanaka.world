@@ -1,15 +1,12 @@
-(function() {
-  var A;
+var A;
 
-  A = (function() {
-    function A() {}
+A = (function() {
+  function A() {}
 
-    A.prototype.test = function() {
-      return console.log('aa');
-    };
+  A.prototype.test = function() {
+    return console.log('aa');
+  };
 
-    return A;
+  return A;
 
-  })();
-
-}).call(this);
+})();

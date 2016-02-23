@@ -1,1 +1,1 @@
-(function(){var n;n=function(){function n(){}return n.prototype.test=function(){return console.log("aa")},n}()}).call(this);
+$(function(){return angular.module("JOJO",["ngRoute"]).service("andSearchService",ANDSearchService).filter("andSearchFilter",ANDSearchFilter).controller("ANDSearchController",ANDSearchController)});
