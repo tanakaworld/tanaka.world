@@ -9,6 +9,7 @@ uglify = require 'gulp-uglify'
 minifyCss = require 'gulp-minify-css'
 concat = require 'gulp-concat'
 runSequence = require 'run-sequence'
+ngAnnotate = require 'gulp-ng-annotate'
 
 libs =
   js: [
@@ -33,13 +34,18 @@ gulp.task 'compile-sass', () ->
 
 gulp.task 'compile-js', () ->
   gulp.src [
-    'src/tmp/js/AndSearchService.js'
-    'src/tmp/js/AndSearchFilter.js'
-    'src/tmp/js/AndSearchController.js'
+    'bower_components/jquery/dist/jquery.js'
+    'bower_components/angular/angular.js'
+    'bower_components/angular-route/angular-route.js'
+
+    'src/tmp/js/lib/AndSearchService.js'
+    'src/tmp/js/lib/AndSearchFilter.js'
+    'src/tmp/js/lib/AndSearchController.js'
 
     'src/tmp/js/main.js'
   ]
   .pipe concat('application.js')
+  .pipe ngAnnotate()
   .pipe uglify()
   .pipe gulp.dest('dist/js')
 
@@ -68,7 +74,6 @@ gulp.task 'reload', ->
   .pipe connect.reload()
 
 gulp.task 'compile', -> runSequence(
-  ['compile-vendor']
   ['compile-coffee', 'compile-sass', 'compile-slim']
   ['compile-js', 'compile-css']
 )
@@ -83,5 +88,6 @@ gulp.task 'watch', ->
 gulp.task 'default', [
   'compile',
   'connect',
-  'open'
+  'open',
+  'watch'
 ]

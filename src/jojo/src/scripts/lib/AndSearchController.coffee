@@ -1,5 +1,4 @@
-ANDSearchController.$inject = ['andSearchService']
 class ANDSearchController
-  #  @$inject: ['andSearchService']
-  constructor: (@andSearchService) ->
-    @users = @andSearchService.getData()
+  @$inject: ['$scope', 'andSearchService']
+  constructor: ($scope, andSearchService) ->
+    $scope.users = andSearchService.getData()

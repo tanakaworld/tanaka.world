@@ -1,8 +1,7 @@
-ANDSearchFilter.$inject = ['andSearchService']
 class ANDSearchFilter
-#  @$inject: ['andSearchService']
-  constructor: (@andSearchService) ->
-    (list, searchQuery) ->
+  @$inject: ['andSearchService']
+  constructor: (andSearchService) ->
+    return (list, searchQuery) ->
       if searchQuery
         # 全角スペースを半角スペースに置換
         query = searchQuery.replace(RegExp('　', 'g'), ' ')
@@ -15,13 +14,13 @@ class ANDSearchFilter
         list.forEach (obj) ->
           # 検索キーワードでオブジェクトそれぞれを探索
           isMatch = !queryWordArray.some((keyword) ->
-            !@andSearchService.keywordJudge(obj, keyword)
+            !andSearchService.keywordJudge(obj, keyword)
           )
 
           # 検索キーワードがAND一致した場合、一覧に表示する配列に格納
           if isMatch
             filteredList.push obj
-          return
 
         return filteredList
+
       return list

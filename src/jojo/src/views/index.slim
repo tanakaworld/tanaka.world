@@ -5,31 +5,25 @@ html lang="ja" ng-app="JOJO"
     meta http-equiv="X-UA-Compatible" content="IE=edge"
     meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"
 
-    / TODO
-    /script type="text/javascript" src="js/vendor.js"
-    script type="text/javascript" src="vendor/jquery.min.js"
-    script type="text/javascript" src="vendor/angular.min.js"
-    script type="text/javascript" src="vendor/angular-route.min.js"
     script type="text/javascript" src="js/application.js"
     link rel="stylesheet" href="css/application.css"
     link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"
 
     title JOJO β
 
-      /! Google Analytics
-      /
-
     /[if lt IE 9]
       script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"
       script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"
 
   body
-    div ng-controller="ANDSearchController as vm"
-      input ng-model="keyword" placeholder="Keyword" type="text" /
+    div ng-controller="ANDSearchController"
+      input ng-model="keyword" placeholder="Keyword" type="text"
+      h1
+        | {{keyword}}
       p
         | Hit :
         span.searchResultCount.hit
-          | {{(vm.users | vm.andSearchFilter:keyword).length}}
+          | {{(users | andSearchFilter:keyword).length}}
         | /
         span.searchResultCount
           | {{users.length}}
@@ -41,8 +35,8 @@ html lang="ja" ng-app="JOJO"
             th Kana
             th Note
         tbody
-          tr ng-repeat=("user in vm.users | vm.andSearchFilter:keyword")
-            td  {user.id}
-            td  {user.name}
-            td  {user.kana}
-            td  {user.note}
+          tr ng-repeat="user in users | andSearchFilter:keyword"
+            td ng-bind="::user.id"
+            td ng-bind="::user.name"
+            td ng-bind="::user.kana"
+            td ng-bind="::user.note"

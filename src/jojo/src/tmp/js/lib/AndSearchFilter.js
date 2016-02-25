@@ -1,11 +1,10 @@
 var ANDSearchFilter;
 
-ANDSearchFilter.$inject = ['andSearchService'];
-
 ANDSearchFilter = (function() {
+  ANDSearchFilter.$inject = ['andSearchService'];
+
   function ANDSearchFilter(andSearchService) {
-    this.andSearchService = andSearchService;
-    (function(list, searchQuery) {
+    return function(list, searchQuery) {
       var filteredList, query, queryWordArray;
       if (searchQuery) {
         query = searchQuery.replace(RegExp('　', 'g'), ' ');
@@ -16,16 +15,16 @@ ANDSearchFilter = (function() {
         list.forEach(function(obj) {
           var isMatch;
           isMatch = !queryWordArray.some(function(keyword) {
-            return !this.andSearchService.keywordJudge(obj, keyword);
+            return !andSearchService.keywordJudge(obj, keyword);
           });
           if (isMatch) {
-            filteredList.push(obj);
+            return filteredList.push(obj);
           }
         });
         return filteredList;
       }
       return list;
-    });
+    };
   }
 
   return ANDSearchFilter;
