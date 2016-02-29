@@ -39,8 +39,10 @@ gulp.task 'compile-js', () ->
     'bower_components/angular-route/angular-route.js'
     'bower_components/bootstrap/dist/js/bootstrap.js'
 
-    'bower_components/datatables/media/js/jquery.dataTables.js'
-    'bower_components/angular-datatables/dist/angular-datatables.js'
+#    'bower_components/datatables/media/js/jquery.dataTables.js'
+#    'bower_components/angular-datatables/dist/angular-datatables.js'
+    'bower_components/angular-smart-table/dist/smart-table.js'
+
 
     'src/tmp/js/lib/AndSearchService.js'
     'src/tmp/js/lib/AndSearchFilter.js'

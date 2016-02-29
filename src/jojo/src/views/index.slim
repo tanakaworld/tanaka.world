@@ -16,32 +16,18 @@ html lang="ja" ng-app="JOJO"
       script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"
 
   body
-    .container ng-controller="ANDSearchController"
-      input.form-control-custom ng-model="keyword" placeholder="Keyword" type="text"
-
-      p
-        | Hit :
-        span.searchResultCount.hit
-          | {{(users | andSearchFilter:keyword).length}}
-        | /
-        span.searchResultCount
-          | {{users.length}}
-
-      .row.character ng-repeat="user in users | andSearchFilter:keyword"
-        .col-md-1 ng-bind="::user.id"
-        .col-md-4 ng-bind="::user.body"
-        .col-md-4 ng-bind="::user.stand"
-
-    .container
-      div ng-controller="AngularWayWithOptionsCtrl"
-        table.row-border.hover datatable="ng" dt-column-defs="dtColumnDefs" dt-options="dtOptions"
-          thead
-            tr
-              th ID
-              th FirstName
-              th LastName
-          tbody
-            tr ng-repeat="p in persons"
-              td ng-bind="::p.id"
-              td ng-bind="::p.firstName"
-              td ng-bind="::p.lastName"
+    .container ng-controller="paginationCtrl" st-table="characters"
+      input.form-control-custom  placeholder="keyword" st-search="" type="search"
+      table.table
+        thead
+          tr
+            th st-sort="firstName" Body
+            th st-sort="lastName" Stand
+        tbody
+          tr ng-repeat="char in characters"
+            td ng-bind="::char.body"
+            td ng-bind="::char.stand"
+        tfoot
+          tr
+            td.text-center colspan="5"
+              div st-displayed-pages="7" st-items-by-page="itemsByPage" st-pagination=""
