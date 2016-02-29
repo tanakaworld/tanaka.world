@@ -80,7 +80,7 @@ gulp.task 'compile', -> runSequence(
 
 gulp.task 'watch', ->
   gulp.watch [
-    'src/styles/**/*.scss'
+    'src/styles/**/*.sass'
     'src/scripts/**/*.coffee'
     'src/views/**/*.slim'
   ], ['compile', 'reload']
