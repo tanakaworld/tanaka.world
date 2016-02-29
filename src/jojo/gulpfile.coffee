@@ -37,10 +37,15 @@ gulp.task 'compile-js', () ->
     'bower_components/jquery/dist/jquery.js'
     'bower_components/angular/angular.js'
     'bower_components/angular-route/angular-route.js'
+    'bower_components/bootstrap/dist/js/bootstrap.js'
+
+    'bower_components/datatables/media/js/jquery.dataTables.js'
+    'bower_components/angular-datatables/dist/angular-datatables.js'
 
     'src/tmp/js/lib/AndSearchService.js'
     'src/tmp/js/lib/AndSearchFilter.js'
     'src/tmp/js/lib/AndSearchController.js'
+    'src/tmp/js/lib/AngularWayWithOptionsCtrl.js'
 
     'src/tmp/js/main.js'
   ]
@@ -50,7 +55,11 @@ gulp.task 'compile-js', () ->
   .pipe gulp.dest('dist/js')
 
 gulp.task 'compile-css', () ->
-  gulp.src('src/tmp/css/**/*.css')
+  gulp.src [
+    'bower_components/bootstrap/dist/css/bootstrap.css'
+    'bower_components/datatables/media/dataTables.bootstrap.css'
+    'src/tmp/css/**/*.css'
+  ]
   .pipe concat('application.css')
   .pipe minifyCss()
   .pipe gulp.dest('dist/css')

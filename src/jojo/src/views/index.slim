@@ -16,10 +16,9 @@ html lang="ja" ng-app="JOJO"
       script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"
 
   body
-    div ng-controller="ANDSearchController"
-      input ng-model="keyword" placeholder="Keyword" type="text"
-      h1
-        | {{keyword}}
+    .container ng-controller="ANDSearchController"
+      input.form-control-custom ng-model="keyword" placeholder="Keyword" type="text"
+
       p
         | Hit :
         span.searchResultCount.hit
@@ -27,16 +26,22 @@ html lang="ja" ng-app="JOJO"
         | /
         span.searchResultCount
           | {{users.length}}
-      table.data-table
-        thead
-          tr
-            th ID
-            th Name
-            th Kana
-            th Note
-        tbody
-          tr ng-repeat="user in users | andSearchFilter:keyword"
-            td ng-bind="::user.id"
-            td ng-bind="::user.name"
-            td ng-bind="::user.kana"
-            td ng-bind="::user.note"
+
+      .row.character ng-repeat="user in users | andSearchFilter:keyword"
+        .col-md-1 ng-bind="::user.id"
+        .col-md-4 ng-bind="::user.body"
+        .col-md-4 ng-bind="::user.stand"
+
+    .container
+      div ng-controller="AngularWayWithOptionsCtrl"
+        table.row-border.hover datatable="ng" dt-column-defs="dtColumnDefs" dt-options="dtOptions"
+          thead
+            tr
+              th ID
+              th FirstName
+              th LastName
+          tbody
+            tr ng-repeat="p in persons"
+              td ng-bind="::p.id"
+              td ng-bind="::p.firstName"
+              td ng-bind="::p.lastName"

@@ -1,4 +1,5 @@
-angular.module('JOJO', ['ngRoute'])
+angular.module('JOJO', ['ngRoute', 'datatables'])
 .service('andSearchService', ANDSearchService)
 .filter('andSearchFilter', ANDSearchFilter)
 .controller('ANDSearchController', ANDSearchController)
+.controller('AngularWayWithOptionsCtrl', AngularWayWithOptionsCtrl)

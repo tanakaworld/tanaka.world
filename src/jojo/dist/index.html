@@ -13,40 +13,42 @@
     <![endif]-->
   </head>
   <body>
-    <div ng-controller="ANDSearchController">
-      <input ng-model="keyword" placeholder="Keyword" type="text" />
-      <h1>
-        {{keyword}}
-      </h1>
+    <div class="container" ng-controller="ANDSearchController">
+      <input class="form-control-custom" ng-model="keyword" placeholder="Keyword" type="text" />
       <p>
         Hit :<span class="searchResultCount hit">{{(users | andSearchFilter:keyword).length}}</span>/<span class="searchResultCount">{{users.length}}</span>
       </p>
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>
-              ID
-            </th>
-            <th>
-              Name
-            </th>
-            <th>
-              Kana
-            </th>
-            <th>
-              Note
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="user in users | andSearchFilter:keyword">
-            <td ng-bind="::user.id"></td>
-            <td ng-bind="::user.name"></td>
-            <td ng-bind="::user.kana"></td>
-            <td ng-bind="::user.note"></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="row character" ng-repeat="user in users | andSearchFilter:keyword">
+        <div class="col-md-1" ng-bind="::user.id"></div>
+        <div class="col-md-4" ng-bind="::user.body"></div>
+        <div class="col-md-4" ng-bind="::user.stand"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div ng-controller="AngularWayWithOptionsCtrl">
+        <table class="row-border hover" datatable="ng" dt-column-defs="dtColumnDefs" dt-options="dtOptions">
+          <thead>
+            <tr>
+              <th>
+                ID
+              </th>
+              <th>
+                FirstName
+              </th>
+              <th>
+                LastName
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="p in persons">
+              <td ng-bind="::p.id"></td>
+              <td ng-bind="::p.firstName"></td>
+              <td ng-bind="::p.lastName"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>
