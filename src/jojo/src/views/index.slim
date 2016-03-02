@@ -5,11 +5,11 @@ html lang="ja" ng-app="JOJO"
     meta http-equiv="X-UA-Compatible" content="IE=edge"
     meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"
 
-    base href="/"
+    /base href="/"
 
-    script type="text/javascript" src="js/application.js"
-    link rel="stylesheet" href="css/application.css"
-    link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"
+    script type="text/javascript" src="./js/application.js"
+    link rel="stylesheet" href="./css/application.css"
+    link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon"
 
     title JOJO β
 
@@ -19,7 +19,7 @@ html lang="ja" ng-app="JOJO"
 
   body
     .container
-      ng-view Loading...
+      ng-view Loading..........
 
     script type="text/ng-template" id="index.html"
       div st-table="characters"
@@ -42,7 +42,7 @@ html lang="ja" ng-app="JOJO"
 
     script type="text/ng-template" id="characterDetail.html"
       .page-header
-        a href="/" < HOME
+        a href="src/jojo/dist" < HOME
 
       .media
         .media-left

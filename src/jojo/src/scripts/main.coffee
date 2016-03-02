@@ -49,5 +49,6 @@ angular.module('JOJO', ['ngRoute', 'smart-table'])
   .when('/:characterId', {templateUrl: 'characterDetail.html', controller: 'CharacterController'})
   .otherwise({redirectTo: '/'})
 
-  $locationProvider.html5Mode(true)
+#  TODO enable
+#  $locationProvider.html5Mode(true)
 ])
