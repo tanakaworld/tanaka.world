@@ -16,29 +16,31 @@
     <div class="container" ng-controller="JOJOController" st-table="characters">
       <input class="form-control-custom" placeholder="keyword" st-search="" type="search" />
       <table class="table">
-        <thead>
-          <tr>
-            <th></th>
-            <th st-sort="firstName"></th>
-            <th st-sort="lastName"></th>
-          </tr>
-        </thead>
+        <div class="row">
+          <div class="col-xs-12 col-sm-2 col-md-2">
+            <select st-search="part">
+              <option value="">
+                ALL
+              </option>
+              <option ng-repeat="p in partsSelector" value="{{p}}">
+                Part-{{p}}
+              </option>
+            </select>
+          </div>
+          <div class="col-xs-12 col-sm-10 col-md-10">
+            <div st-displayed-pages="7" st-items-by-page="itemsByPage" st-pagination=""></div>
+          </div>
+        </div>
         <tbody>
-          <tr ng-repeat="char in characters">
+          <tr class="character-row" ng-click="openDetail(char)" ng-repeat="char in characters">
             <td>
               <img height="50" src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=J&amp;w=200&amp;h=200" width="50" />
             </td>
             <td ng-bind="::char.body"></td>
             <td ng-bind="::char.stand"></td>
+            <td ng-bind="::char.part"></td>
           </tr>
         </tbody>
-        <tfoot>
-          <tr>
-            <td class="text-center" colspan="5">
-              <div st-displayed-pages="7" st-items-by-page="itemsByPage" st-pagination=""></div>
-            </td>
-          </tr>
-        </tfoot>
       </table>
     </div>
   </body>

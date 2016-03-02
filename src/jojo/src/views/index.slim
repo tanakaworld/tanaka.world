@@ -17,20 +17,19 @@ html lang="ja" ng-app="JOJO"
 
   body
     .container ng-controller="JOJOController" st-table="characters"
-      input.form-control-custom  placeholder="keyword" st-search="" type="search"
+      input.form-control-custom placeholder="keyword" st-search="" type="search"
       table.table
-        thead
-          tr
-            th
-            th st-sort="firstName"
-            th st-sort="lastName"
+        .row
+          .col-xs-12.col-sm-2.col-md-2
+            select st-search="part"
+              option value="" ALL
+              option ng-repeat="p in partsSelector" value="{{p}}" Part-{{p}}
+          .col-xs-12.col-sm-10.col-md-10
+            div st-displayed-pages="7" st-items-by-page="itemsByPage" st-pagination=""
         tbody
-          tr ng-repeat="char in characters"
+          tr.character-row ng-repeat="char in characters" ng-click="openDetail(char)"
             td
               img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200" width="50" height="50"
             td ng-bind="::char.body"
             td ng-bind="::char.stand"
-        tfoot
-          tr
-            td.text-center colspan="5"
-              div st-displayed-pages="7" st-items-by-page="itemsByPage" st-pagination=""
+            td ng-bind="::char.part"
