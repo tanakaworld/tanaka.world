@@ -38,6 +38,7 @@ gulp.task 'compile-js', () ->
     'bower_components/angular-smart-table/dist/smart-table.js'
 
     'src/tmp/js/lib/JOJOController.js'
+    'src/tmp/js/lib/CharacterController.js'
 
     'src/tmp/js/main.js'
   ]
