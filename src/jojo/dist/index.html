@@ -13,21 +13,21 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container" ng-controller="paginationCtrl" st-table="characters">
+    <div class="container" ng-controller="JOJOController" st-table="characters">
       <input class="form-control-custom" placeholder="keyword" st-search="" type="search" />
       <table class="table">
         <thead>
           <tr>
-            <th st-sort="firstName">
-              Body
-            </th>
-            <th st-sort="lastName">
-              Stand
-            </th>
+            <th></th>
+            <th st-sort="firstName"></th>
+            <th st-sort="lastName"></th>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat="char in characters">
+            <td>
+              <img height="50" src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=J&amp;w=200&amp;h=200" width="50" />
+            </td>
             <td ng-bind="::char.body"></td>
             <td ng-bind="::char.stand"></td>
           </tr>

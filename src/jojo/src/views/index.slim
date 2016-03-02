@@ -16,15 +16,18 @@ html lang="ja" ng-app="JOJO"
       script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"
 
   body
-    .container ng-controller="paginationCtrl" st-table="characters"
+    .container ng-controller="JOJOController" st-table="characters"
       input.form-control-custom  placeholder="keyword" st-search="" type="search"
       table.table
         thead
           tr
-            th st-sort="firstName" Body
-            th st-sort="lastName" Stand
+            th
+            th st-sort="firstName"
+            th st-sort="lastName"
         tbody
           tr ng-repeat="char in characters"
+            td
+              img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200" width="50" height="50"
             td ng-bind="::char.body"
             td ng-bind="::char.stand"
         tfoot

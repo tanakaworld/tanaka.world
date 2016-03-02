@@ -11,19 +11,16 @@ concat = require 'gulp-concat'
 runSequence = require 'run-sequence'
 ngAnnotate = require 'gulp-ng-annotate'
 
-libs =
-  js: [
-    'jquery/dist/jquery.min.js',
-    'angular/angualr.min.js'
-  ]
-
 gulp.task 'compile-coffee', () ->
   gulp.src 'src/scripts/**/*.coffee'
   .pipe coffee({bare: true})
   .pipe gulp.dest('src/tmp/js')
 
 gulp.task 'compile-vendor', () ->
-  gulp.src libs.js.map (e) -> "bower_components/#{e}"
+  gulp.src [
+    'jquery/dist/jquery.min.js',
+    'angular/angualr.min.js'
+  ].map (e) -> "bower_components/#{e}"
   .pipe concat 'vendor.js'
   .pipe gulp.dest 'dist/js'
 
@@ -38,16 +35,9 @@ gulp.task 'compile-js', () ->
     'bower_components/angular/angular.js'
     'bower_components/angular-route/angular-route.js'
     'bower_components/bootstrap/dist/js/bootstrap.js'
-
-#    'bower_components/datatables/media/js/jquery.dataTables.js'
-#    'bower_components/angular-datatables/dist/angular-datatables.js'
     'bower_components/angular-smart-table/dist/smart-table.js'
 
-
-    'src/tmp/js/lib/AndSearchService.js'
-    'src/tmp/js/lib/AndSearchFilter.js'
-    'src/tmp/js/lib/AndSearchController.js'
-    'src/tmp/js/lib/AngularWayWithOptionsCtrl.js'
+    'src/tmp/js/lib/JOJOController.js'
 
     'src/tmp/js/main.js'
   ]
