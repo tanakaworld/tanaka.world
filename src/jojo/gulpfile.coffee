@@ -10,6 +10,20 @@ minifyCss = require 'gulp-minify-css'
 concat = require 'gulp-concat'
 runSequence = require 'run-sequence'
 ngAnnotate = require 'gulp-ng-annotate'
+spreadsheets = require 'google-spreadsheets-parser'
+fs = require 'fs'
+replace = require 'gulp-replace'
+
+gulp.task 'download', ->
+  pubUrl = 'https://docs.google.com/spreadsheets/d/1ayeYr3WPhUuK7ErPvdlGAorrXQT93JNOhhDMc31KiHk/pubhtml'
+  gss = new spreadsheets(pubUrl, {sheetTitle: 'characters', hasTitle: true})
+  fs.writeFile('./src/json/characters.json', gss.toJson(), 'UTF-8')
+
+gulp.task 'replace-characters-data', ->
+  charactersJson = require('./src/json/characters.json')
+  gulp.src ['src/tmp/js/main.js']
+  .pipe(replace('CHARACTERS_JSON', JSON.stringify(charactersJson)))
+  .pipe(gulp.dest('src/tmp/js/'))
 
 gulp.task 'compile-coffee', () ->
   gulp.src 'src/scripts/**/*.coffee'
@@ -77,6 +91,7 @@ gulp.task 'reload', ->
 
 gulp.task 'compile', -> runSequence(
   ['compile-coffee', 'compile-sass', 'compile-slim']
+  ['replace-characters-data']
   ['compile-js', 'compile-css']
 )
 
