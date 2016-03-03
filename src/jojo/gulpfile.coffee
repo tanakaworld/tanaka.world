@@ -15,6 +15,7 @@ fs = require 'fs'
 replace = require 'gulp-replace'
 
 JOJO_ROOT = '../../jojo/'
+REPO_ROOT = '../../'
 
 gulp.task 'download', ->
   pubUrl = 'https://docs.google.com/spreadsheets/d/1ayeYr3WPhUuK7ErPvdlGAorrXQT93JNOhhDMc31KiHk/pubhtml'
@@ -84,7 +85,7 @@ gulp.task 'open', ->
 
 gulp.task 'connect', ->
   connect.server
-    root: JOJO_ROOT
+    root: REPO_ROOT
     livereload: true
 
 gulp.task 'reload', ->

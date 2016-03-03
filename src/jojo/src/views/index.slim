@@ -23,6 +23,7 @@ html lang="ja" ng-app="JOJO"
 
     script type="text/ng-template" id="index.html"
       div st-table="characters"
+        / TODO filter search target
         input.form-control-custom placeholder="keyword" st-search="" type="search"
         table.table
           .row
@@ -42,7 +43,7 @@ html lang="ja" ng-app="JOJO"
 
     script type="text/ng-template" id="characterDetail.html"
       .page-header
-        a href="/" < HOME
+        a href="/jojo" < HOME
         h1 ng-bind="::char.part"
       .media
         .media-left
