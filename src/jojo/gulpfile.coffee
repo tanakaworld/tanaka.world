@@ -14,6 +14,8 @@ spreadsheets = require 'google-spreadsheets-parser'
 fs = require 'fs'
 replace = require 'gulp-replace'
 
+JOJO_ROOT = '../../jojo/'
+
 gulp.task 'download', ->
   pubUrl = 'https://docs.google.com/spreadsheets/d/1ayeYr3WPhUuK7ErPvdlGAorrXQT93JNOhhDMc31KiHk/pubhtml'
   gss = new spreadsheets(pubUrl, {sheetTitle: 'characters', hasTitle: true})
@@ -59,7 +61,7 @@ gulp.task 'compile-js', () ->
   .pipe concat('application.js')
   .pipe ngAnnotate()
   .pipe uglify()
-  .pipe gulp.dest('dist/js')
+  .pipe gulp.dest(JOJO_ROOT)
 
 gulp.task 'compile-css', () ->
   gulp.src [
@@ -69,12 +71,12 @@ gulp.task 'compile-css', () ->
   ]
   .pipe concat('application.css')
   .pipe minifyCss()
-  .pipe gulp.dest('dist/css')
+  .pipe gulp.dest(JOJO_ROOT)
 
 gulp.task 'compile-slim', ->
   gulp.src('src/views/*.slim')
   .pipe slim pretty: true
-  .pipe gulp.dest 'dist/'
+  .pipe gulp.dest(JOJO_ROOT)
 
 gulp.task 'open', ->
   gulp.src(__filename)
@@ -82,11 +84,11 @@ gulp.task 'open', ->
 
 gulp.task 'connect', ->
   connect.server
-    root: 'dist'
+    root: JOJO_ROOT
     livereload: true
 
 gulp.task 'reload', ->
-  gulp.src('dist/index.html')
+  gulp.src("#{JOJO_ROOT}index.html")
   .pipe connect.reload()
 
 gulp.task 'compile', -> runSequence(

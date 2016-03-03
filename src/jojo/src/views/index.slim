@@ -7,9 +7,9 @@ html lang="ja" ng-app="JOJO"
 
     /base href="/"
 
-    script type="text/javascript" src="./js/application.js"
-    link rel="stylesheet" href="./css/application.css"
-    link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon"
+    script type="text/javascript" src="./application.js"
+    link rel="stylesheet" href="./application.css"
+    link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"
 
     title JOJO β
 
@@ -43,13 +43,19 @@ html lang="ja" ng-app="JOJO"
     script type="text/ng-template" id="characterDetail.html"
       .page-header
         a href="/" < HOME
-
+        h1 ng-bind="::char.part"
       .media
         .media-left
           img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200"
         .media-body
-          h4.media-heading ng-bind="::char.body"
-          p ng-bind="::char.stand"
-          p ng-bind="::char.part"
+          h3.media-heading ng-bind="::char.body"
+          p ng-bind="::char.body_description"
+      .media
+        .media-left
+          img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200"
+        .media-body
+          h3.media-heading ng-bind="::char.stand"
+          p ng-bind="::char.stand_description"
+
 
 
