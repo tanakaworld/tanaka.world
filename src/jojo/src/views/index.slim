@@ -36,7 +36,8 @@ html lang="ja" ng-app="JOJO"
           tbody
             tr.character-row ng-repeat="char in characters" ng-click="openDetail(char)"
               td
-                img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200" width="50" height="50"
+                /img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200" width="50" height="50"
+                img ng-src="./ico/{{char.ico_id}}.jpg" width="50" height="50"
               td ng-bind="::char.body"
               td ng-bind="::char.stand"
               td ng-bind="::char.part"
@@ -47,13 +48,15 @@ html lang="ja" ng-app="JOJO"
         h1 ng-bind="::char.part"
       .media
         .media-left
-          img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200"
+          /img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200"
+          img ng-src="./ico/{{char.ico_id}}.jpg" width="200" height="200"
         .media-body
           h3.media-heading ng-bind="::char.body"
           p ng-bind="::char.body_description"
       .media
         .media-left
-          img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200"
+          /img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200"
+          img ng-src="./ico/{{char.ico_id}}.jpg" width="200" height="200"
         .media-body
           h3.media-heading ng-bind="::char.stand"
           p ng-bind="::char.stand_description"
