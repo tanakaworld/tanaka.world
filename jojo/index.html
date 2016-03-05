@@ -38,7 +38,7 @@
           <tbody>
             <tr class="character-row" ng-click="openDetail(char)" ng-repeat="char in characters">
               <td>
-                <img height="50" ng-src="./ico/{{char.ico_id}}.jpg" width="50" />
+                <img height="50" ng-src="./ico/{{char.body_ico_id}}.jpg" width="50" />
               </td>
               <td ng-bind="::char.body"></td>
               <td ng-bind="::char.stand"></td>
@@ -55,7 +55,7 @@
       </div>
       <div class="media">
         <div class="media-left">
-          <img height="200" ng-src="./ico/{{char.ico_id}}.jpg" width="200" />
+          <img height="200" ng-src="./ico/{{char.body_ico_id}}.jpg" width="200" />
         </div>
         <div class="media-body">
           <h3 class="media-heading" ng-bind="::char.body"></h3>
@@ -64,7 +64,7 @@
       </div>
       <div class="media">
         <div class="media-left">
-          <img height="200" ng-src="./ico/{{char.ico_id}}.jpg" width="200" />
+          <img height="200" ng-src="./ico/{{char.stand_ico_id}}.jpg" width="200" />
         </div>
         <div class="media-body">
           <h3 class="media-heading" ng-bind="::char.stand"></h3>
