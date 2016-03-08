@@ -73,7 +73,9 @@
       </div>
     </script>
     <script id="thumbnail.html" type="text/ng-template">
-      <img class="avator" height="100" ng-repeat="c in characters" ng-src="./ico/{{c.stand_ico_id}}.jpg" width="100" />
+      <a class="avator" href="#/character/{{c.id}}" ng-repeat="c in characters"><img ng-src="./ico/{{c.body_ico_id}}.jpg" />
+        <div class="name" ng-bind="::c.body"></div>
+      </a>
     </script>
   </body>
 </html>

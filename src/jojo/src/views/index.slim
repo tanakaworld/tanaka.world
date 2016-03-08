@@ -63,4 +63,6 @@ html lang="ja" ng-app="JOJO"
           p ng-bind="::char.stand_description"
 
     script type="text/ng-template" id="thumbnail.html"
-      img.avator ng-repeat="c in characters" ng-src="./ico/{{c.stand_ico_id}}.jpg" width="100" height="100"
+      a.avator ng-repeat="c in characters" href="#/character/{{c.id}}"
+        img ng-src="./ico/{{c.body_ico_id}}.jpg"
+        .name ng-bind="::c.body"
