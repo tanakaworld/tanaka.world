@@ -56,6 +56,7 @@ gulp.task 'compile-js', () ->
 
     'src/tmp/js/lib/JOJOController.js'
     'src/tmp/js/lib/CharacterController.js'
+    'src/tmp/js/lib/ThumbnailController.js'
 
     'src/tmp/js/main.js'
   ]
