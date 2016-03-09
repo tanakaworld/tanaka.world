@@ -22,7 +22,7 @@
         <table class="table">
           <div class="row">
             <div class="col-xs-12 col-sm-2 col-md-2">
-              <select st-search="part">
+              <select class="form-control part-selector" st-search="part">
                 <option value="">
                   ALL
                 </option>
@@ -31,27 +31,23 @@
                 </option>
               </select>
             </div>
-            <div class="col-xs-12 col-sm-10 col-md-10">
-              <div st-displayed-pages="7" st-items-by-page="itemsByPage" st-pagination=""></div>
-            </div>
           </div>
-          <tbody>
-            <tr class="character-row" ng-click="openDetail(char)" ng-repeat="char in characters">
-              <td>
-                <img height="50" ng-src="./ico/{{char.body_ico_id}}.jpg" width="50" />
-              </td>
-              <td ng-bind="::char.body"></td>
-              <td ng-bind="::char.stand"></td>
-              <td ng-bind="::char.part"></td>
-            </tr>
-          </tbody>
         </table>
+        <hr>
+          <div class="conatainer">
+            <a class="avator" href="#/character/{{c.id}}" ng-repeat="c in characters"><img ng-src="./ico/{{c.body_ico_id}}.jpg" />
+              <div class="name" ng-bind="::c.body"></div>
+            </a>
+          </div>
+        </hr>
       </div>
     </script>
     <script id="characterDetail.html" type="text/ng-template">
       <div class="page-header">
         <a href="/jojo">< HOME</a>
-        <h1 ng-bind="::char.part"></h1>
+        <h1>
+          Part:<span ng-bind="::char.part"></span>
+        </h1>
       </div>
       <div class="media">
         <div class="media-left">

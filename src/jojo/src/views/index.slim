@@ -28,12 +28,12 @@ html lang="ja" ng-app="JOJO"
         table.table
           .row
             .col-xs-12.col-sm-2.col-md-2
-              select st-search="part"
+              select.form-control.part-selector st-search="part"
                 option value="" ALL
                 option ng-repeat="p in partsSelector" value="{{p}}" Part-{{p}}
-            .col-xs-12.col-sm-10.col-md-10
-              div st-displayed-pages="7" st-items-by-page="itemsByPage" st-pagination=""
-          tbody
+            /.col-xs-12.col-sm-10.col-md-10
+            /  div st-displayed-pages="7" st-items-by-page="itemsByPage" st-pagination=""
+          /tbody
             tr.character-row ng-repeat="char in characters" ng-click="openDetail(char)"
               td
                 /img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200" width="50" height="50"
@@ -43,10 +43,18 @@ html lang="ja" ng-app="JOJO"
               td ng-bind="::char.stand"
               td ng-bind="::char.part"
 
+        hr
+          .conatainer
+            a.avator ng-repeat="c in characters" href="#/character/{{c.id}}"
+              img ng-src="./ico/{{c.body_ico_id}}.jpg"
+              .name ng-bind="::c.body"
+
     script type="text/ng-template" id="characterDetail.html"
       .page-header
         a href="/jojo" < HOME
-        h1 ng-bind="::char.part"
+        h1
+          | Part:
+          span ng-bind="::char.part"
       .media
         .media-left
           /img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200"
