@@ -1,0 +1,76 @@
+doctype html
+html lang="ja" ng-app="JOJO"
+  head
+    meta charset="UTF-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"
+
+    /base href="/"
+
+    script type="text/javascript" src="./application.js"
+    link rel="stylesheet" href="./application.css"
+    link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"
+
+    title JOJO β
+
+    /[if lt IE 9]
+      script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"
+      script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"
+
+  body
+    .container
+      ng-view Loading..........
+
+    script type="text/ng-template" id="index.html"
+      div st-table="characters"
+        / TODO filter search target
+        input.form-control-custom placeholder="keyword" st-search="" type="search"
+        table.table
+          .row
+            .col-xs-12.col-sm-2.col-md-2
+              select.form-control.part-selector st-search="part"
+                option value="" ALL
+                option ng-repeat="p in partsSelector" value="{{p}}" Part-{{p}}
+            /.col-xs-12.col-sm-10.col-md-10
+            /  div st-displayed-pages="7" st-items-by-page="itemsByPage" st-pagination=""
+          /tbody
+            tr.character-row ng-repeat="char in characters" ng-click="openDetail(char)"
+              td
+                /img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200" width="50" height="50"
+                / TODO switch body / stand icon
+                img ng-src="./ico/{{char.body_ico_id}}.jpg" width="50" height="50"
+              td ng-bind="::char.body"
+              td ng-bind="::char.stand"
+              td ng-bind="::char.part"
+
+        hr
+          .conatainer
+            a.avator ng-repeat="c in characters" href="#/character/{{c.id}}"
+              img ng-src="./ico/{{c.body_ico_id}}.jpg"
+              .name ng-bind="::c.body"
+
+    script type="text/ng-template" id="characterDetail.html"
+      .page-header
+        a href="/jojo" < HOME
+        h1
+          | Part:
+          span ng-bind="::char.part"
+      .media
+        .media-left
+          /img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200"
+          img ng-src="./ico/{{char.body_ico_id}}.jpg" width="200" height="200"
+        .media-body
+          h3.media-heading ng-bind="::char.body"
+          p ng-bind="::char.body_description"
+      .media
+        .media-left
+          /img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=J&w=200&h=200"
+          img ng-src="./ico/{{char.stand_ico_id}}.jpg" width="200" height="200"
+        .media-body
+          h3.media-heading ng-bind="::char.stand"
+          p ng-bind="::char.stand_description"
+
+    script type="text/ng-template" id="thumbnail.html"
+      a.avator ng-repeat="c in characters" href="#/character/{{c.id}}"
+        img ng-src="./ico/{{c.body_ico_id}}.jpg"
+        .name ng-bind="::c.body"
