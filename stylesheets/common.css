@@ -22,23 +22,41 @@ html, body {
 body {
     font-family: PixcelMplus12;
     color: #d9edf7;
-}
-
-#wp {
-    width: 100%;
-    position: relative;
-    height: auto !important;
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    min-height: 100%;
 }
 
 #main {
     padding-bottom: 80px;
 }
 
+header {
+    flex: 0 0 auto;
+    padding: 30px;
+}
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header .header-left {
+    justify-content: flex-start;
+}
+
+header .header-right {
+    justify-content: flex-end;
+}
+
+#content {
+    flex: 1 1 auto;
+    position: relative; /* need this to position inner content */
+    overflow-y: auto;
+}
+
 footer {
-    height: 80px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
+    flex: 0 0 auto;
+    background-color: #dcdcdc;
 }
