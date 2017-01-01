@@ -7,7 +7,6 @@ const App = ({children}) => (
         <header>
             <h1>TANAKA WORLD</h1>
             <Link to="/about">About</Link>
-            <Link to="/poweredby">Powered by</Link>
             <Link to="/gallery">Gallery</Link>
         </header>
         <section>
