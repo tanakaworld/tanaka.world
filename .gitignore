@@ -1,5 +1,9 @@
 .DS_Store
 .idea/
+node_modules
+.tmp
+dist
+.publish
 
 src/jojo/bower_components/
 src/jojo/node_modules/
