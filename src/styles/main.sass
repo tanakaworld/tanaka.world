@@ -1,3 +1,5 @@
+@import "./color"
+
 @font-face
   font-family: PixcelMplus12
   src: url("../../font/PixelMplus12-Regular.eot")
@@ -10,14 +12,14 @@
 
 body
   font-family: PixcelMplus12, Arial, Helvetica, sans-serif
-  color: #d9edf7
+  color:
   margin: 0
   padding: 0
-  background: #555555
+  background: $color-dark-gray
 
 header
-  color: #fff
-  background: #0066bb
+  color: $color-white
+  background: $color-dark-gray
   h1
     display: inline-block
     padding: 0 20px
@@ -25,11 +27,12 @@ header
     display: inline-block
     margin: 10px
     padding: 10px
-    color: #fff
+    color: $color-white
     text-decoration: none
     border-radius: 3px
     &.active, &:hover
-      background-color: #0085F3
+      background-color: $color-gray
 
 section
   padding: 20px
+  color: $color-white
