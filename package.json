@@ -16,7 +16,7 @@
     "deploy": "gulp deploy",
     "test": "ava --tap | tap-nyan"
   },
-  "author": "Maurizio Mangione",
+  "author": "tanakaworld",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tanakaworld/tanaka.world/issues"
