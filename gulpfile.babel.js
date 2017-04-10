@@ -28,7 +28,8 @@ import concat from 'gulp-concat';
 const paths = {
     bundle: 'app.js',
     entry: 'src/Index.js',
-    srcCss: 'src/**/*.sass',
+    srcSass: 'src/**/*.sass',
+    srcCss: ['node_modules/normalize.css/normalize.css'],
     srcImg: 'src/images/**',
     srcLint: ['src/**/*.js', 'test/**/*.js'],
     dist: 'dist',
@@ -92,8 +93,8 @@ gulp.task('browserify', () => {
 
 gulp.task('styles', () => {
     es.concat(
-        gulp.src(paths.srcCss)
-            .pipe(sass.sync().on('error', sass.logError))
+        gulp.src(paths.srcCss),
+        gulp.src(paths.srcSass).pipe(sass.sync().on('error', sass.logError))
     ).pipe(rename({extname: '.css'}))
         .pipe(sourcemaps.init())
         .pipe(postcss([vars, extend, nested, autoprefixer, cssnano]))
@@ -120,7 +121,7 @@ gulp.task('images', () => {
 });
 
 gulp.task('watchTask', () => {
-    gulp.watch(paths.srcCss, ['styles']);
+    gulp.watch(paths.srcSass, ['styles']);
 });
 
 gulp.task('deploy', () => {
