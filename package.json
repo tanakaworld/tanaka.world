@@ -24,6 +24,7 @@
   "homepage": "https://github.com/tanakaworld/tanaka.world#readme",
   "dependencies": {
     "history": "^4.5.0",
+    "normalize.css": "^6.0.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-router": "^3.0.0"
