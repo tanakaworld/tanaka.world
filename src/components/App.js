@@ -6,11 +6,15 @@ import Home from './Home';
 const App = ({children}) => (
     <div>
         <header>
-            <h1>
+            <h1 id="title">
                 <Link to="/">TANAKA WORLD</Link>
             </h1>
-            <Link to="/about">About</Link>
-            <Link to="/gallery">Gallery</Link>
+            <nav id="nav">
+                <ul>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/gallery">Gallery</Link></li>
+                </ul>
+            </nav>
         </header>
         <section>
             {children || <Home/>}
