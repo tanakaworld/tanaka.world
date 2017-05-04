@@ -90,6 +90,11 @@ const Gallery = () => (
 
             <p className="description">Fly up 2017</p>
         </div>
+        <div className="thumbnail">
+            <img className="gallery-icon" src="images/me/CharacterAnimationGIF-1.gif"/>
+
+            <p className="description">Sequential Human</p>
+        </div>
     </div>
 );
 
