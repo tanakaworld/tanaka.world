@@ -4,3 +4,4 @@ node_modules
 .tmp
 .publish
 firebase-debug.log*
+dist/
