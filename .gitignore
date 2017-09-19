@@ -3,7 +3,4 @@
 node_modules
 .tmp
 .publish
-
-src/jojo/bower_components/
-src/jojo/node_modules/
-src/jojo/src/tmp/
+firebase-debug.log*
