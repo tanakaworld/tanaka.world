@@ -24,12 +24,12 @@ export default class About extends Component {
         return (
             <div id="about">
                 <div className="profile-wrap">
-                    <div className="profile-row">
+                    <div className="profile-row profile-row-has-child">
                         <div>
                             <img
                                 className="profile-icon"
                                 alt='profile-icon'
-                                src='https://firebasestorage.googleapis.com/v0/b/tanaka-world.appspot.com/o/lp%2Fme%2F8bit_me_clear.jpg?alt=media&token=165e056b-d97b-4a15-81fd-1c8dbb1bdc51'/>
+                                src='https://firebasestorage.googleapis.com/v0/b/tanaka-world.appspot.com/o/lp%2Fme%2Ftanakaworld.jpg?alt=media&token=d87a363e-25a2-4628-ba9e-f146c23ad695'/>
                         </div>
                         <div className="profile-property">
                             <div><a href="http://tanaka.world">tanakaworld</a></div>
@@ -45,7 +45,10 @@ export default class About extends Component {
 
                     <div className="profile-row">
                         あおやまがくいんだいがくりこうがくぶじょうほうテクノロジーがっかそつ。<br/>
-                        エムティーアイ、フクロウラボ、こじんじぎょうぬしをへて2016ねん8がつ curiosity, inc. ににゅうしゃ。エンジニアとして、
+                        <a href='http://www.mti.co.jp/' target='_blank'>エムティーアイ</a>、
+                        <a href='http://fukurou-labo.co.jp/' target='_blank'>フクロウラボ</a>、
+                        こじんじぎょうぬしをへて、2016ねん8がつ
+                        <a href='https://www.curiosity-inc.jp/' target='_blank'>curiosity, inc.</a> ににゅうしゃ。エンジニアとして、
                         Webのフロントエンドからインフラまでおおくのプロジェクトにたずわる。<br/>
                         JavaScript・C#・Rubyを用いたアプリケーションかいはつをとくいとしている。<br/>
                         ピクセルアートとルービックキューブをこよなく愛する。

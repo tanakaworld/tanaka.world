@@ -5,15 +5,17 @@
 
   .profile-row
     padding: 16px
-    flex-direction: row
-    display: flex
-    align-items: center
-    justify-content: space-between
-
-    &:not(:first-child)
-      margin-left: 12px
-
     line-height: 1.5em
+
+    &.profile-row-has-child
+      flex-direction: row
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+      &:not(:first-child)
+        margin-left: 12px
+
 
     .profile-property
       padding: 24px
@@ -30,6 +32,7 @@
         margin-top: 12px
 
   .profile-icon
+    transform: scaleX(-1)
     width: 100%
     max-width: 500px
     max-height: 500px
