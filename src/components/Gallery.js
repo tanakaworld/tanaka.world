@@ -63,22 +63,22 @@ const Gallery = () => {
             description: 'Saru me 2016',
             file: 'https://firebasestorage.googleapis.com/v0/b/tanaka-world.appspot.com/o/lp%2Fme%2F8bit-me-mon-2016.png?alt=media&token=a439ab14-adac-4462-922d-019df8d3f60c'
         },
-        {
-            description: 'GIFme',
-            file: 'https://firebasestorage.googleapis.com/v0/b/tanaka-world.appspot.com/o/lp%2Fme%2Fme-deformed-16fr.gif?alt=media&token=f012eb59-9ea7-403c-b445-bf488e74fca1'
-        },
+        // {
+        //     description: 'GIFme',
+        //     file: 'https://firebasestorage.googleapis.com/v0/b/tanaka-world.appspot.com/o/lp%2Fme%2Fme-deformed-16fr.gif?alt=media&token=f012eb59-9ea7-403c-b445-bf488e74fca1'
+        // },
         {
             description: 'Tori me 2017',
             file: 'https://firebasestorage.googleapis.com/v0/b/tanaka-world.appspot.com/o/lp%2Fme%2Fme-2017-tori-v1.0.0.500.png?alt=media&token=cef64a6e-afe6-433b-ae0b-a7ac6ef96257'
         },
-        {
-            description: 'Fly up 2017',
-            file: 'https://firebasestorage.googleapis.com/v0/b/tanaka-world.appspot.com/o/lp%2Fme%2Fme-2017-tori-fly-up.500.gif?alt=media&token=dbecf16f-e281-4b6c-836c-e7e8dc97c043'
-        },
-        {
-            description: 'Sequential Human',
-            file: 'https://firebasestorage.googleapis.com/v0/b/tanaka-world.appspot.com/o/lp%2Fme%2FCharacterAnimationGIF-1.gif?alt=media&token=553a4017-3b03-4dbf-a3d7-b60f20900e7a'
-        },
+        // {
+        //     description: 'Fly up 2017',
+        //     file: 'https://firebasestorage.googleapis.com/v0/b/tanaka-world.appspot.com/o/lp%2Fme%2Fme-2017-tori-fly-up.500.gif?alt=media&token=dbecf16f-e281-4b6c-836c-e7e8dc97c043'
+        // },
+        // {
+        //     description: 'Sequential Human',
+        //     file: 'https://firebasestorage.googleapis.com/v0/b/tanaka-world.appspot.com/o/lp%2Fme%2FCharacterAnimationGIF-1.gif?alt=media&token=553a4017-3b03-4dbf-a3d7-b60f20900e7a'
+        // },
     ].map((c, i) => {
         return <div className="thumbnail" key={i}>
             <img className="gallery-icon" src={c.file}/>
