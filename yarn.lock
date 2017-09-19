@@ -3190,6 +3190,10 @@ pkg-dir@^1.0.0:
   dependencies:
     find-up "^1.0.0"
 
+pokemon-font@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/pokemon-font/-/pokemon-font-1.8.1.tgz#55cad862590fce41b5dbb4f080693f9444bea097"
+
 portfinder@^1.0.9:
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.13.tgz#bb32ecd87c27104ae6ee44b5a3ccbf0ebb1aede9"
