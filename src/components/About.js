@@ -77,7 +77,7 @@ export default class About extends Component {
                         <p>
                             Let's make unown text !!
                             <br/>
-                            <small>powered by
+                            <small>powered by&nbsp;
                                 <a href="https://github.com/Superpencil/pokemon-font" target="_blank">pokemon-font</a>
                             </small>
                         </p>
