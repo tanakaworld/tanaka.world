@@ -8,7 +8,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "NODE_ENV=production webpack --progress --profile --colors",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && firebase deploy"
   },
   "dependencies": {
     "html-webpack-plugin": "^2.26.0",
