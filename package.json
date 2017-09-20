@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack --progress --profile --colors",
+    "build": "NODE_ENV=production webpack --progress --profile --colors",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
