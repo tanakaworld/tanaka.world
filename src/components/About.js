@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 
 const unownText = (text) => {
-    return text.split('').map(t => 'unown' + t).join('');
+    return text.split('').map((t) => {
+        return t === ' ' ? t : 'unown' + t.toLowerCase();
+    }).join('');
 };
 
 export default class About extends Component {
@@ -42,7 +44,6 @@ export default class About extends Component {
                             </div>
                         </div>
                     </div>
-
                     <div className="profile-row">
                         あおやまがくいんだいがくりこうがくぶじょうほうテクノロジーがっかそつ。<br/>
                         <a href='http://www.mti.co.jp/' target='_blank'>エムティーアイ</a>、
@@ -65,29 +66,28 @@ export default class About extends Component {
                         <p>
                             <a href="http://tanaka.world">tanakaworld</a> is a Software Engineer in Japan.
                         </p>
-                    </div>
-                    <div className="profile-row">
                         <p>
                             <a href="http://tanaka.world">{unownText('tanakaworld')}</a> {unownText('is')} {unownText('a')} {unownText('software')} {unownText('engineer')} {unownText('in')} {unownText('japan')}.
                         </p>
+                        <p>
+                            たなかわーるどはにほんのソフトウェアエンジニアです。
+                        </p>
                     </div>
                     <div className="profile-row">
                         <p>
-                            たなかわーるどは日本のソフトウェアエンジニアです。
+                            Let's make unown text !!
+                            <br/>
+                            <small>powered by
+                                <a href="https://github.com/Superpencil/pokemon-font" target="_blank">pokemon-font</a>
+                            </small>
+                        </p>
+                        <input type='text' className='makeUnownTextInput' placeholder='enter some text ...'
+                               onChange={this._updateInputText}/>
+                        <p className="makeUnownTextInputDisplay">
+                            {unownText(this.state.inputText)}
                         </p>
                     </div>
                 </div>
-                {/*<hr/>*/
-                }
-
-                {/*<input type='text' placeholder='enter some text ...' onChange={this._updateInputText}/>*/
-                }
-                {/*<pre>*/
-                }
-                {/*{unownText(this.state.inputText)}*/
-                }
-                {/*</pre>*/
-                }
             </div>
         )
     }

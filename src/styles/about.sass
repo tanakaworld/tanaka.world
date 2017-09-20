@@ -1,3 +1,5 @@
+@import "color"
+
 #about
   display: flex
   justify-items: center
@@ -6,6 +8,8 @@
   .profile-row
     padding: 16px
     line-height: 1.5em
+    &:not(:first-child)
+      border-top: solid 1px $color-sky-blue
 
     &.profile-row-has-child
       flex-direction: row
@@ -15,7 +19,6 @@
 
       &:not(:first-child)
         margin-left: 12px
-
 
     .profile-property
       padding: 24px
@@ -49,3 +52,12 @@
     font-size: 12px
   .profile-row
     flex-direction: column !important
+
+.makeUnownTextInput
+  width: 100%
+  padding: 4px
+  text-decoration: none
+  color: $color-gray
+
+.makeUnownTextInputDisplay
+  width: 100%
