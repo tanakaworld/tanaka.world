@@ -3,8 +3,10 @@ import {
     BrowserRouter as Router,
     Route,
     Link
-} from 'react-router-dom'
+} from 'react-router-dom';
 
+import 'normalize.css/normalize.css';
+import 'pokemon-font/css/pokemon-font.css';
 import '../styles/index.sass';
 
 import Home from './Home';

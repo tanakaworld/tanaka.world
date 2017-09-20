@@ -17,7 +17,8 @@ module.exports = {
             {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
             {test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/},
             {test: /\.png$/, loader: "file-loader?name=dist/[path][name].[ext]"},
-            {test: /\.sass/, loaders: ['style-loader', 'css-loader', 'sass-loader']}
+            {test: /\.(sass|css)$/, loaders: ['style-loader', 'css-loader', 'sass-loader']},
+            {test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'}
         ]
     },
     plugins: [HtmlWebpackPluginConfig],
