@@ -51,8 +51,8 @@ export default class About extends Component {
                         こじんじぎょうぬしをへて、2016ねん8がつ
                         <a href='https://www.curiosity-inc.jp/' target='_blank'>curiosity, inc.</a> ににゅうしゃ。エンジニアとして、
                         Webのフロントエンドからインフラまでおおくのプロジェクトにたずわる。<br/>
-                        JavaScript・C#・Rubyを用いたアプリケーションかいはつをとくいとしている。<br/>
-                        ピクセルアートとルービックキューブをこよなく愛する。
+                        JavaScript・C#・Rubyをもちいたアプリケーションかいはつをとくいとしている。<br/>
+                        ピクセルアートとルービックキューブをこよなくあいする。
                     </div>
                     <div>
                         <ul>
