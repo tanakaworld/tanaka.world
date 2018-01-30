@@ -1,51 +1,59 @@
 <template>
-  <div id="about">
-    <div class="profile-wrap">
-      <div class="profile-row profile-row-has-child">
+  <div>
+    <header-view/>
+    <div id="about">
+      <div class="profile-wrap">
+        <div class="profile-row profile-row-has-child">
+          <div>
+            <img
+              class="profile-icon"
+              alt='profile-icon'
+              src='https://firebasestorage.googleapis.com/v0/b/tanaka-world.appspot.com/o/lp%2Fme%2Ftanakaworld.jpg?alt=media&token=d87a363e-25a2-4628-ba9e-f146c23ad695'/>
+          </div>
+          <div class="profile-property">
+            <div>
+              <router-link to="http://tanaka.world">tanakaworld</router-link>
+            </div>
+            <div>Software Engineer</div>
+            <div>
+              たかさ 1.75m
+            </div>
+            <div>
+              おもさ 62.0kg
+            </div>
+          </div>
+        </div>
+        <div class="profile-row">
+          あおやまがくいんだいがくりこうがくぶじょうほうテクノロジーがっかそつ。<br/>
+          <a href='http://www.mti.co.jp/' target='_blank'>エムティーアイ</a>、
+          <a href='http://fukurou-labo.co.jp/' target='_blank'>フクロウラボ</a>、
+          こじんじぎょうぬしをへて、2016ねん8がつ
+          <a href='https://www.curiosity-inc.jp/' target='_blank'>curiosity, inc.</a> ににゅうしゃ。エンジニアとして、
+          Webのフロントエンドからインフラまでおおくのプロジェクトにたずわる。<br/>
+          JavaScript・C#・Rubyをもちいたアプリケーションかいはつをとくいとしている。<br/>
+          ピクセルアートとルービックキューブをこよなくあいする。
+        </div>
         <div>
-          <img
-            class="profile-icon"
-            alt='profile-icon'
-            src='https://firebasestorage.googleapis.com/v0/b/tanaka-world.appspot.com/o/lp%2Fme%2Ftanakaworld.jpg?alt=media&token=d87a363e-25a2-4628-ba9e-f146c23ad695'/>
+          <ul>
+            <li><a href="https://twitter.com/_tanakaworld">Twitter</a></li>
+            <li><a href="https://github.com/tanakaworld">GitHub</a></li>
+            <li><a href="http://qiita.com/tanakaworld">Qiita (Short Tips)</a></li>
+            <li><a href="https://www.facebook.com/tanaka.world">Facebook</a></li>
+          </ul>
         </div>
-        <div class="profile-property">
-          <div>
-            <router-link to="http://tanaka.world">tanakaworld</router-link>
-          </div>
-          <div>Software Engineer</div>
-          <div>
-            たかさ 1.75m
-          </div>
-          <div>
-            おもさ 62.0kg
-          </div>
-        </div>
-      </div>
-      <div class="profile-row">
-        あおやまがくいんだいがくりこうがくぶじょうほうテクノロジーがっかそつ。<br/>
-        <a href='http://www.mti.co.jp/' target='_blank'>エムティーアイ</a>、
-        <a href='http://fukurou-labo.co.jp/' target='_blank'>フクロウラボ</a>、
-        こじんじぎょうぬしをへて、2016ねん8がつ
-        <a href='https://www.curiosity-inc.jp/' target='_blank'>curiosity, inc.</a> ににゅうしゃ。エンジニアとして、
-        Webのフロントエンドからインフラまでおおくのプロジェクトにたずわる。<br/>
-        JavaScript・C#・Rubyをもちいたアプリケーションかいはつをとくいとしている。<br/>
-        ピクセルアートとルービックキューブをこよなくあいする。
-      </div>
-      <div>
-        <ul>
-          <li><a href="https://twitter.com/_tanakaworld">Twitter</a></li>
-          <li><a href="https://github.com/tanakaworld">GitHub</a></li>
-          <li><a href="http://qiita.com/tanakaworld">Qiita (Short Tips)</a></li>
-          <li><a href="https://www.facebook.com/tanaka.world">Facebook</a></li>
-        </ul>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import HeaderView from '@/components/common/HeaderView';
+
   export default {
     name: 'about',
+    components: {
+      HeaderView,
+    },
   };
 </script>
 
