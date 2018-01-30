@@ -33,9 +33,12 @@
   @import ./styles/color
 
   @font-face
-    font-smooth: never
-    -webkit-font-smoothing: none
-    font-family: 'pokemon-font', monospace
+    font-family: 'Misaki Gothic'
+    src: url('./assets/fonts/misaki_gothic.ttf') format('truetype')
+
+  @font-face
+    font-family: 'Misaki Mincho'
+    src: url('./assets/fonts/misaki_mincho.ttf') format('truetype')
 
   *
     box-sizing: border-box
@@ -43,7 +46,7 @@
       box-sizing: border-box
 
   body
-    font-family: pokemon-font, Arial, Helvetica, sans-serif
+    font-family: Misaki Gothic, Misaki Mincho, Arial, Helvetica, sans-serif
     color:
     margin: 0
     padding: 0
