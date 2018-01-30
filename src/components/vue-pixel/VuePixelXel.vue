@@ -59,4 +59,6 @@
       content: ''
       display: block
       padding-top: 100%
+
+    transition: all .3s ease
 </style>
