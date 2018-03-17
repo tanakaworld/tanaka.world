@@ -3,7 +3,6 @@
     <header-view/>
     <div id="gallery">
       <div v-for="(c, index) in photos" class="thumbnail" :key="index">
-        <img class="gallery-icon" src="../assets/logo.png"/>
         <p class="description">{{c.description}}</p>
       </div>
     </div>
