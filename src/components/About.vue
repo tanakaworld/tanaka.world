@@ -33,13 +33,23 @@
           JavaScript・C#・Rubyをもちいたアプリケーションかいはつをとくいとしている。<br/>
           ピクセルアートとルービックキューブをこよなくあいする。
         </div>
-        <div>
-          <ul>
-            <li><a href="https://twitter.com/_tanakaworld">Twitter</a></li>
-            <li><a href="https://github.com/tanakaworld">GitHub</a></li>
-            <li><a href="http://qiita.com/tanakaworld">Qiita (Short Tips)</a></li>
-            <li><a href="https://www.facebook.com/tanaka.world">Facebook</a></li>
-          </ul>
+        <div class="profile-row no-border sns-links-wrap">
+          <a class="sns-link sns-link-twitter" href="https://twitter.com/_tanakaworld" target="_blank">
+            <font-awesome-icon :icon="icons.twitter"/>
+          </a>
+          <a class="sns-link sns-link-github" href="https://github.com/tanakaworld" target="_blank">
+            <font-awesome-icon :icon="icons.github"/>
+          </a>
+          <a class="sns-link sns-link-qiita" href="http://qiita.com/tanakaworld" target="_blank">
+            <font-awesome-icon :icon="icons.qiita"/>
+          </a>
+          <a class="sns-link sns-link-facebook" href="https://www.facebook.com/tanaka.world" target="_blank">
+            <font-awesome-icon :icon="icons.facebook"/>
+          </a>
+          <a class="sns-link sns-link-linkedin" href="https://www.linkedin.com/in/yutaro-tanaka-world-7863b249/"
+             target="_blank">
+            <font-awesome-icon :icon="icons.linkedin"/>
+          </a>
         </div>
       </div>
     </div>
@@ -48,11 +58,27 @@
 
 <script>
   import HeaderView from '@/components/common/HeaderView';
+  import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter';
+  import faGitHub from '@fortawesome/fontawesome-free-brands/faGithub';
+  import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook';
+  import faQiita from '@fortawesome/fontawesome-free-solid/faSearch';
+  import faLinkedin from '@fortawesome/fontawesome-free-brands/faLinkedin';
 
   export default {
     name: 'about',
     components: {
       HeaderView,
+    },
+    computed: {
+      icons() {
+        return {
+          twitter: faTwitter,
+          github: faGitHub,
+          facebook: faFacebook,
+          qiita: faQiita,
+          linkedin: faLinkedin,
+        };
+      },
     },
   };
 </script>
@@ -71,6 +97,8 @@
       line-height: 1.5em
       &:not(:first-child)
         border-top: solid 1px $color-sky-blue
+      &.no-border
+        border-top: none
 
       &.profile-row-has-child
         flex-direction: row
@@ -126,4 +154,37 @@
 
     .makeUnownTextInputDisplay
       width: 100%
+
+  .sns-links-wrap
+    display: flex
+    align-items: center
+    justify-content: center
+
+    .sns-link
+      &:not(:first-child)
+        margin-left: 12px
+
+    .sns-link-twitter
+      &:hover
+        color: #4A9FEC
+
+    .sns-link-facebook
+      &:hover
+        color: #4966AD
+
+    .sns-link-github
+      &:hover
+        color: #404448
+
+    .sns-link-qiita
+      &:hover
+        color: #72C23A
+
+    .sns-link-facebook
+      &:hover
+        color: #4A9FEC
+
+    .sns-link-linkedin
+      &:hover
+        color: #3175B0
 </style>
