@@ -31,7 +31,7 @@
           <a href='https://www.curiosity-inc.jp/' target='_blank'>curiosity, inc.</a> ににゅうしゃ。エンジニアとして、
           Webのフロントエンドからインフラまでおおくのプロジェクトにたずわる。<br/>
           JavaScript・C#・Rubyをもちいたアプリケーションかいはつをとくいとしている。<br/>
-          ピクセルアートとルービックキューブをこよなくあいする。
+          ピクセルアート、ルービックキューブ、ピクトグラム、イヌをこよなくあいする。
         </div>
         <div class="profile-row no-border sns-links-wrap">
           <a class="sns-link sns-link-twitter" href="https://twitter.com/_tanakaworld" target="_blank">
