@@ -4,6 +4,7 @@ import Vue from 'vue';
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 import App from './App';
 import router from './router';
+import store from './store';
 
 Vue.config.productionTip = false;
 Vue.mixin({
@@ -15,6 +16,7 @@ Vue.mixin({
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>',

@@ -9,6 +9,7 @@
     name: 'vue-pixel-xel',
     data() {
       return {
+        ableToTransform: this.afterColor !== null,
         bgColor: this.beforeColor,
         transformed: false,
       };
@@ -36,9 +37,17 @@
     },
     methods: {
       handleHover() {
-        if (!this.static && !this.transformed && this.afterColor) {
+        if (!this.static && !this.transformed && this.ableToTransform) {
           this.bgColor = this.afterColor;
           this.transformed = true;
+
+          if (!this.$store.state.showPixelCount) {
+            this.$store.commit('togglePixelCount', true);
+          }
+          this.$store.commit('decrementPixelCount');
+          if (this.$store.state.pixelCount === 0) {
+            this.$store.commit('togglePixelCount', false);
+          }
         }
       },
     },

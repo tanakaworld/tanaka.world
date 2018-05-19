@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="vue-pixel-board">
+    <div class="pixel-count-display" v-show="$store.state.showPixelCount">{{$store.state.pixelCount}}</div>
     <div class="board" v-for="(s, i) in seed"
          :key="`board.${i}`"
          @touchmove="handleTouchMove($event)">
@@ -35,7 +36,13 @@
         default: false,
       },
     },
+    mounted() {
+      this.$store.commit('setPixelCount', Object.keys(this.$refs).filter(k => {
+        return this.$refs[k][0].ableToTransform;
+      }).length);
+    },
     methods: {
+      // For touch devices
       handleTouchMove(e) {
         if (e && e.target) {
           const { pageX, pageY } = e;
@@ -52,12 +59,27 @@
 </script>
 
 <style scoped lang="sass">
-  .board
-    max-width: 600px
-    margin: 0 auto
+  .vue-pixel-board
+    position: relative
 
-    .row
-      display: flex
-      flex-direction: row
-      justify-content: center
+    .pixel-count-display
+      position: absolute
+      top: 0
+      width: 30px
+      height: 30px
+      font-size: 30px
+      z-index: 10
+
+    .board
+      z-index: 5
+      max-width: 600px
+      margin: 0 auto
+
+      .row
+        display: flex
+        flex-direction: row
+        justify-content: center
+
+      .pixelCountDisplay
+        height: 10px
 </style>
