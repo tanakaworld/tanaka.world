@@ -1,0 +1,40 @@
+{
+  "name": "tanaka.world",
+  "version": "1.0.0",
+  "description": "The TANAKA WORLD",
+  "author": "tanakaworld <yutaro.tanaka.world@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "ajv": "^6.5.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "nuxt": "1.0.0-rc11",
+    "vue": "2.5.16",
+    "vue-server-renderer": "2.5.16",
+    "vue-template-compiler": "2.5.16",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/pwa": "^2.0.8",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.5.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1"
+  },
+  "engines": {
+    "node": "6.14.2"
+  }
+}
