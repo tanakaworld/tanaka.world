@@ -6,6 +6,7 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex';
   import HeaderView from '@/components/common/HeaderView';
   import VuePixel from '@/components/vue-pixel/VuePixel';
 
@@ -23,6 +24,9 @@
       VuePixel,
     },
     methods: {
+      ...mapMutations([
+        'toggleFixBody',
+      ]),
       updateViePixelHeight() {
         if (window) {
           const windowHeight = window.innerHeight;
@@ -39,9 +43,11 @@
     },
     mounted() {
       window.addEventListener('resize', this.updateViePixelHeight);
+      this.toggleFixBody(true);
       this.updateViePixelHeight();
     },
     beforeDestroy() {
+      this.toggleFixBody(false);
       window.removeEventListener('resize', this.updateViePixelHeight);
     },
     computed: {
