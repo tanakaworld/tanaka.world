@@ -1,6 +1,6 @@
 module.exports = {
   head: {
-    title: 'The TANAKA WORLD',
+    title: 'tanaka.world',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' },
@@ -15,7 +15,7 @@ module.exports = {
         hid: 'og:description', name: 'og:description',
         content: 'tanakaworld is a Software Engineer in Japan.',
       },
-      { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: '田中' },
+      { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'tanaka.world' },
       { hid: 'msapplication-TileColor', name: 'msapplication-TileColor', content: '#da532c' },
     ],
     link: [

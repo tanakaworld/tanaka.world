@@ -65,6 +65,7 @@
     .pixel-count-display
       position: absolute
       top: 0
+      left: 42px
       width: 30px
       height: 30px
       font-size: 30px

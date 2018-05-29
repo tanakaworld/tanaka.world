@@ -109,6 +109,8 @@
     flex-direction: row
     flex-wrap: wrap
     justify-content: center
+    padding: 24px
+    box-sizing: border-box
     .thumbnail
       height: 200px
       .gallery-icon
