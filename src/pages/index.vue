@@ -12,11 +12,19 @@
 
   export default {
     name: 'home',
+    head() {
+      return {
+        bodyAttrs: {
+          class: this.fixBody ? 'no-scroll' : '',
+        },
+      };
+    },
     data() {
       return {
         vuePixelWidth: 0,
         vuePixelWidthMax: 600,
         vuePixelHeight: 0,
+        fixBody: true,
       };
     },
     components: {
@@ -43,11 +51,11 @@
     },
     mounted() {
       window.addEventListener('resize', this.updateViePixelHeight);
-      this.toggleFixBody(true);
       this.updateViePixelHeight();
+      this.fixBody = true;
     },
     beforeDestroy() {
-      this.toggleFixBody(false);
+      this.fixBody = false;
       window.removeEventListener('resize', this.updateViePixelHeight);
     },
     computed: {

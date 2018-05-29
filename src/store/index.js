@@ -4,7 +4,7 @@ const store = () => new Vuex.Store({
   state: {
     showPixelCount: false,
     pixelCount: 0,
-    fixBody: false,
+    // fixBody: false,
   },
   mutations: {
     setPixelCount(state, count) {

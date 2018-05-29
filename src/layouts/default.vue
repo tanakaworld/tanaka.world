@@ -7,13 +7,6 @@
 <script>
   export default {
     name: 'App',
-    head() {
-      return {
-        bodyAttrs: {
-          class: this.$store.state.fixBody ? 'no-scroll' : '',
-        },
-      };
-    },
   };
 </script>
 
