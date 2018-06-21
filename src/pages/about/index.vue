@@ -34,36 +34,10 @@
           ピクセルアート、ルービックキューブ、ピクトグラム、イヌをこよなくあいする。
         </div>
         <div class="profile-row no-border sns-links-wrap">
-          <div>
-            <a class="sns-link sns-link-twitter" href="https://twitter.com/_tanakaworld" target="_blank">
-              Twitter
-            </a>
-          </div>
-          <div>
-            <a class="sns-link sns-link-github" href="https://github.com/tanakaworld" target="_blank">
-              Github
-            </a>
-          </div>
-          <div>
-            <a class="sns-link sns-link-qiita" href="http://qiita.com/tanakaworld" target="_blank">
-              Qiita
-            </a>
-          </div>
-          <div>
-            <a class="sns-link sns-link-facebook" href="https://www.facebook.com/tanaka.world" target="_blank">
-              Facebook
-            </a>
-          </div>
-          <div>
-            <a class="sns-link sns-link-linkedin" href="https://www.linkedin.com/in/yutaro-tanaka-world-7863b249/"
-               target="_blank">
-              Linkedin
-            </a>
-          </div>
-          <div>
-            <a class="sns-link sns-link-rubygems" href="https://rubygems.org/profiles/tanakaworld/"
-               target="_blank">
-              RubyGems
+          <div v-for="(account, index) in snsAccounts">
+            <a class="sns-link sns-link-twitter" :class="`sns-link-${account.name.toLowerCase()}`" :href="account.url"
+               :key="index" target="_blank">
+              {{account.name}}
             </a>
           </div>
         </div>
@@ -91,6 +65,19 @@
     name: 'about',
     components: {
       HeaderView,
+    },
+    methods: {},
+    computed: {
+      snsAccounts() {
+        return [
+          { name: 'Twitter', url: 'https://twitter.com/_tanakaworld' },
+          { name: 'Github', url: 'https://github.com/tanakaworld' },
+          { name: 'Qiita', url: 'http://qiita.com/tanakaworld' },
+          { name: 'Facebook', url: 'https://www.facebook.com/tanaka.world' },
+          { name: 'LinkedIn', url: 'https://www.linkedin.com/in/yutaro-tanaka-world-7863b249/' },
+          { name: 'RubyGems', url: 'https://rubygems.org/profiles/tanakaworld' },
+        ];
+      },
     },
   };
 </script>
@@ -177,31 +164,15 @@
       &:not(:first-child)
         margin-left: 12px
 
-    .sns-link-twitter
-      &:hover
-        color: #4A9FEC
+    @mixin sns-link($name, $color)
+      .sns-link-#{$name}
+        &:hover
+          color: $color
 
-    .sns-link-facebook
-      &:hover
-        color: #4966AD
-
-    .sns-link-github
-      &:hover
-        color: #98a1a8
-
-    .sns-link-qiita
-      &:hover
-        color: #72C23A
-
-    .sns-link-facebook
-      &:hover
-        color: #4A9FEC
-
-    .sns-link-linkedin
-      &:hover
-        color: #3175B0
-
-    .sns-link-rubygems
-      &:hover
-        color: #D96149
+    +sns-link('twitter', #4A9FEC)
+    +sns-link('facebook', #4966AD)
+    +sns-link('github', #98a1a8)
+    +sns-link('qiita', #72C23A)
+    +sns-link('linkedin', #3175B0)
+    +sns-link('rubygems', #D96149)
 </style>
