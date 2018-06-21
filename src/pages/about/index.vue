@@ -60,6 +60,12 @@
               Linkedin
             </a>
           </div>
+          <div>
+            <a class="sns-link sns-link-rubygems" href="https://rubygems.org/profiles/tanakaworld/"
+               target="_blank">
+              RubyGems
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -194,4 +200,8 @@
     .sns-link-linkedin
       &:hover
         color: #3175B0
+
+    .sns-link-rubygems
+      &:hover
+        color: #D96149
 </style>
