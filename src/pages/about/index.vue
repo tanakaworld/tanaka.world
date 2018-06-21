@@ -34,9 +34,9 @@
           ピクセルアート、ルービックキューブ、ピクトグラム、イヌをこよなくあいする。
         </div>
         <div class="profile-row no-border sns-links-wrap">
-          <div v-for="(account, index) in snsAccounts">
+          <div v-for="(account, index) in snsAccounts" :key="index">
             <a class="sns-link sns-link-twitter" :class="`sns-link-${account.name.toLowerCase()}`" :href="account.url"
-               :key="index" target="_blank">
+               target="_blank">
               {{account.name}}
             </a>
           </div>
