@@ -107,9 +107,9 @@
             range: '2016.8 ~',
             link: 'https://www.curiosity-inc.jp/',
             linkLabel: 'curiosity, inc.',
-            role: 'Web Developer',
+            role: 'Software Engineer',
           },
-          { range: '2017.8 ~', link: 'http://iki.mn/', linkLabel: 'IKIMONO Inc.', role: 'Engineer' },
+          { range: '2017.8 ~', link: 'http://iki.mn/', linkLabel: 'IKIMONO Inc.', role: 'Software Engineer' },
         ];
       },
       level() {
