@@ -7,7 +7,7 @@
           <div>
             <img
               class="profile-icon"
-              alt='profile-icon'
+              alt='Profile Icon'
               src='~/assets/img/tanakaworld.png'/>
           </div>
           <div class="profile-property">
@@ -111,7 +111,7 @@
             role: 'Software Engineer',
           },
           { range: '2017.8 ~', link: 'http://iki.mn/', linkLabel: 'IKIMONO Inc.', role: 'Software Engineer' },
-        ];
+        ].sort(() => 1);
       },
       level() {
         const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 31556925994);
@@ -229,13 +229,15 @@
         margin-left: 8px
 
   @media screen and (max-width: 560px)
-    .histories-wrap
+    #about
       font-size: 16px
-      .history-item
-        &:not(:first-child)
-          margin-top: 8px
-        &-range
-          width: 100%
-        &-link
-          margin-left: 0
+
+      .histories-wrap
+        .history-item
+          &:not(:first-child)
+            margin-top: 8px
+          &-range
+            width: 100%
+          &-link
+            margin-left: 0
 </style>
