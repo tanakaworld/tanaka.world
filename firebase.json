@@ -5,15 +5,6 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "function": "ssrapp"
-      }
     ]
-  },
-  "functions": {
-    "source": "functions"
   }
 }
