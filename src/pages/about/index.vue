@@ -27,8 +27,8 @@
         <div class="profile-row">
           エンジニアとして、 Webのフロントエンドからインフラまでおおくのプロジェクトにたずわる。
           JavaScript・C#・Rubyをもちいたアプリケーションかいはつをとくいとしている。
-          ピクセルアート、ルービックキューブ、ピクトグラム、イヌをこよなく愛する。
-          しゅみは、<a href="https://www.youtube.com/watch?v=qpkCstorMxs&t=1207s" target="_blank">パズル</a>・しょうぎ（ウォーズ２だん）。
+          ピクセルアート、ルービックキューブ、ピクトグラム、イヌが好き。
+          しゅみは、<a href="https://www.youtube.com/watch?v=qpkCstorMxs&t=1207s" target="_blank">パズル</a>・しょうぎ（ウォーズしょだん）。
         </div>
         <div class="profile-row no-border sns-links-wrap">
           <div v-for="(account, index) in snsAccounts" :key="index">
@@ -74,12 +74,13 @@
     computed: {
       snsAccounts() {
         return [
+          { name: 'Blog', url: 'https://blog.tanaka.world' },
           { name: 'Twitter', url: 'https://twitter.com/_tanakaworld' },
           { name: 'Github', url: 'https://github.com/tanakaworld' },
           { name: 'Qiita', url: 'http://qiita.com/tanakaworld' },
+          { name: 'RubyGems', url: 'https://rubygems.org/profiles/tanakaworld' },
           { name: 'Facebook', url: 'https://www.facebook.com/tanaka.world' },
           { name: 'LinkedIn', url: 'https://www.linkedin.com/in/yutaro-tanaka-world-7863b249/' },
-          { name: 'RubyGems', url: 'https://rubygems.org/profiles/tanakaworld' },
         ];
       },
       histories() {
@@ -207,6 +208,7 @@
         &:hover
           color: $color
 
+    +sns-link('blog', #ece7e7)
     +sns-link('twitter', #4A9FEC)
     +sns-link('facebook', #4966AD)
     +sns-link('github', #98a1a8)
