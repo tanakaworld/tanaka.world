@@ -105,7 +105,7 @@
             role: 'Lead Engineer',
           },
           {
-            range: '2016.8 ~',
+            range: '2016.8 ~ 2018.7',
             link: 'https://www.curiosity-inc.jp/',
             linkLabel: 'curiosity, inc.',
             role: 'Software Engineer',
