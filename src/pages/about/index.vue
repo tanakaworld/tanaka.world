@@ -8,7 +8,7 @@
             <img
               class="profile-icon"
               alt='Profile Icon'
-              src='~/assets/img/tanakaworld.png'/>
+              src='~/assets/img/tanakaworld-2018.png'/>
           </div>
           <div class="profile-property">
             <div>

@@ -100,6 +100,10 @@
           {
             description: 'Naked',
             file: require('~/assets/img/me-basic.png')
+          },
+          {
+            description: 'TW 2018',
+            file: require('~/assets/img/tanakaworld-2018.png')
           }
         ]
       };
