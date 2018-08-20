@@ -47,6 +47,9 @@
           this.$store.commit('decrementPixelCount');
           if (this.$store.state.pixelCount === 0) {
             this.$store.commit('togglePixelCount', false);
+            setTimeout(() => {
+              this.$router.push('/about');
+            }, 500);
           }
         }
       },
