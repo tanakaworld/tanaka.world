@@ -12,8 +12,7 @@
     "copyprerendered": "cp -R src/dist/* public",
     "dev": "cd src/ && yarn run dev",
     "serve": "firebase serve --only hosting,functions",
-    "build": "yarn run clean && cd src/ && yarn run build && cd .. && yarn run copyassets && yarn run copystatic",
-    "generate": "yarn run clean && cd src/ && yarn run generate && cd .. && yarn run copystatic && yarn run copyprerendered",
+    "build": "yarn run clean && cd src/ && yarn run generate && cd .. && yarn run copystatic && yarn run copyprerendered",
     "deploy": "firebase use tanaka-world && firebase deploy"
   }
 }
