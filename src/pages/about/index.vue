@@ -110,7 +110,8 @@
             linkLabel: 'curiosity, inc.',
             role: 'Software Engineer',
           },
-          { range: '2017.8 ~', link: 'http://iki.mn/', linkLabel: 'IKIMONO Inc.', role: 'Software Engineer' },
+          { range: '2017.8 ~', link: 'https://iki.mn/', linkLabel: 'IKIMONO Inc.', role: 'Software Engineer' },
+          { range: '2018.8 ~', link: 'https://merpay.com/', linkLabel: 'Merpay, Inc.', role: 'Software Engineer' },
         ].sort(() => 1);
       },
       level() {
