@@ -25,10 +25,8 @@
           </div>
         </div>
         <div class="profile-row">
-          エンジニアとして、 Webのフロントエンドからインフラまでおおくのプロジェクトにたずわる。
-          JavaScript・C#・Rubyをもちいたアプリケーションかいはつをとくいとしている。
-          ピクセルアート、ルービックキューブ、ピクトグラム、イヌが好き。
-          しゅみは、<a href="https://www.youtube.com/watch?v=qpkCstorMxs&t=1207s" target="_blank">パズル</a>・しょうぎ（ウォーズしょだん）。
+          Web に関することは何でもやるマン。大企業・ベンチャー企業・個人事業主を得て、フロントエンドからインフラまで多くのプロジェクトに携わる。JavaScript・C#・Ruby を用いたアプリケーション開発を得意としている。
+          ピクセルアート、ルービックキューブ、ピクトグラム、イヌが好き。趣味は、<a href="https://www.youtube.com/watch?v=qpkCstorMxs&t=1207s" target="_blank">パズル</a>・将棋（ウォーズ初段）。
         </div>
         <div class="profile-row no-border sns-links-wrap">
           <div v-for="(account, index) in snsAccounts" :key="index">
@@ -93,12 +91,6 @@
             role: 'Web Developer',
           },
           {
-            range: '2016.2 ~',
-            link: 'https://tanaka.world',
-            linkLabel: 'TANAKA WORLD (Self Employed Project)',
-            role: null,
-          },
-          {
             range: '2016.8 ~ 2017.8',
             link: 'https://returnees.jp/',
             linkLabel: 'RETURNEES, Inc.',
@@ -109,6 +101,12 @@
             link: 'https://www.curiosity-inc.jp/',
             linkLabel: 'curiosity, inc.',
             role: 'Software Engineer',
+          },
+          {
+            range: '2016.2 ~',
+            link: 'https://tanaka.world',
+            linkLabel: 'TANAKA WORLD (Self Employed Project)',
+            role: null,
           },
           { range: '2017.8 ~', link: 'https://iki.mn/', linkLabel: 'IKIMONO Inc.', role: 'Software Engineer' },
           { range: '2018.8 ~', link: 'https://merpay.com/', linkLabel: 'Merpay, Inc.', role: 'Software Engineer' },
