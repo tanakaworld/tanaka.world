@@ -35,6 +35,6 @@
     "sass-loader": "^7.0.1"
   },
   "engines": {
-    "node": "8.11.3"
+    "node": "8"
   }
 }
