@@ -17,10 +17,10 @@
             <div>Software Engineer</div>
             <div>LV.{{level}}</div>
             <div>
-              たかさ 1.75m
+              たかさ 1.74 m
             </div>
             <div>
-              おもさ 62.0kg
+              おもさ 58.0 kg
             </div>
           </div>
         </div>
