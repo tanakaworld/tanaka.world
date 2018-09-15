@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import { mapMutations } from 'vuex';
+  import {mapMutations} from 'vuex';
   import HeaderView from '@/components/common/HeaderView';
   import VuePixel from '@/components/vue-pixel/VuePixel';
 
@@ -15,8 +15,8 @@
     head() {
       return {
         bodyAttrs: {
-          class: this.fixBody ? 'no-scroll' : '',
-        },
+          class: this.fixBody ? 'no-scroll' : ''
+        }
       };
     },
     data() {
@@ -24,16 +24,16 @@
         vuePixelWidth: 0,
         vuePixelWidthMax: 600,
         vuePixelHeight: 0,
-        fixBody: true,
+        fixBody: true
       };
     },
     components: {
       HeaderView,
-      VuePixel,
+      VuePixel
     },
     methods: {
       ...mapMutations([
-        'toggleFixBody',
+        'toggleFixBody'
       ]),
       updateViePixelHeight() {
         if (window) {
@@ -47,7 +47,7 @@
           if (tmpWidth > windowWidth) tmpWidth = windowWidth;
           this.vuePixelWidth = tmpWidth;
         }
-      },
+      }
     },
     mounted() {
       window.addEventListener('resize', this.updateViePixelHeight);
@@ -62,14 +62,17 @@
       vuePixelStyles() {
         return {
           width: `${this.vuePixelWidth}px`,
-          height: `${this.vuePixelHeight}px`,
+          height: `${this.vuePixelHeight}px`
         };
-      },
-    },
+      }
+    }
   };
 </script>
 
 <style scoped lang="sass">
   .vue-pixel
     margin: 0 auto
+
+    .actions
+      display: flex
 </style>

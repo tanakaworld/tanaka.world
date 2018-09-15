@@ -5,38 +5,40 @@
 </template>
 
 <script>
+  import {SKIP_GAME} from '@/store';
+
   export default {
     name: 'vue-pixel-xel',
     data() {
       return {
         ableToTransform: this.afterColor !== null,
         bgColor: this.beforeColor,
-        transformed: false,
+        transformed: false
       };
     },
     props: {
       debug: {
         type: Boolean,
         required: false,
-        default: false,
+        default: false
       },
       static: {
         type: Boolean,
         required: false,
-        default: false,
+        default: false
       },
       beforeColor: {
         type: String,
-        required: true,
+        required: true
       },
       afterColor: {
         type: String,
         required: false,
-        default: null,
-      },
+        default: null
+      }
     },
     methods: {
-      handleHover() {
+      async handleHover() {
         if (!this.static && !this.transformed && this.ableToTransform) {
           this.bgColor = this.afterColor;
           this.transformed = true;
@@ -46,14 +48,14 @@
           }
           this.$store.commit('decrementPixelCount');
           if (this.$store.state.pixelCount === 0) {
-            this.$store.commit('togglePixelCount', false);
+            await this.$store.dispatch(SKIP_GAME);
             setTimeout(() => {
               this.$router.push('/about');
             }, 500);
           }
         }
-      },
-    },
+      }
+    }
   };
 </script>
 

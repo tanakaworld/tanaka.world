@@ -6,8 +6,8 @@
   import VuePixelBoard from '@/components/vue-pixel/VuePixelBoard';
 
   const BG = '#555555';
-  const BLUE = '#008cc8';
-  const SKY = '#2dbae8';
+  const BLUE = '#008cc8'; // 0 140 200
+  const SKY = '#2dbae8';  // 45 186 232
   const LIGHT_GRAY = '#f5f5f5';
   const WHITE = '#FFFFFF';
   const HAIR = '#50340a';

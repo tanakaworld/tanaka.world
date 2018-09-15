@@ -1,6 +1,9 @@
 <template>
   <div class="vue-pixel-board">
-    <div class="pixel-count-display" v-show="$store.state.showPixelCount">{{$store.state.pixelCount}}</div>
+    <div class="pixel-menu pixel-count-display" v-show="$store.state.showPixelCount">{{$store.state.pixelCount}}</div>
+    <div class="pixel-menu actions">
+      <a class="skip-button" v-if="$store.state.showPixelCount" @click="skipAnimation">Skip</a>
+    </div>
     <div class="board" v-for="(s, i) in seed"
          :key="`board.${i}`"
          @touchmove="handleTouchMove($event)">
@@ -18,23 +21,24 @@
 </template>
 
 <script>
+  import Vue from 'vue';
   import VuePixelXel from '@/components/vue-pixel/VuePixelXel';
 
   export default {
     name: 'vue-pixel-board',
     components: {
-      VuePixelXel,
+      VuePixelXel
     },
     props: {
       seed: {
         type: Array,
-        required: true,
+        required: true
       },
       debug: {
         type: Boolean,
         required: false,
-        default: false,
-      },
+        default: false
+      }
     },
     mounted() {
       this.$store.commit('setPixelCount', Object.keys(this.$refs).filter(k => {
@@ -45,16 +49,28 @@
       // For touch devices
       handleTouchMove(e) {
         if (e && e.target) {
-          const { pageX, pageY } = e;
+          const {pageX, pageY} = e;
           const xelId = document.elementFromPoint(pageX, pageY).dataset.xelId;
           const xelComponent = this.$refs[xelId];
 
-          if (xelComponent) {
+          if (xelComponent && xelComponent[0] instanceof Vue) {
             xelComponent[0].handleHover();
           }
         }
       },
-    },
+      async skipAnimation() {
+        const xels = [];
+        Object.keys(this.$refs).forEach(key => {
+          const component = this.$refs[key];
+          if (key.startsWith('xel.') && component[0] instanceof Vue) {
+            xels.push(component[0]);
+          }
+        });
+        xels.sort(() => Math.random() - 0.5).forEach(xel =>
+          setTimeout(() => xel.handleHover(), Math.random())
+        );
+      }
+    }
   };
 </script>
 
@@ -62,14 +78,22 @@
   .vue-pixel-board
     position: relative
 
-    .pixel-count-display
+    .pixel-menu
       position: absolute
       top: 0
-      left: 42px
       width: 30px
       height: 30px
-      font-size: 30px
+      font-size: 1.5rem
       z-index: 10
+
+    .pixel-count-display
+      left: 42px
+
+    .actions
+      right: 42px
+      .skip-button
+        cursor: pointer
+        color: #fbed29
 
     .board
       z-index: 5
