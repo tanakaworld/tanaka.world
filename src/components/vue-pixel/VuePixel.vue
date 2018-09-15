@@ -6,14 +6,14 @@
   import VuePixelBoard from '@/components/vue-pixel/VuePixelBoard';
 
   const BG = '#555555';
-  const BLUE = '#0066CC';
-  const SKY = '#3399CC';
-  const LIGHT_GRAY = '#d9edf7';
+  const BLUE = '#008cc8';
+  const SKY = '#2dbae8';
+  const LIGHT_GRAY = '#f5f5f5';
   const WHITE = '#FFFFFF';
-  const HAIR = '#663300';
-  const SKIN = '#FFCC66';
-  const YELLOW = '#FFFF33';
-  const PINK = '#DA4F49';
+  const HAIR = '#50340a';
+  const SKIN = '#fec878';
+  const YELLOW = '#fbed29';
+  const PINK = '#e75e00';
 
   export default {
     name: 'vue-pixel',
