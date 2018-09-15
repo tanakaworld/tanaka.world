@@ -1,5 +1,5 @@
 <template>
-  <vue-pixel-board :seed="seed"/>
+  <vue-pixel-board :class="{'gameEnd': $store.state.pixelCount === 0}" :seed="seed"/>
 </template>
 
 <script>
@@ -355,6 +355,41 @@
   };
 </script>
 
-<style scoped>
+<style scoped lang="sass">
+  .gameEnd
+    animation: swing .4s ease
+    animation-iteration-count: infinite
 
+    @keyframes swing
+      15%
+        -webkit-transform: translateX(5px)
+        transform: translateX(5px)
+
+      30%
+        -webkit-transform: translateX(-5px)
+        transform: translateX(-5px)
+
+      50%
+        -webkit-transform: translateX(3px)
+        transform: translateX(3px)
+
+      65%
+        -webkit-transform: translateX(-3px)
+        transform: translateX(-3px)
+
+      80%
+        -webkit-transform: translateX(2px)
+        transform: translateX(2px)
+
+      100%
+        -webkit-transform: translateX(0)
+        transform: translateX(0)
+
+    @keyframes shrink
+      0%
+        transform: scale(1)
+      30%
+        transform: scale(1.2)
+      100%
+        transform: scale(0)
 </style>
