@@ -24,7 +24,7 @@
 
 <script>
   export default {
-    name: 'header-view',
+    name: 'header-view'
   };
 </script>
 
@@ -38,6 +38,8 @@
 
     color: $color-white
     background: $color-dark-gray
+
+    margin-bottom: 48px
 
     #title
       flex: 2

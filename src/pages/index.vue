@@ -1,7 +1,7 @@
 <template>
   <div>
     <header-view :ref="'headerView'"/>
-    <vue-pixel class="vue-pixel" :style="vuePixelStyles"/>
+    <vue-pixel class="vue-pixel" :style="vuePixelStyles" :main-color="mainColor"/>
   </div>
 </template>
 
@@ -64,6 +64,9 @@
           width: `${this.vuePixelWidth}px`,
           height: `${this.vuePixelHeight}px`
         };
+      },
+      mainColor() {
+        return this.$route.query.color;
       }
     }
   };

@@ -51,7 +51,7 @@
             await this.$store.dispatch(SKIP_GAME);
             setTimeout(() => {
               this.$router.push('/about');
-            }, 500);
+            }, 1000);
           }
         }
       }

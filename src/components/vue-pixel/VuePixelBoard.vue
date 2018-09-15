@@ -1,8 +1,21 @@
 <template>
   <div class="vue-pixel-board">
-    <div class="pixel-menu pixel-count-display" v-show="$store.state.showPixelCount">{{$store.state.pixelCount}}</div>
-    <div class="pixel-menu actions">
-      <a class="skip-button" v-if="$store.state.showPixelCount" @click="skipAnimation">Skip</a>
+    <div class="pixel-menu color" v-show="$store.state.showPixelCount">
+      <a class="color-button" v-if="$store.state.showPixelCount" @click="goToRandom">
+        <div class="color-button-row">
+          <div class="color-button-item" :style="{'background-color': suggestColors[0]}"></div>
+          <div class="color-button-item" :style="{'background-color': suggestColors[1]}"></div>
+        </div>
+        <div class="color-button-row">
+          <div class="color-button-item" :style="{'background-color': suggestColors[2]}"></div>
+          <div class="color-button-item" :style="{'background-color': suggestColors[3]}"></div>
+        </div>
+      </a></div>
+    <div class="pixel-menu skip">
+      <a class="skip-button" v-if="$store.state.showPixelCount" @click="skipAnimation">
+        <div class="skip-button-text">Skip</div>
+        <div class="pixel-count-text">{{$store.state.pixelCount}}</div>
+      </a>
     </div>
     <div class="board" v-for="(s, i) in seed"
          :key="`board.${i}`"
@@ -22,6 +35,7 @@
 
 <script>
   import Vue from 'vue';
+  import randomcolor from 'randomcolor';
   import VuePixelXel from '@/components/vue-pixel/VuePixelXel';
 
   export default {
@@ -39,6 +53,16 @@
         required: false,
         default: false
       }
+    },
+    data() {
+      return {
+        suggestColors: [
+          randomcolor(),
+          randomcolor(),
+          randomcolor(),
+          randomcolor()
+        ]
+      };
     },
     mounted() {
       this.$store.commit('setPixelCount', Object.keys(this.$refs).filter(k => {
@@ -69,12 +93,18 @@
         xels.sort(() => Math.random() - 0.5).forEach(xel =>
           setTimeout(() => xel.handleHover(), Math.random())
         );
+      },
+      goToRandom() {
+        const color = randomcolor();
+        this.$router.push(`/?color=${color.slice(1)}`); // remove '#'
       }
     }
   };
 </script>
 
 <style scoped lang="sass">
+  @import ../../styles/color
+
   .vue-pixel-board
     position: relative
 
@@ -86,14 +116,35 @@
       font-size: 1.5rem
       z-index: 10
 
-    .pixel-count-display
-      left: 42px
+      &.color
+        left: 42px
+      &.skip
+        right: 42px
+        display: flex
+        flex-direction: column
 
-    .actions
-      right: 42px
-      .skip-button
-        cursor: pointer
-        color: #fbed29
+    .skip-button-text
+      color: #fbed29
+    .pixel-count-text
+      color: #d9edf7
+
+    .skip-button
+      cursor: pointer
+      display: flex
+      flex-direction: column
+      align-items: center
+      &:not(:first-child)
+        margin-top: 0.4rem
+
+    .color-button
+      cursor: pointer
+      display: flex
+      &-row
+        display: flex
+        flex-direction: column
+      &-item
+        width: 20px
+        height: 20px
 
     .board
       z-index: 5
@@ -107,4 +158,10 @@
 
       .pixelCountDisplay
         height: 10px
+
+    @media screen and (max-width: 730px)
+      .vue-pixel-board
+        margin-top: 40px
+      .pixel-menu
+        top: -40px
 </style>
