@@ -35,15 +35,12 @@ module.exports = {
     extractCSS: true,
     babel: {
       presets: [
-        'env',
-        'stage-0',
+        '@babel/preset-env',
       ],
       plugins: [
-        ['transform-runtime', {
-          polyfill: true,
-          regenerator: true,
-        }],
-      ],
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-transform-template-literals"
+      ]
     },
     modules: [
       '@nuxtjs/pwa',
@@ -52,7 +49,9 @@ module.exports = {
       name: 'tanaka.world',
       lang: 'ja',
     },
-    vendor: [],
+    vendor: [
+      'babel-polyfill'
+    ],
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
