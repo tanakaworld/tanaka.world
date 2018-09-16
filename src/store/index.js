@@ -1,16 +1,21 @@
 import Vuex from 'vuex';
 
-export const SKIP_GAME = 'SKIP_GAME';
+export const TOGGLE_MENU = 'TOGGLE_MENU';
+export const GAME_END = 'GAME_END';
 
 const store = () => new Vuex.Store({
   state: {
     showPixelCount: false,
     pixelCount: 0,
-    fixBody: false
+    fixBody: false,
+    gameEnd: false
   },
   actions: {
-    async [SKIP_GAME]({commit}) {
-      commit('togglePixelCount', false);
+    async [TOGGLE_MENU]({commit}, flag) {
+      commit('togglePixelCount', flag);
+    },
+    async [GAME_END]({commit}, flag) {
+      commit('toggleGameEnd', flag);
     }
   },
   mutations: {
@@ -29,6 +34,10 @@ const store = () => new Vuex.Store({
     toggleFixBody(state, isFix) {
       // eslint-disable-next-line
       state.fixBody = isFix;
+    },
+    toggleGameEnd(state, isEnd) {
+      // eslint-disable-next-line
+      state.gameEnd = isEnd;
     }
   }
 });

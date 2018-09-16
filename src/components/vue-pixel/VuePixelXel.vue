@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import {SKIP_GAME} from '@/store';
+  import {GAME_END, TOGGLE_MENU} from '@/store';
 
   export default {
     name: 'vue-pixel-xel',
@@ -44,14 +44,17 @@
           this.transformed = true;
 
           if (!this.$store.state.showPixelCount) {
-            this.$store.commit('togglePixelCount', true);
+            await this.$store.dispatch(TOGGLE_MENU, true);
           }
           this.$store.commit('decrementPixelCount');
           if (this.$store.state.pixelCount === 0) {
-            await this.$store.dispatch(SKIP_GAME);
-            setTimeout(() => {
-              this.$router.push('/about');
-            }, 1000);
+            await this.$store.dispatch(TOGGLE_MENU, false);
+            setTimeout(async () => {
+              await this.$store.dispatch(GAME_END, true);
+              setTimeout(() => {
+                this.$router.push('/about');
+              }, 1000);
+            }, 500);
           }
         }
       }

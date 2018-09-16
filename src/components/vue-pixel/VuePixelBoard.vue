@@ -91,7 +91,7 @@
           }
         });
         xels.sort(() => Math.random() - 0.5).forEach(xel =>
-          setTimeout(() => xel.handleHover(), Math.random())
+          setTimeout(() => xel.handleHover(), Math.random() * 2)
         );
       },
       goToRandom() {

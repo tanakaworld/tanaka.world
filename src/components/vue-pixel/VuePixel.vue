@@ -1,11 +1,12 @@
 <template>
-  <vue-pixel-board :class="{'gameEnd': $store.state.pixelCount === 0}" :seed="seed"/>
+  <vue-pixel-board :class="{'gameEnd': $store.state.gameEnd}" :seed="seed"/>
 </template>
 
 <script>
   import VuePixelBoard from '@/components/vue-pixel/VuePixelBoard';
   import randomcolor from 'randomcolor';
   import colorConverter from 'color-convert';
+  import {GAME_END} from '@/store';
 
   const COLOR_MIN = 0;
   const COLOR_MAX = 255;
@@ -331,6 +332,9 @@
           ]
         ]
       };
+    },
+    mounted() {
+      this.$store.dispatch(GAME_END, false);
     },
     methods: {
       getMainColor() {

@@ -6,7 +6,6 @@
 </template>
 
 <script>
-  import {mapMutations} from 'vuex';
   import HeaderView from '@/components/common/HeaderView';
   import VuePixel from '@/components/vue-pixel/VuePixel';
 
@@ -32,9 +31,6 @@
       VuePixel
     },
     methods: {
-      ...mapMutations([
-        'toggleFixBody'
-      ]),
       updateViePixelHeight() {
         if (window) {
           const windowHeight = window.innerHeight;
