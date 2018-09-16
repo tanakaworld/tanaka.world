@@ -44,6 +44,9 @@ module.exports = {
     },
     modules: [
       '@nuxtjs/pwa',
+      ['@nuxtjs/google-analytics', {
+        id: 'UA-125861293-1'
+      }]
     ],
     manifest: {
       name: 'tanaka.world',
