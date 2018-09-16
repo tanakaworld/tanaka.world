@@ -5,18 +5,17 @@
 <script>
   import VuePixelBoard from '@/components/vue-pixel/VuePixelBoard';
   import randomcolor from 'randomcolor';
-  import hexRgb from 'hex-rgb';
-  import rgbHex from 'rgb-hex';
+  import colorConverter from 'color-convert';
 
   const COLOR_MIN = 0;
   const COLOR_MAX = 255;
   const COLOR_DIFF = 45;
+  const DEFAULT_COLOR = '#008cc8';
   const castInRange = (n) => {
     if (n < COLOR_MIN) return COLOR_MIN;
     if (n > COLOR_MAX) return COLOR_MAX;
     return n;
   };
-  const alphaPercent = (alpha) => `${(alpha / COLOR_MAX) * 100}%`;
 
   export default {
     name: 'vue-pixel',
@@ -339,15 +338,14 @@
           if (this.mainColor === 'random') return randomcolor({hue: 'random', luminosity: 'random'});
           return `#${this.mainColor}`;
         }
-        return '#008cc8';
+        return DEFAULT_COLOR;
       },
       getMainThinColor(mainColor) {
-        const {red, green, blue, alpha} = hexRgb(mainColor);
-        const hex = rgbHex(
+        const [red, green, blue] = colorConverter.hex.rgb(mainColor);
+        const hex = colorConverter.rgb.hex(
           castInRange(red + COLOR_DIFF),
           castInRange(green + COLOR_DIFF),
-          castInRange(blue + COLOR_DIFF),
-          alphaPercent(alpha)
+          castInRange(blue + COLOR_DIFF)
         );
         return `#${hex}`;
       }

@@ -15,10 +15,9 @@
   "dependencies": {
     "ajv": "^6.5.0",
     "babel-plugin-module-resolver": "^3.1.1",
-    "hex-rgb": "^3.0.0",
+    "color-convert": "^1.9.3",
     "nuxt": "1.0.0-rc11",
     "randomcolor": "^0.5.3",
-    "rgb-hex": "^2.1.0",
     "vue": "2.5.16",
     "vue-server-renderer": "2.5.16",
     "vue-template-compiler": "2.5.16",
