@@ -29,7 +29,7 @@ module.exports = {
   },
   plugins: [],
   loading: { color: '#22419B' },
-  buildDir: '../functions/nuxt',
+  buildDir: '../public',
   build: {
     publicPath: '/assets/',
     extractCSS: true,
