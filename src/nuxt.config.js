@@ -29,6 +29,12 @@ module.exports = {
   },
   plugins: [],
   loading: { color: '#22419B' },
+  modules: [
+    '@nuxtjs/pwa',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-125861293-1'
+    }]
+  ],
   buildDir: '../public',
   build: {
     publicPath: '/assets/',
@@ -42,12 +48,6 @@ module.exports = {
         "@babel/plugin-transform-template-literals"
       ]
     },
-    modules: [
-      '@nuxtjs/pwa',
-      ['@nuxtjs/google-analytics', {
-        id: 'UA-125861293-1'
-      }]
-    ],
     manifest: {
       name: 'tanaka.world',
       lang: 'ja',
