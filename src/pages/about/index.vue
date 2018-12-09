@@ -25,10 +25,11 @@
           </div>
         </div>
         <div class="profile-row">
-          Web に関することは何でもやるマン。大企業・ベンチャー企業・個人事業主を得て、フロントエンドからインフラまで多くのプロジェクトに携わる。JavaScript・C#・Ruby を用いたアプリケーション開発を得意としている。
-          ピクセルアート、ルービックキューブ、ピクトグラム、イヌが好き。趣味は、<a href="https://www.youtube.com/watch?v=qpkCstorMxs&t=1207s" target="_blank">パズル</a>・将棋（ウォーズ初段）。
+          Web に関することは何でもやるマン。上場企業・スタートアップ・個人事業主を得て、フロントエンドからインフラまで多くのプロジェクトに携わる。JavaScript・C#・Ruby を用いたアプリケーション開発を得意としている。
+          ピクセルアート、ルービックキューブ、イヌが好き。趣味は、<a href="https://www.youtube.com/watch?v=qpkCstorMxs&t=1207s" target="_blank">パズル</a>・将棋（ウォーズ初段）。
         </div>
         <div class="profile-row no-border sns-links-wrap">
+          <h2 class="profile-row-title">Social</h2>
           <div v-for="(account, index) in snsAccounts" :key="index">
             <a class="sns-link sns-link-twitter" :class="`sns-link-${account.name.toLowerCase()}`" :href="account.url"
                target="_blank">
@@ -36,7 +37,17 @@
             </a>
           </div>
         </div>
+        <div class="profile-row no-border sns-links-wrap">
+          <h2 class="profile-row-title">Product</h2>
+          <div v-for="(p, index) in products" :key="index">
+            <a class="sns-link sns-link-twitter" :class="`sns-link-${p.name.toLowerCase()}`" :href="p.url"
+               target="_blank">
+              {{p.name}}
+            </a>
+          </div>
+        </div>
         <div class="profile-row no-border histories-wrap">
+          <h2 class="profile-row-title">History</h2>
           <div v-for="(history, index) in histories" :key="index" class="history-item">
             <div class="history-item-range">{{history.range}}</div>
             <div><a class="history-item-link" :href="history.link" target='_blank'>{{history.linkLabel}}</a></div>
@@ -76,10 +87,16 @@
           { name: 'Twitter', url: 'https://twitter.com/_tanakaworld' },
           { name: 'Github', url: 'https://github.com/tanakaworld' },
           { name: 'Qiita', url: 'http://qiita.com/tanakaworld' },
-          { name: 'RubyGems', url: 'https://rubygems.org/profiles/tanakaworld' },
           { name: 'Facebook', url: 'https://www.facebook.com/tanaka.world' },
           { name: 'LinkedIn', url: 'https://www.linkedin.com/in/yutaro-tanaka-world-7863b249/' },
         ];
+      },
+      products() {
+        return [
+          { name: 'Proff.io', url: 'https://proff.io' },
+          { name: 'RubyGems', url: 'https://rubygems.org/profiles/tanakaworld' },
+          { name: 'NPM', url: 'https://www.npmjs.com/~tanakaworld' },
+        ]
       },
       histories() {
         return [
@@ -110,7 +127,7 @@
           },
           { range: '2017.8 ~', link: 'https://iki.mn/', linkLabel: 'IKIMONO Inc.', role: 'Software Engineer' },
           { range: '2018.8 ~', link: 'https://merpay.com/', linkLabel: 'Merpay, Inc.', role: 'Software Engineer' },
-        ].sort(() => 1);
+        ].sort(() => -1);
       },
       level() {
         const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 31556925994);
@@ -151,6 +168,10 @@
         flex-direction: column
         align-items: center
         justify-content: space-around
+
+      &-title
+        width: 100%
+        text-align: center
 
     .profile-wrap
       max-width: 700px
