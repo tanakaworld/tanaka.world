@@ -30,7 +30,6 @@ module.exports = {
   plugins: [],
   loading: { color: '#22419B' },
   modules: [
-    '@nuxtjs/pwa',
     ['@nuxtjs/google-analytics', {
       id: 'UA-125861293-1'
     }]
