@@ -18,3 +18,4 @@ node_modules
 .idea/
 public/
 firebase-debug.log
+.firebase/
