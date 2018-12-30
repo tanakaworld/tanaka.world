@@ -2,17 +2,35 @@
   "name": "tanaka.world",
   "version": "1.0.0",
   "description": "The TANAKA WORLD",
-  "author": "tanakaworld <yutaro.tanaka.world@gmail.com>",
+  "author": "tanakaworld",
   "private": true,
   "scripts": {
-    "setup": "npm run clean && npm run copyassets && npm run copystatic",
-    "clean": "mkdir -p public && rm -rf public/*",
-    "copyassets": "cp -R functions/nuxt/dist/ public/assets",
-    "copystatic": "cp -R src/static/* public",
-    "copyprerendered": "cp -R src/dist/* public",
-    "dev": "cd src/ && yarn run dev",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
     "serve": "firebase serve --only hosting",
-    "build": "yarn run clean && cd src/ && yarn run generate && cd .. && yarn run copystatic && yarn run copyprerendered",
     "deploy": "firebase use tanaka-world && firebase deploy --only hosting"
+  },
+  "dependencies": {
+    "@nuxtjs/google-analytics": "^2.0.2",
+    "color-convert": "^1.9.3",
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.0.0",
+    "randomcolor": "^0.5.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^5.0.1",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-vue": "^4.0.0",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.11.0",
+    "prettier": "1.14.3",
+    "sass-loader": "^7.1.0"
   }
 }
