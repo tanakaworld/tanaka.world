@@ -104,6 +104,10 @@
           {
             description: 'TW 2018',
             file: require('~/assets/img/tanakaworld-2018.png')
+          },
+          {
+            description: '2018 Inu',
+            file: require('~/assets/img/tanakaworld-2018-inu.png')
           }
         ]
       };
