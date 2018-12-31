@@ -6,10 +6,11 @@
     @mouseover="handleHover()"/>
 </template>
 
-<script>
-import { GAME_END, TOGGLE_MENU } from '~/store'
+<script lang="ts">
+import Vue from 'vue'
+import * as VuePixelStore from './store'
 
-export default {
+export default Vue.extend({
   name: 'VuePixelXel',
   props: {
     debug: {
@@ -45,14 +46,35 @@ export default {
         this.bgColor = this.afterColor
         this.transformed = true
 
-        if (!this.$store.state.showPixelCount) {
-          await this.$store.dispatch(TOGGLE_MENU, true)
+        if (!this.$store.getters['vuePixel/showMenu']) {
+          await this.$store.dispatch(
+            VuePixelStore.ToggleMenu(
+              { flag: true },
+              { namespace: VuePixelStore.namespace }
+            )
+          )
         }
-        this.$store.commit('decrementPixelCount')
-        if (this.$store.state.pixelCount === 0) {
-          await this.$store.dispatch(TOGGLE_MENU, false)
+
+        await this.$store.dispatch(
+          VuePixelStore.DecrementPixelCount(null, {
+            namespace: VuePixelStore.namespace
+          })
+        )
+
+        if (this.$store.getters['vuePixel/pixelCount'] === 0) {
+          await this.$store.dispatch(
+            VuePixelStore.ToggleMenu(
+              { flag: false },
+              { namespace: VuePixelStore.namespace }
+            )
+          )
           setTimeout(async () => {
-            await this.$store.dispatch(GAME_END, true)
+            await this.$store.dispatch(
+              VuePixelStore.GameEnd(
+                { isEnd: true },
+                { namespace: VuePixelStore.namespace }
+              )
+            )
             setTimeout(() => {
               this.$router.push('/about')
             }, 1000)
@@ -61,7 +83,7 @@ export default {
       }
     }
   }
-}
+})
 </script>
 
 <style scoped lang="sass">

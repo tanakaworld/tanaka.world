@@ -8051,6 +8051,13 @@ vue@^2.5.17:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.21.tgz#3d33dcd03bb813912ce894a8303ab553699c4a85"
   integrity sha512-Aejvyyfhn0zjVeLvXd70h4hrE4zZDx1wfZqia6ekkobLmUZ+vNFQer53B4fu0EjWBSiqApxPejzkO1Znt3joxQ==
 
+vuex-typescript-fsa@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/vuex-typescript-fsa/-/vuex-typescript-fsa-0.1.0.tgz#54a4c208cc5eeab915cca628c512aa4af9c08da3"
+  integrity sha512-o3NjHDFm3hf67d5qhv+KaT3xoSTFItA9nE9RwkAmbXcPSDNqRfIWjLYiCBghAQQoxa2hN5S7zAWbeuj7zd8u6A==
+  dependencies:
+    vuex "^3.0.1"
+
 vuex@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.0.1.tgz#e761352ebe0af537d4bb755a9b9dc4be3df7efd2"

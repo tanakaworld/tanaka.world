@@ -1,5 +1,3 @@
-const pkg = require('./package')
-
 module.exports = {
   mode: 'universal',
   head: {
@@ -76,7 +74,7 @@ module.exports = {
   loading: { color: '#22419B' },
   css: [],
   plugins: [],
-  modules: [],
+  modules: ['~/modules/typescript.js'],
   build: {
     publicPath: '/assets/',
     extractCSS: true,

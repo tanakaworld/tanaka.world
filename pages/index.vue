@@ -8,11 +8,12 @@
   </div>
 </template>
 
-<script>
-import HeaderView from '~/components/common/HeaderView'
-import VuePixel from '~/components/vue-pixel/VuePixel'
+<script lang="ts">
+import Vue from 'vue'
+import HeaderView from '~/components/common/HeaderView.vue'
+import VuePixel from '~/components/vue-pixel/VuePixel.vue'
 
-export default {
+export default Vue.extend({
   name: 'Home',
   head() {
     return {
@@ -68,7 +69,7 @@ export default {
       }
     }
   }
-}
+})
 </script>
 
 <style scoped lang="sass">

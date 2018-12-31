@@ -8,7 +8,7 @@
             <img
               class="profile-icon"
               alt="Profile Icon"
-              src="~/assets/img/tanakaworld-2018.png">
+              src="/img/tanakaworld-2018.png">
           </div>
           <div class="profile-property">
             <div>
@@ -79,13 +79,15 @@
   </div>
 </template>
 
-<script>
-import HeaderView from '~/components/common/HeaderView'
+<script lang="ts">
+import Vue from 'vue'
+import HeaderView from '~/components/common/HeaderView.vue'
 
 const title = 'About - The TANAKA WORLD'
 const description = 'Who am I ?'
+const brithday = new Date('1990-11-07')
 
-export default {
+export default Vue.extend({
   head: {
     title,
     meta: [
@@ -166,14 +168,14 @@ export default {
         }
       ].sort(() => -1)
     },
-    level() {
-      const getAge = birthDate =>
-        Math.floor((new Date() - new Date(birthDate).getTime()) / 31556925994)
-      return getAge('1990-11-07')
+    level: function(): number {
+      return Math.floor(
+        Math.abs(Date.now() - brithday) / (1000 * 3600 * 24) / 365
+      )
     }
   },
   methods: {}
-}
+})
 </script>
 
 <style scoped lang="sass">

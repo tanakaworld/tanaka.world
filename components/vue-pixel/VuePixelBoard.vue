@@ -1,10 +1,10 @@
 <template>
   <div class="vue-pixel-board">
     <div
-      v-show="$store.state.showPixelCount"
+      v-show="showMenu"
       class="pixel-menu color">
       <a
-        v-if="$store.state.showPixelCount"
+        v-if="showMenu"
         class="color-button"
         @click="goToRandom">
         <div class="color-button-row">
@@ -26,11 +26,11 @@
     </a></div>
     <div class="pixel-menu skip">
       <a
-        v-if="$store.state.showPixelCount"
+        v-if="showMenu"
         class="skip-button"
         @click="skipAnimation">
         <div class="skip-button-text">Skip</div>
-        <div class="pixel-count-text">{{ $store.state.pixelCount }}</div>
+        <div class="pixel-count-text">{{ pixelCount }}</div>
       </a>
     </div>
     <div
@@ -53,12 +53,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue'
+import { mapGetters } from 'vuex'
 import randomcolor from 'randomcolor'
-import VuePixelXel from '~/components/vue-pixel/VuePixelXel'
+import VuePixelXel from '~/components/vue-pixel/VuePixelXel.vue'
+import * as VuePixelStore from './store'
 
-export default {
+export default Vue.extend({
   name: 'VuePixelBoard',
   components: {
     VuePixelXel
@@ -84,12 +86,22 @@ export default {
       ]
     }
   },
+  computed: {
+    ...mapGetters({
+      showMenu: `${VuePixelStore.namespace}/showMenu`,
+      pixelCount: `${VuePixelStore.namespace}/pixelCount`
+    })
+  },
   mounted() {
     this.$store.commit(
-      'setPixelCount',
-      Object.keys(this.$refs).filter(k => {
-        return this.$refs[k][0].ableToTransform
-      }).length
+      VuePixelStore.SetPixelTotal(
+        {
+          pixelCount: Object.keys(this.$refs).filter(k => {
+            return this.$refs[k][0].ableToTransform
+          }).length
+        },
+        { namespace: VuePixelStore.namespace }
+      )
     )
   },
   methods: {
@@ -122,7 +134,7 @@ export default {
       this.$router.push(`/?color=${color.slice(1)}`) // remove '#'
     }
   }
-}
+})
 </script>
 
 <style scoped lang="sass">

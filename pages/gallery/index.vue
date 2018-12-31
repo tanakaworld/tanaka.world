@@ -16,10 +16,11 @@
   </div>
 </template>
 
-<script>
-import HeaderView from '~/components/common/HeaderView'
+<script lang="ts">
+import Vue from 'vue'
+import HeaderView from '~/components/common/HeaderView.vue'
 
-export default {
+export default Vue.extend({
   name: 'Gallery',
   components: {
     HeaderView
@@ -29,96 +30,96 @@ export default {
       photos: [
         {
           description: 'me',
-          file: require('~/assets/img/me-real.png')
+          file: '/img/me-real.png'
         },
         {
           description: 'Blog Logo',
-          file: require('~/assets/img/ForXDevelopersLogo.png')
+          file: '/img/ForXDevelopersLogo.png'
         },
         {
           description: '2D',
-          file: require('~/assets/img/8bit-me.png')
+          file: '/img/8bit-me.png'
         },
         {
           description: '3D',
-          file: require('~/assets/img/8bit-me-3d.png')
+          file: '/img/8bit-me-3d.png'
         },
         {
           description: 'santa/snow',
-          file: require('~/assets/img/8bit-me-santa.png')
+          file: '/img/8bit-me-santa.png'
         },
         {
           description: 'sheep suit',
-          file: require('~/assets/img/8bit-me-sheep-suit.png')
+          file: '/img/8bit-me-sheep-suit.png'
         },
         {
           description: 'sheep',
-          file: require('~/assets/img/8bit-me-sheep.png')
+          file: '/img/8bit-me-sheep.png'
         },
         {
           description: 'block me clear',
-          file: require('~/assets/img/8bit_me_clear.jpg')
+          file: '/img/8bit_me_clear.jpg'
         },
         {
           description: 'block me no cap',
-          file: require('~/assets/img/8bit_me_nocap.png')
+          file: '/img/8bit_me_nocap.png'
         },
         {
           description: 'MacBook',
-          file: require('~/assets/img/mac_sq.png')
+          file: '/img/mac_sq.png'
         },
         {
           description: 'me',
-          file: require('~/assets/img/me-pixel-all.png')
+          file: '/img/me-pixel-all.png'
         },
         {
           description: 'my face',
-          file: require('~/assets/img/me-real-face.png')
+          file: '/img/me-real-face.png'
         },
         {
           description: 'Santa 2015',
-          file: require('~/assets/img/8bit-me-santa-2015.png')
+          file: '/img/8bit-me-santa-2015.png'
         },
         {
           description: 'Saru Costume 2016',
-          file: require('~/assets/img/8bit-me-mon-2016-costume.png')
+          file: '/img/8bit-me-mon-2016-costume.png'
         },
         {
           description: 'Saru me 2016',
-          file: require('~/assets/img/8bit-me-mon-2016.png')
+          file: '/img/8bit-me-mon-2016.png'
         },
         // {
         //   description: 'GIFme',
-        //   file: require('~/assets/img/me-deformed-16fr.gif'),
+        //   file: '/img/me-deformed-16fr.gif')
         // },
         {
           description: 'Tori me 2017',
-          file: require('~/assets/img/me-2017-tori-v1.0.0.500.png')
+          file: '/img/me-2017-tori-v1.0.0.500.png'
         },
         // {
         //   description: 'Fly up 2017',
-        //   file: require('~/assets/img/me-2017-tori-fly-up.500.gif'),
+        //   file: '/img/me-2017-tori-fly-up.500.gif')
         // },
         {
           description: 'Cap',
-          file: require('~/assets/img/me-real-face-cap.png')
+          file: '/img/me-real-face-cap.png'
         },
         {
           description: 'Naked',
-          file: require('~/assets/img/me-basic.png')
+          file: '/img/me-basic.png'
         },
         {
           description: 'TW 2018',
-          file: require('~/assets/img/tanakaworld-2018.png')
+          file: '/img/tanakaworld-2018.png'
         },
         {
           description: '2018 Inu',
-          file: require('~/assets/img/tanakaworld-2018-inu.png')
+          file: '/img/tanakaworld-2018-inu.png'
         }
       ]
     }
   }
-}
+})
 </script>
 
 <style scoped lang="sass">
