@@ -49,24 +49,28 @@ export default Vue.extend({
           file: '/img/8bit-me-santa.png'
         },
         {
-          description: 'sheep suit',
+          description: '2014 未 Cos',
           file: '/img/8bit-me-sheep-suit.png'
         },
         {
-          description: 'sheep',
+          description: '2014 未',
           file: '/img/8bit-me-sheep.png'
         },
         {
-          description: 'block me clear',
+          description: '2014 Me',
           file: '/img/8bit_me_clear.jpg'
         },
         {
-          description: 'block me no cap',
+          description: 'No cap',
           file: '/img/8bit_me_nocap.png'
         },
         {
           description: 'MacBook',
           file: '/img/mac_sq.png'
+        },
+        {
+          description: 'Megumi Katoh',
+          file: '/img/megumi-katoh.png'
         },
         {
           description: 'me',
@@ -77,15 +81,19 @@ export default Vue.extend({
           file: '/img/me-real-face.png'
         },
         {
-          description: 'Santa 2015',
+          description: 'my face (secret)',
+          file: '/img/me-real-face-secret.png'
+        },
+        {
+          description: '2015 🎄🎅',
           file: '/img/8bit-me-santa-2015.png'
         },
         {
-          description: 'Saru Costume 2016',
+          description: '2016 申 Cos',
           file: '/img/8bit-me-mon-2016-costume.png'
         },
         {
-          description: 'Saru me 2016',
+          description: '2016 申',
           file: '/img/8bit-me-mon-2016.png'
         },
         // {
@@ -93,7 +101,7 @@ export default Vue.extend({
         //   file: '/img/me-deformed-16fr.gif')
         // },
         {
-          description: 'Tori me 2017',
+          description: '2017 酉',
           file: '/img/me-2017-tori-v1.0.0.500.png'
         },
         // {
@@ -109,12 +117,16 @@ export default Vue.extend({
           file: '/img/me-basic.png'
         },
         {
-          description: 'TW 2018',
+          description: '2018 TW',
           file: '/img/tanakaworld-2018.png'
         },
         {
-          description: '2018 Inu',
+          description: '2018 戌',
           file: '/img/tanakaworld-2018-inu.png'
+        },
+        {
+          description: '2019 亥',
+          file: '/img/tanakaworld-2019-iee.png'
         }
       ]
     }
@@ -142,4 +154,5 @@ export default Vue.extend({
       .description
         margin-top: -10px
         text-align: center
+        line-height: 20px
 </style>
