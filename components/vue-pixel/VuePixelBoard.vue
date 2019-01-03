@@ -33,23 +33,27 @@
         <div class="pixel-count-text">{{ pixelCount }}</div>
       </a>
     </div>
-    <div
-      v-for="(s, i) in seed"
-      :key="`board.${i}`"
-      class="board"
-      @touchmove="handleTouchMove($event)">
-      <div class="row">
-        <vue-pixel-xel
-          v-for="(xel, j) in s"
-          :key="`row.${j}`"
-          :ref="`xel.${i}.${j}`"
-          :data-xel-id="`xel.${i}.${j}`"
-          :before-color="xel.before"
-          :after-color="xel.after"
-          :static="xel.static === true"
-          :debug="debug"/>
+    <template
+      v-if="showBoard"
+    >
+      <div
+        v-for="(s, i) in seed"
+        :key="`board.${i}`"
+        class="board"
+        @touchmove="handleTouchMove($event)">
+        <div class="row">
+          <vue-pixel-xel
+            v-for="(xel, j) in s"
+            :key="`row.${j}`"
+            :ref="`xel.${i}.${j}`"
+            :data-xel-id="`xel.${i}.${j}`"
+            :before-color="xel.before"
+            :after-color="xel.after"
+            :static="xel.static === true"
+            :debug="debug"/>
+        </div>
       </div>
-    </div>
+    </template>
   </div>
 </template>
 
@@ -59,6 +63,10 @@ import { mapGetters } from 'vuex'
 import randomcolor from 'randomcolor'
 import VuePixelXel from '~/components/vue-pixel/VuePixelXel.vue'
 import * as VuePixelStore from './store'
+
+const generateSuggestColors = () => {
+  return [randomcolor(), randomcolor(), randomcolor(), randomcolor()]
+}
 
 export default Vue.extend({
   name: 'VuePixelBoard',
@@ -78,12 +86,8 @@ export default Vue.extend({
   },
   data() {
     return {
-      suggestColors: [
-        randomcolor(),
-        randomcolor(),
-        randomcolor(),
-        randomcolor()
-      ]
+      showBoard: true,
+      suggestColors: generateSuggestColors()
     }
   },
   computed: {
@@ -93,17 +97,7 @@ export default Vue.extend({
     })
   },
   mounted() {
-    const pixelCount = Object.keys(this.$refs).filter(
-      k => !this.$refs[k][0].static
-    ).length
-    this.$store.commit(
-      VuePixelStore.SetPixelTotal(
-        {
-          pixelCount
-        },
-        { namespace: VuePixelStore.namespace }
-      )
-    )
+    this.initPixels()
   },
   methods: {
     // For touch devices
@@ -131,8 +125,30 @@ export default Vue.extend({
         .forEach(xel => setTimeout(() => xel.handleHover(), Math.random() * 2))
     },
     goToRandom() {
+      this.showBoard = false
+
+      // refresh
       const color = randomcolor()
       this.$router.push(`/?color=${color.slice(1)}`) // remove '#'
+      this.suggestColors = generateSuggestColors()
+      this.initPixels()
+
+      this.$nextTick(() => {
+        this.showBoard = true
+      })
+    },
+    initPixels() {
+      const pixelCount = Object.keys(this.$refs).filter(
+        k => !this.$refs[k][0].static
+      ).length
+      this.$store.commit(
+        VuePixelStore.SetPixelTotal(
+          {
+            pixelCount
+          },
+          { namespace: VuePixelStore.namespace }
+        )
+      )
     }
   }
 })
