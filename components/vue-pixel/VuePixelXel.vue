@@ -3,7 +3,7 @@
     :class="{debug: debug}"
     :style="{background: bgColor}"
     class="xel"
-    @mouseover="handleHover()"/>
+    @mouseover="handleHover"/>
 </template>
 
 <script lang="ts">
@@ -35,14 +35,13 @@ export default Vue.extend({
   },
   data() {
     return {
-      ableToTransform: this.afterColor !== null,
       bgColor: this.beforeColor,
       transformed: false
     }
   },
   methods: {
     async handleHover() {
-      if (!this.static && !this.transformed && this.ableToTransform) {
+      if (!this.static && !this.transformed) {
         this.bgColor = this.afterColor
         this.transformed = true
 

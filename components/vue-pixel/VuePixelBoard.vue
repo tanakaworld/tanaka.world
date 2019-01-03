@@ -93,12 +93,13 @@ export default Vue.extend({
     })
   },
   mounted() {
+    const pixelCount = Object.keys(this.$refs).filter(
+      k => !this.$refs[k][0].static
+    ).length
     this.$store.commit(
       VuePixelStore.SetPixelTotal(
         {
-          pixelCount: Object.keys(this.$refs).filter(k => {
-            return this.$refs[k][0].ableToTransform
-          }).length
+          pixelCount
         },
         { namespace: VuePixelStore.namespace }
       )

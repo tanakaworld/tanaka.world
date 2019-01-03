@@ -1,11 +1,8 @@
 <template>
-  <div>
-    <h1>{{ mainColor }}</h1>
-    <vue-pixel-board
-      :class="{'gameEnd': isGameEnd}"
-      :seed="seed"
-    />
-  </div>
+  <vue-pixel-board
+    :class="{'gameEnd': isGameEnd}"
+    :seed="seed"
+  />
 </template>
 
 <script lang="ts">
