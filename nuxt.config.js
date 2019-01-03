@@ -17,20 +17,25 @@ module.exports = {
       {
         hid: 'keywords',
         name: 'keywords',
-        content: 'tanakaworld,SoftwareEngineer,tanaka.world'
+        content: 'tanakaworld,SoftwareEngineer,tanaka.world,art,pixelart'
       },
-      { hid: 'og:title', name: 'og:title', content: 'The Tanaka World' },
-      { hid: 'og:type', name: 'og:type', content: 'website' },
-      { hid: 'og:url', name: 'og:url', content: 'https://tanaka.wrold' },
-      { hid: 'og:locale', name: 'og:locale', content: 'ja_JP' },
+      { hid: 'og:title', property: 'og:title', content: 'The Tanaka World' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: 'https://tanaka.wrold' },
+      { hid: 'og:locale', property: 'og:locale', content: 'ja_JP' },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://tanaka.world/img/og.png'
+      },
       {
         hid: 'og:site_name',
-        name: 'og:site_name',
+        property: 'og:site_name',
         content: 'The Tanaka World'
       },
       {
         hid: 'og:description',
-        name: 'og:description',
+        property: 'og:description',
         content: 'tanakaworld is a Software Engineer in Japan.'
       },
       {

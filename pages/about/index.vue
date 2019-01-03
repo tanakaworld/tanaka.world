@@ -92,9 +92,17 @@ export default Vue.extend({
     title,
     meta: [
       { hid: 'description', name: 'description', content: description },
-      { hid: 'og:title', name: 'og:title', content: title },
-      { hid: 'og:url', name: 'og:url', content: 'https://tanaka.world/about' },
-      { hid: 'og:description', name: 'og:description', content: description }
+      { hid: 'og:title', property: 'og:title', content: title },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://tanaka.world/about'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: description
+      }
     ]
   },
   name: 'About',

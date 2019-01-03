@@ -20,7 +20,27 @@
 import Vue from 'vue'
 import HeaderView from '~/components/common/HeaderView.vue'
 
+const title = 'Gallery - The TANAKA WORLD'
+const description = 'Arts made by me'
+
 export default Vue.extend({
+  head: {
+    title,
+    meta: [
+      { hid: 'description', name: 'description', content: description },
+      { hid: 'og:title', property: 'og:title', content: title },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://tanaka.world/gallery'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: description
+      }
+    ]
+  },
   name: 'Gallery',
   components: {
     HeaderView
@@ -47,10 +67,6 @@ export default Vue.extend({
         {
           description: 'santa/snow',
           file: '/img/8bit-me-santa.png'
-        },
-        {
-          description: '2014 未 Cos',
-          file: '/img/8bit-me-sheep-suit.png'
         },
         {
           description: '2014 未',
@@ -85,12 +101,8 @@ export default Vue.extend({
           file: '/img/me-real-face-secret.png'
         },
         {
-          description: '2015 🎄🎅',
+          description: '2015 X-mas',
           file: '/img/8bit-me-santa-2015.png'
-        },
-        {
-          description: '2016 申 Cos',
-          file: '/img/8bit-me-mon-2016-costume.png'
         },
         {
           description: '2016 申',
@@ -103,6 +115,10 @@ export default Vue.extend({
         {
           description: '2017 酉',
           file: '/img/me-2017-tori-v1.0.0.500.png'
+        },
+        {
+          description: 'ツラタン',
+          file: '/img/tsura-tang.png'
         },
         // {
         //   description: 'Fly up 2017',
@@ -119,6 +135,14 @@ export default Vue.extend({
         {
           description: '2018 TW',
           file: '/img/tanakaworld-2018.png'
+        },
+        {
+          description: '2018 Halloween',
+          file: '/img/tanakaworld-sm-helloween-bg.png'
+        },
+        {
+          description: 'Chick',
+          file: '/img/hiyoko.png'
         },
         {
           description: '2018 戌',
