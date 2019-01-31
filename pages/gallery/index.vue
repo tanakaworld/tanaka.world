@@ -151,6 +151,26 @@ export default Vue.extend({
         {
           description: '2019 亥',
           file: '/img/tanakaworld-2019-iee.png'
+        },
+        {
+          description: '@__syumai',
+          file: '/img/syumai.png'
+        },
+        {
+          description: '@tenntenn',
+          file: '/img/tenntenn.png'
+        },
+        {
+          description: '@shiratoriyurie',
+          file: '/img/swaaan-sm.png'
+        },
+        {
+          description: '@shiratoriyurie',
+          file: '/img/swaaan-dash.png'
+        },
+        {
+          description: '@codehex',
+          file: '/img/codehex.png'
         }
       ]
     }
