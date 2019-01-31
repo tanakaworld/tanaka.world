@@ -31,7 +31,7 @@
             target="_blank">パズル</a>・将棋（ウォーズ初段）。
         </div>
         <div class="profile-row no-border sns-links-wrap">
-          <h2 class="profile-row-title">Social</h2>
+          <h2 class="profile-row-title">SNS</h2>
           <div
             v-for="(account, index) in snsAccounts"
             :key="index">
@@ -109,40 +109,20 @@ export default Vue.extend({
   components: {
     HeaderView
   },
-  computed: {
-    snsAccounts() {
-      return [
-        { name: 'Blog', url: 'https://blog.tanaka.world' },
-        { name: 'Twitter', url: 'https://twitter.com/_tanakaworld' },
-        { name: 'Github', url: 'https://github.com/tanakaworld' },
-        { name: 'Qiita', url: 'http://qiita.com/tanakaworld' },
-        { name: 'Facebook', url: 'https://www.facebook.com/tanaka.world' },
-        {
-          name: 'LinkedIn',
-          url: 'https://www.linkedin.com/in/yutaro-tanaka-world-7863b249/'
-        }
-      ]
-    },
-    products() {
-      return [
-        { name: 'Proff.io', url: 'https://proff.io' },
-        { name: 'RubyGems', url: 'https://rubygems.org/profiles/tanakaworld' },
-        { name: 'NPM', url: 'https://www.npmjs.com/~tanakaworld' }
-      ]
-    },
-    histories() {
-      return [
+  data() {
+    return {
+      histories: [
         {
           range: '2013.4 ~ 2015.2',
           link: 'http://www.mti.co.jp/',
           linkLabel: 'MTI Ltd.',
-          role: 'Web Developer'
+          role: 'Backend Developer'
         },
         {
           range: '2015.3 ~ 2016.7',
           link: 'http://fukurou-labo.co.jp/',
           linkLabel: 'Fukurou Labo',
-          role: 'Web Developer'
+          role: 'Web Engineer'
         },
         {
           range: '2016.8 ~ 2017.8',
@@ -172,9 +152,31 @@ export default Vue.extend({
           range: '2018.8 ~',
           link: 'https://merpay.com/',
           linkLabel: 'Merpay, Inc.',
-          role: 'Software Engineer'
+          role: 'Software Engineer (Frontend)'
         }
       ].sort(() => -1)
+    }
+  },
+  computed: {
+    snsAccounts() {
+      return [
+        { name: 'Blog', url: 'https://blog.tanaka.world' },
+        { name: 'Twitter', url: 'https://twitter.com/_tanakaworld' },
+        { name: 'Github', url: 'https://github.com/tanakaworld' },
+        { name: 'Qiita', url: 'http://qiita.com/tanakaworld' },
+        { name: 'Facebook', url: 'https://www.facebook.com/tanaka.world' },
+        {
+          name: 'LinkedIn',
+          url: 'https://www.linkedin.com/in/yutaro-tanaka-world-7863b249/'
+        }
+      ]
+    },
+    products() {
+      return [
+        { name: 'Proff.io', url: 'https://proff.io' },
+        { name: 'RubyGems', url: 'https://rubygems.org/profiles/tanakaworld' },
+        { name: 'NPM', url: 'https://www.npmjs.com/~tanakaworld' }
+      ]
     },
     level: function(): number {
       return Math.floor(
