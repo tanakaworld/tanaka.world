@@ -76,7 +76,7 @@ module.exports = {
       }
     ]
   },
-  loading: { color: '#22419B' },
+  loading: { color: '#91C3DC' },
   css: [],
   plugins: [],
   modules: ['~/modules/typescript.js'],

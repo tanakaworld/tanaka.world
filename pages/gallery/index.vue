@@ -6,7 +6,9 @@
         v-for="(c, index) in photos"
         :key="index"
         class="thumbnail">
-        <p class="description">{{ c.description }}</p>
+        <p
+          class="description"
+          v-html="c.description"/>
         <img
           :src="c.file"
           :alt="c.description"
@@ -153,23 +155,23 @@ export default Vue.extend({
           file: '/img/tanakaworld-2019-iee.png'
         },
         {
-          description: '@__syumai',
+          description: '<span class="description-at">@</span>__syumai',
           file: '/img/syumai.png'
         },
         {
-          description: '@tenntenn',
+          description: '<span class="description-at">@</span>tenntenn',
           file: '/img/tenntenn.png'
         },
         {
-          description: '@shiratoriyurie',
+          description: '<span class="description-at">@</span>shiratoriyurie',
           file: '/img/swaaan-sm.png'
         },
         {
-          description: '@shiratoriyurie',
+          description: '<span class="description-at">@</span>shiratoriyurie',
           file: '/img/swaaan-dash.png'
         },
         {
-          description: '@codehex',
+          description: '<span class="description-at">@</span>codehex',
           file: '/img/codehex.png'
         }
       ]
@@ -196,7 +198,11 @@ export default Vue.extend({
         width: 100px
         margin: 15px 10px
       .description
+        width: 120px
         margin-top: -10px
+        padding: 0 10px
         text-align: center
         line-height: 20px
+        max-height: 20px
+        overflow-wrap: break-word
 </style>
