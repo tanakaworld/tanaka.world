@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="profile-row">
-          Web に関することは何でもやるマン。上場企業・スタートアップ・個人事業主を得て、フロントエンドからインフラまで多くのプロジェクトに携わる。JavaScript・C#・Ruby を用いたアプリケーション開発を得意としている。
+          Web に関することは何でもやるマン。上場企業・スタートアップ・個人事業主を経て、フロントエンドからインフラまで多くのプロジェクトに携わる。JavaScript・C#・Ruby を用いたアプリケーション開発を得意としている。
           ピクセルアート、ルービックキューブ、イヌが好き。趣味は、<a
             href="https://www.youtube.com/watch?v=qpkCstorMxs&t=1207s"
             target="_blank"
