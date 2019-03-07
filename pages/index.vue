@@ -1,10 +1,11 @@
 <template>
   <div>
-    <header-view :ref="'headerView'"/>
+    <header-view :ref="'headerView'" />
     <vue-pixel
       :style="vuePixelStyles"
       :main-color="mainColor"
-      class="vue-pixel"/>
+      class="vue-pixel"
+    />
   </div>
 </template>
 

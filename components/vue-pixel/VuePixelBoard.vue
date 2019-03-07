@@ -2,33 +2,41 @@
   <div class="vue-pixel-board">
     <div
       v-show="showMenu"
-      class="pixel-menu color">
+      class="pixel-menu color"
+    >
       <a
         v-if="showMenu"
         class="color-button"
-        @click="goToRandom">
+        @click="goToRandom"
+      >
         <div class="color-button-row">
           <div
             :style="{'background-color': suggestColors[0]}"
-            class="color-button-item"/>
+            class="color-button-item"
+          />
           <div
             :style="{'background-color': suggestColors[1]}"
-            class="color-button-item"/>
+            class="color-button-item"
+          />
         </div>
         <div class="color-button-row">
           <div
             :style="{'background-color': suggestColors[2]}"
-            class="color-button-item"/>
+            class="color-button-item"
+          />
           <div
             :style="{'background-color': suggestColors[3]}"
-            class="color-button-item"/>
+            class="color-button-item"
+          />
         </div>
-    </a></div>
+      </a>
+    </div>
     <div class="pixel-menu skip">
       <a
         v-if="showMenu"
         class="skip-button"
-        @click="skipAnimation">
+        @click="skipAnimation"
+      >
         <div class="skip-button-text">Skip</div>
         <div class="pixel-count-text">{{ pixelCount }}</div>
       </a>
@@ -40,7 +48,8 @@
         v-for="(s, i) in seed"
         :key="`board.${i}`"
         class="board"
-        @touchmove="handleTouchMove($event)">
+        @touchmove="handleTouchMove($event)"
+      >
         <div class="row">
           <vue-pixel-xel
             v-for="(xel, j) in s"
@@ -50,7 +59,8 @@
             :before-color="xel.before"
             :after-color="xel.after"
             :static="xel.static === true"
-            :debug="debug"/>
+            :debug="debug"
+          />
         </div>
       </div>
     </template>

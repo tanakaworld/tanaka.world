@@ -1,18 +1,21 @@
 <template>
   <div>
-    <header-view/>
+    <header-view />
     <div id="gallery">
       <div
         v-for="(c, index) in photos"
         :key="index"
-        class="thumbnail">
+        class="thumbnail"
+      >
         <p
           class="description"
-          v-html="c.description"/>
+          v-html="c.description"
+        />
         <img
           :src="c.file"
           :alt="c.description"
-          class="gallery-icon">
+          class="gallery-icon"
+        >
       </div>
     </div>
   </div>

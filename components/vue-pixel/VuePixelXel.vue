@@ -3,7 +3,8 @@
     :class="{debug: debug}"
     :style="{background: bgColor}"
     class="xel"
-    @mouseover="handleHover"/>
+    @mouseover="handleHover"
+  />
 </template>
 
 <script lang="ts">
