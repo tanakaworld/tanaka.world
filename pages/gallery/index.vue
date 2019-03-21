@@ -74,7 +74,7 @@ export default Vue.extend({
           file: '/img/8bit-me-santa.png'
         },
         {
-          description: '2014 未',
+          description: '2015 未',
           file: '/img/8bit-me-sheep.png'
         },
         {
@@ -94,15 +94,15 @@ export default Vue.extend({
           file: '/img/megumi-katoh.png'
         },
         {
-          description: 'me',
+          description: 'Full Body',
           file: '/img/me-pixel-all.png'
         },
         {
-          description: 'my face',
+          description: 'Face',
           file: '/img/me-real-face.png'
         },
         {
-          description: 'my face (secret)',
+          description: 'Face (secret)',
           file: '/img/me-real-face-secret.png'
         },
         {
@@ -176,6 +176,10 @@ export default Vue.extend({
         {
           description: '<span class="description-at">@</span>codehex',
           file: '/img/codehex.png'
+        },
+        {
+          description: '<span class="description-at">@</span>8saki',
+          file: '/img/8saki.png'
         }
       ]
     }
