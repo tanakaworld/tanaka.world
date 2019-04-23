@@ -185,7 +185,10 @@ export default Vue.extend({
           description: 'Ms. Dyamond',
           file: '/img/ms-dia.png'
         },
-
+        {
+          description: '<span class="description-at">@</span>peranikov',
+          file: '/img/peranikov.png'
+        },
         {
           description: '<span class="description-at">@</span>denoland',
           file: '/img/deno.gif'
