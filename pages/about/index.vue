@@ -136,22 +136,16 @@ export default Vue.extend({
     return {
       histories: [
         {
-          range: '2013.4 ~ 2015.2',
-          link: 'http://www.mti.co.jp/',
-          linkLabel: 'MTI Ltd.',
-          role: 'Backend Developer'
+          range: '2018.8 ~',
+          link: 'https://merpay.com/',
+          linkLabel: 'Merpay, Inc.',
+          role: 'Software Engineer (Frontend)'
         },
         {
-          range: '2015.3 ~ 2016.7',
-          link: 'http://fukurou-labo.co.jp/',
-          linkLabel: 'Fukurou Labo',
-          role: 'Web Engineer'
-        },
-        {
-          range: '2016.8 ~ 2017.8',
-          link: 'https://returnees.jp/',
-          linkLabel: 'RETURNEES, Inc.',
-          role: 'Lead Engineer'
+          range: '2017.8 ~',
+          link: 'https://iki.mn/',
+          linkLabel: 'IKIMONO Inc.',
+          role: 'Software Engineer'
         },
         {
           range: '2016.8 ~ 2018.7',
@@ -166,18 +160,24 @@ export default Vue.extend({
           role: null
         },
         {
-          range: '2017.8 ~',
-          link: 'https://iki.mn/',
-          linkLabel: 'IKIMONO Inc.',
-          role: 'Software Engineer'
+          range: '2016.8 ~ 2017.8',
+          link: 'https://returnees.jp/',
+          linkLabel: 'RETURNEES, Inc.',
+          role: 'Lead Engineer'
         },
         {
-          range: '2018.8 ~',
-          link: 'https://merpay.com/',
-          linkLabel: 'Merpay, Inc.',
-          role: 'Software Engineer (Frontend)'
+          range: '2015.3 ~ 2016.7',
+          link: 'http://fukurou-labo.co.jp/',
+          linkLabel: 'Fukurou Labo',
+          role: 'Web Engineer'
+        },
+        {
+          range: '2013.4 ~ 2015.2',
+          link: 'http://www.mti.co.jp/',
+          linkLabel: 'MTI Ltd.',
+          role: 'Backend Developer'
         }
-      ].sort(() => -1)
+      ]
     }
   },
   computed: {
