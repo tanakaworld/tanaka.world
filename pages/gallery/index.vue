@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header-view />
+    <header-view/>
     <div id="gallery">
       <div
         v-for="(c, index) in photos"
@@ -63,14 +63,14 @@ export default Vue.extend({
         },
         {
           description: '2D',
-          file: '/img/8bit-me.png'
+          file: '/img/tanakaworld-2d.png'
         },
         {
-          description: '3D',
-          file: '/img/8bit-me-3d.png'
+          description: 'Dash',
+          file: '/img/tanakaworld-2d-dash.gif'
         },
         {
-          description: 'santa/snow',
+          description: 'santa',
           file: '/img/8bit-me-santa.png'
         },
         {
@@ -80,10 +80,6 @@ export default Vue.extend({
         {
           description: '2014 Me',
           file: '/img/8bit_me_clear.jpg'
-        },
-        {
-          description: 'No cap',
-          file: '/img/8bit_me_nocap.png'
         },
         {
           description: 'MacBook',
@@ -113,10 +109,6 @@ export default Vue.extend({
           description: '2016 申',
           file: '/img/8bit-me-mon-2016.png'
         },
-        // {
-        //   description: 'GIFme',
-        //   file: '/img/me-deformed-16fr.gif')
-        // },
         {
           description: '2017 酉',
           file: '/img/me-2017-tori-v1.0.0.500.png'
@@ -125,25 +117,33 @@ export default Vue.extend({
           description: 'ツラタン',
           file: '/img/tsura-tang.png'
         },
-        // {
-        //   description: 'Fly up 2017',
-        //   file: '/img/me-2017-tori-fly-up.500.gif')
-        // },
+        {
+          description: 'Fly up 2017',
+          file: '/img/me-tori-2017-gif.gif'
+        },
+        {
+          description: 'Humans Seq',
+          file: '/img/sequence-human.gif'
+        },
         {
           description: 'Cap',
           file: '/img/me-real-face-cap.png'
         },
         {
-          description: 'Naked',
-          file: '/img/me-basic.png'
-        },
-        {
-          description: '2018 TW',
+          description: '2018 Me',
           file: '/img/tanakaworld-2018.png'
         },
         {
+          description: '2018 No Cap',
+          file: '/img/tanakaworld-2018-no-cap.png'
+        },
+        {
+          description: '2018 Naked',
+          file: '/img/tanakaworld-2018-nkd.png'
+        },
+        {
           description: '2018 Halloween',
-          file: '/img/tanakaworld-sm-helloween-bg.png'
+          file: '/img/tanakaworld-2018-helloween.png'
         },
         {
           description: 'Chick',
@@ -166,11 +166,11 @@ export default Vue.extend({
           file: '/img/tenntenn.png'
         },
         {
-          description: '<span class="description-at">@</span>shiratoriyurie',
+          description: '<span class="description-at">@</span>swaaan',
           file: '/img/swaaan-sm.png'
         },
         {
-          description: '<span class="description-at">@</span>shiratoriyurie',
+          description: '<span class="description-at">@</span>swaaan',
           file: '/img/swaaan-dash.png'
         },
         {
@@ -180,6 +180,15 @@ export default Vue.extend({
         {
           description: '<span class="description-at">@</span>8saki',
           file: '/img/8saki.png'
+        },
+        {
+          description: 'Ms. Dyamond',
+          file: '/img/ms-dia.png'
+        },
+
+        {
+          description: '<span class="description-at">@</span>denoland',
+          file: '/img/deno.gif'
         }
       ]
     }

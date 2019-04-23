@@ -26,12 +26,10 @@
       "git add"
     ],
     "*.css": [
-      "stylelint --fix",
       "git add"
     ],
     "*.vue": [
       "eslint --fix",
-      "stylelint --fix",
       "git add"
     ]
   },
