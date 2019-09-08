@@ -1,21 +1,10 @@
 <template>
   <div>
-    <header-view/>
+    <header-view />
     <div id="gallery">
-      <div
-        v-for="(c, index) in photos"
-        :key="index"
-        class="thumbnail"
-      >
-        <p
-          class="description"
-          v-html="c.description"
-        />
-        <img
-          :src="c.file"
-          :alt="c.description"
-          class="gallery-icon"
-        >
+      <div v-for="(c, index) in photos" :key="index" class="thumbnail">
+        <p class="description" v-html="c.description" />
+        <img :src="c.file" :alt="c.description" class="gallery-icon" />
       </div>
     </div>
   </div>
@@ -200,28 +189,28 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-  @import ../../styles/color
+@import ../../styles/color
 
-  #gallery
-    width: 90%
-    margin: 0 auto
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    justify-content: center
-    padding: 24px
-    box-sizing: border-box
-    .thumbnail
-      height: 200px
-      .gallery-icon
-        width: 100px
-        margin: 15px 10px
-      .description
-        width: 120px
-        margin-top: -10px
-        padding: 0 10px
-        text-align: center
-        line-height: 20px
-        max-height: 20px
-        overflow-wrap: break-word
+#gallery
+  width: 90%
+  margin: 0 auto
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: center
+  padding: 24px
+  box-sizing: border-box
+  .thumbnail
+    height: 200px
+    .gallery-icon
+      width: 100px
+      margin: 15px 10px
+    .description
+      width: 120px
+      margin-top: -10px
+      padding: 0 10px
+      text-align: center
+      line-height: 20px
+      max-height: 20px
+      overflow-wrap: break-word
 </style>

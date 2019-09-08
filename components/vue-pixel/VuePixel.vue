@@ -1,8 +1,5 @@
 <template>
-  <vue-pixel-board
-    :class="{'gameEnd': isGameEnd}"
-    :seed="seed"
-  />
+  <vue-pixel-board :class="{ gameEnd: isGameEnd }" :seed="seed" />
 </template>
 
 <script lang="ts">
@@ -10,8 +7,8 @@ import Vue from 'vue'
 import { mapGetters } from 'vuex'
 import randomcolor from 'randomcolor'
 import colorConverter from 'color-convert'
-import VuePixelBoard from '~/components/vue-pixel/VuePixelBoard.vue'
 import * as VuePixelStore from './store'
+import VuePixelBoard from '~/components/vue-pixel/VuePixelBoard.vue'
 
 const COLOR_MIN = 0
 const COLOR_MAX = 255
@@ -366,7 +363,7 @@ export default Vue.extend({
   },
   watch: {
     mainColor: {
-      handler: function(val) {
+      handler(val) {
         this.seed = generateSeed(val)
       },
       immediate: true
@@ -384,40 +381,40 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-  .gameEnd
-    animation: swing .4s ease
-    animation-iteration-count: infinite
+.gameEnd
+  animation: swing .4s ease
+  animation-iteration-count: infinite
 
-    @keyframes swing
-      15%
-        -webkit-transform: translateX(5px)
-        transform: translateX(5px)
+  @keyframes swing
+    15%
+      -webkit-transform: translateX(5px)
+      transform: translateX(5px)
 
-      30%
-        -webkit-transform: translateX(-5px)
-        transform: translateX(-5px)
+    30%
+      -webkit-transform: translateX(-5px)
+      transform: translateX(-5px)
 
-      50%
-        -webkit-transform: translateX(3px)
-        transform: translateX(3px)
+    50%
+      -webkit-transform: translateX(3px)
+      transform: translateX(3px)
 
-      65%
-        -webkit-transform: translateX(-3px)
-        transform: translateX(-3px)
+    65%
+      -webkit-transform: translateX(-3px)
+      transform: translateX(-3px)
 
-      80%
-        -webkit-transform: translateX(2px)
-        transform: translateX(2px)
+    80%
+      -webkit-transform: translateX(2px)
+      transform: translateX(2px)
 
-      100%
-        -webkit-transform: translateX(0)
-        transform: translateX(0)
+    100%
+      -webkit-transform: translateX(0)
+      transform: translateX(0)
 
-    @keyframes shrink
-      0%
-        transform: scale(1)
-      30%
-        transform: scale(1.2)
-      100%
-        transform: scale(0)
+  @keyframes shrink
+    0%
+      transform: scale(1)
+    30%
+      transform: scale(1.2)
+    100%
+      transform: scale(0)
 </style>

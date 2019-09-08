@@ -1,49 +1,36 @@
 <template>
   <div class="vue-pixel-board">
-    <div
-      v-show="showMenu"
-      class="pixel-menu color"
-    >
-      <a
-        v-if="showMenu"
-        class="color-button"
-        @click="goToRandom"
-      >
+    <div v-show="showMenu" class="pixel-menu color">
+      <a v-if="showMenu" class="color-button" @click="goToRandom">
         <div class="color-button-row">
           <div
-            :style="{'background-color': suggestColors[0]}"
+            :style="{ 'background-color': suggestColors[0] }"
             class="color-button-item"
           />
           <div
-            :style="{'background-color': suggestColors[1]}"
+            :style="{ 'background-color': suggestColors[1] }"
             class="color-button-item"
           />
         </div>
         <div class="color-button-row">
           <div
-            :style="{'background-color': suggestColors[2]}"
+            :style="{ 'background-color': suggestColors[2] }"
             class="color-button-item"
           />
           <div
-            :style="{'background-color': suggestColors[3]}"
+            :style="{ 'background-color': suggestColors[3] }"
             class="color-button-item"
           />
         </div>
       </a>
     </div>
     <div class="pixel-menu skip">
-      <a
-        v-if="showMenu"
-        class="skip-button"
-        @click="skipAnimation"
-      >
+      <a v-if="showMenu" class="skip-button" @click="skipAnimation">
         <div class="skip-button-text">Skip</div>
         <div class="pixel-count-text">{{ pixelCount }}</div>
       </a>
     </div>
-    <template
-      v-if="showBoard"
-    >
+    <template v-if="showBoard">
       <div
         v-for="(s, i) in seed"
         :key="`board.${i}`"
@@ -71,8 +58,8 @@
 import Vue from 'vue'
 import { mapGetters } from 'vuex'
 import randomcolor from 'randomcolor'
-import VuePixelXel from '~/components/vue-pixel/VuePixelXel.vue'
 import * as VuePixelStore from './store'
+import VuePixelXel from '~/components/vue-pixel/VuePixelXel.vue'
 
 const generateSuggestColors = () => {
   return [randomcolor(), randomcolor(), randomcolor(), randomcolor()]
@@ -122,7 +109,7 @@ export default Vue.extend({
         }
       }
     },
-    async skipAnimation() {
+    skipAnimation() {
       const xels = []
       Object.keys(this.$refs).forEach(key => {
         const component = this.$refs[key]
@@ -165,65 +152,65 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-  @import ../../styles/color
+@import ../../styles/color
 
-  .vue-pixel-board
-    position: relative
+.vue-pixel-board
+  position: relative
 
-    .pixel-menu
-      position: absolute
-      top: 0
-      width: 30px
-      height: 30px
-      font-size: 1.5rem
-      z-index: 10
+  .pixel-menu
+    position: absolute
+    top: 0
+    width: 30px
+    height: 30px
+    font-size: 1.5rem
+    z-index: 10
 
-      &.color
-        left: 42px
-      &.skip
-        right: 42px
-        display: flex
-        flex-direction: column
-
-    .skip-button-text
-      color: #fbed29
-    .pixel-count-text
-      color: #d9edf7
-
-    .skip-button
-      cursor: pointer
+    &.color
+      left: 42px
+    &.skip
+      right: 42px
       display: flex
       flex-direction: column
-      align-items: center
-      &:not(:first-child)
-        margin-top: 0.4rem
 
-    .color-button
-      cursor: pointer
+  .skip-button-text
+    color: #fbed29
+  .pixel-count-text
+    color: #d9edf7
+
+  .skip-button
+    cursor: pointer
+    display: flex
+    flex-direction: column
+    align-items: center
+    &:not(:first-child)
+      margin-top: 0.4rem
+
+  .color-button
+    cursor: pointer
+    display: flex
+    &-row
       display: flex
-      &-row
-        display: flex
-        flex-direction: column
-      &-item
-        width: 20px
-        height: 20px
+      flex-direction: column
+    &-item
+      width: 20px
+      height: 20px
 
-    .board
-      z-index: 5
-      max-width: 600px
-      margin: 0 auto
+  .board
+    z-index: 5
+    max-width: 600px
+    margin: 0 auto
 
-      .row
-        display: flex
-        flex-direction: row
-        justify-content: center
+    .row
+      display: flex
+      flex-direction: row
+      justify-content: center
 
-      .pixelCountDisplay
-        height: 10px
+    .pixelCountDisplay
+      height: 10px
 
-    @media screen and (max-width: 730px)
-      .vue-pixel-board
-        margin-top: 40px
-      .pixel-menu
-        top: -40px
+  @media screen and (max-width: 730px)
+    .vue-pixel-board
+      margin-top: 40px
+    .pixel-menu
+      top: -40px
 </style>

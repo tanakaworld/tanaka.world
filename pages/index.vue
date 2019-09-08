@@ -60,7 +60,7 @@ export default Vue.extend({
       if (window) {
         const windowHeight = window.innerHeight
         const windowWidth = window.innerWidth
-        const headerHeight = this.$refs['headerView'].$el.clientHeight
+        const headerHeight = this.$refs.headerView.$el.clientHeight
         // calc height
         this.vuePixelHeight = windowHeight - headerHeight
         // calc width
@@ -74,9 +74,9 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-  .vue-pixel
-    margin: 0 auto
+.vue-pixel
+  margin: 0 auto
 
-    .actions
-      display: flex
+  .actions
+    display: flex
 </style>

@@ -31,38 +31,38 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-  @import ../../styles/color
+@import ../../styles/color
 
-  header
-    display: flex
-    flex-flow: row
-    flex-wrap: wrap
+header
+  display: flex
+  flex-flow: row
+  flex-wrap: wrap
 
-    color: $color-white
-    background: $color-dark-gray
+  color: $color-white
+  background: $color-dark-gray
 
-    margin-bottom: 48px
+  margin-bottom: 48px
 
-    #title
-      flex: 2
-      a
-        padding: 10px
-    #nav
-      ul
-        display: flex
-        flex-flow: row
-        flex-wrap: wrap
-        list-style: none
-      li
-        flex: 1
-        a
-          margin: 10px
-          padding: 10px
+  #title
+    flex: 2
     a
-      display: inline-block
-      color: $color-white
-      text-decoration: none
-      border-radius: 3px
-      &.active, &:hover
-        background-color: $color-gray
+      padding: 10px
+  #nav
+    ul
+      display: flex
+      flex-flow: row
+      flex-wrap: wrap
+      list-style: none
+    li
+      flex: 1
+      a
+        margin: 10px
+        padding: 10px
+  a
+    display: inline-block
+    color: $color-white
+    text-decoration: none
+    border-radius: 3px
+    &.active, &:hover
+      background-color: $color-gray
 </style>

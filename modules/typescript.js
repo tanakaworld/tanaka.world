@@ -14,7 +14,7 @@ module.exports = function() {
       test: /((client|server)\.js)|(\.tsx?)$/,
       ...tsLoader
     })
-    for (let rule of config.module.rules) {
+    for (const rule of config.module.rules) {
       if (rule.loader === 'vue-loader') {
         if (!rule.options.loaders) {
           rule.options.loaders = {}
@@ -22,7 +22,7 @@ module.exports = function() {
         rule.options.loaders.ts = tsLoader
       }
     }
-    if (config.resolve.extensions.indexOf('.ts') < 0) {
+    if (!config.resolve.extensions.includes('.ts')) {
       config.resolve.extensions.push('.ts')
     }
   })

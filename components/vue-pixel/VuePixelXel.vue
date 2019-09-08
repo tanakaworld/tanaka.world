@@ -1,7 +1,7 @@
 <template>
   <div
-    :class="{debug: debug}"
-    :style="{background: bgColor}"
+    :class="{ debug: debug }"
+    :style="{ background: bgColor }"
     class="xel"
     @mouseover="handleHover"
   />
@@ -87,19 +87,19 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-  .xel
-    flex: 1
-    font-size: 10px
-    cursor: pointer
-    &.debug
-      border: 1px solid gray
+.xel
+  flex: 1
+  font-size: 10px
+  cursor: pointer
+  &.debug
+    border: 1px solid gray
 
-    position: relative
-    width: 100%
-    &:before
-      content: ''
-      display: block
-      padding-top: 100%
+  position: relative
+  width: 100%
+  &:before
+    content: ''
+    display: block
+    padding-top: 100%
 
-    transition: all .3s ease
+  transition: all .3s ease
 </style>
