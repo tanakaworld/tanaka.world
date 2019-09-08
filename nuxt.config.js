@@ -80,6 +80,9 @@ module.exports = {
   css: [],
   plugins: [],
   modules: ['~/modules/typescript.js'],
+  buildModules: [
+    '@nuxtjs/eslint-module'
+  ],
   build: {
     publicPath: '/assets/',
     extractCSS: true,
