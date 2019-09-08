@@ -98,12 +98,12 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import HeaderView from '~/components/common/HeaderView.vue'
+import Vue from 'vue';
+import HeaderView from '~/components/common/HeaderView.vue';
 
-const title = 'About - The TANAKA WORLD'
-const description = 'Who am I ?'
-const brithday = new Date('1990-11-07')
+const title = 'About - The TANAKA WORLD';
+const description = 'Who am I ?';
+const brithday = new Date('1990-11-07');
 
 export default Vue.extend({
   head: {
@@ -173,7 +173,7 @@ export default Vue.extend({
           role: 'Backend Developer'
         }
       ]
-    }
+    };
   },
   computed: {
     snsAccounts() {
@@ -188,23 +188,25 @@ export default Vue.extend({
           name: 'LinkedIn',
           url: 'https://www.linkedin.com/in/yutaro-tanaka-world-7863b249/'
         }
-      ]
+      ];
     },
     products() {
       return [
         { name: 'Proff.io', url: 'https://proff.io' },
         { name: 'RubyGems', url: 'https://rubygems.org/profiles/tanakaworld' },
         { name: 'NPM', url: 'https://www.npmjs.com/~tanakaworld' }
-      ]
+      ];
     },
     level(): number {
       return Math.floor(
-        Math.abs(Date.now() - brithday) / (1000 * 3600 * 24) / 365
-      )
+        Math.abs(Date.now() - brithday.getMilliseconds()) /
+          (1000 * 3600 * 24) /
+          365
+      );
     }
   },
   methods: {}
-})
+});
 </script>
 
 <style scoped lang="sass">

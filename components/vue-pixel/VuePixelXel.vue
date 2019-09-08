@@ -8,20 +8,18 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import * as VuePixelStore from './store'
+import Vue from 'vue';
+import * as VuePixelStore from './store';
 
 export default Vue.extend({
   name: 'VuePixelXel',
   props: {
     debug: {
       type: Boolean,
-      required: false,
       default: false
     },
     static: {
       type: Boolean,
-      required: false,
       default: false
     },
     beforeColor: {
@@ -30,7 +28,6 @@ export default Vue.extend({
     },
     afterColor: {
       type: String,
-      required: false,
       default: null
     }
   },
@@ -38,13 +35,13 @@ export default Vue.extend({
     return {
       bgColor: this.beforeColor,
       transformed: false
-    }
+    };
   },
   methods: {
     async handleHover() {
       if (!this.static && !this.transformed) {
-        this.bgColor = this.afterColor
-        this.transformed = true
+        this.bgColor = this.afterColor;
+        this.transformed = true;
 
         if (!this.$store.getters['vuePixel/showMenu']) {
           await this.$store.dispatch(
@@ -52,14 +49,14 @@ export default Vue.extend({
               { flag: true },
               { namespace: VuePixelStore.namespace }
             )
-          )
+          );
         }
 
         await this.$store.dispatch(
           VuePixelStore.DecrementPixelCount(null, {
             namespace: VuePixelStore.namespace
           })
-        )
+        );
 
         if (this.$store.getters['vuePixel/pixelCount'] === 0) {
           await this.$store.dispatch(
@@ -67,23 +64,23 @@ export default Vue.extend({
               { flag: false },
               { namespace: VuePixelStore.namespace }
             )
-          )
+          );
           setTimeout(async () => {
             await this.$store.dispatch(
               VuePixelStore.GameEnd(
                 { isEnd: true },
                 { namespace: VuePixelStore.namespace }
               )
-            )
+            );
             setTimeout(() => {
-              this.$router.push('/about')
-            }, 1000)
-          }, 500)
+              this.$router.push('/about');
+            }, 1000);
+          }, 500);
         }
       }
     }
   }
-})
+});
 </script>
 
 <style scoped lang="sass">

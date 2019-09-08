@@ -2,7 +2,10 @@
   <div>
     <header-view :ref="'headerView'" />
     <vue-pixel
-      :style="vuePixelStyles"
+      :style="{
+        width: `${vuePixelWidth}px`,
+        height: `${vuePixelHeight}px`
+      }"
       :main-color="mainColor"
       class="vue-pixel"
     />
@@ -10,18 +13,19 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import HeaderView from '~/components/common/HeaderView.vue'
-import VuePixel from '~/components/vue-pixel/VuePixel.vue'
+import Vue from 'vue';
+import HeaderView from '~/components/common/HeaderView.vue';
+import VuePixel from '~/components/vue-pixel/VuePixel.vue';
 
 export default Vue.extend({
   name: 'Home',
   head() {
     return {
       bodyAttrs: {
-        class: this.fixBody ? 'no-scroll' : ''
+        // @ts-ignore
+        class: this.fixBody ? 'no-scrodll' : ''
       }
-    }
+    };
   },
   components: {
     HeaderView,
@@ -33,44 +37,38 @@ export default Vue.extend({
       vuePixelWidthMax: 600,
       vuePixelHeight: 0,
       fixBody: true
-    }
+    };
   },
   computed: {
-    vuePixelStyles() {
-      return {
-        width: `${this.vuePixelWidth}px`,
-        height: `${this.vuePixelHeight}px`
-      }
-    },
     mainColor() {
-      return this.$route.query.color
+      return this.$route.query.color;
     }
   },
   mounted() {
-    window.addEventListener('resize', this.updateViePixelHeight)
-    this.updateViePixelHeight()
-    this.fixBody = true
+    window.addEventListener('resize', this.updateViePixelHeight);
+    this.updateViePixelHeight();
+    this.fixBody = true;
   },
   beforeDestroy() {
-    this.fixBody = false
-    window.removeEventListener('resize', this.updateViePixelHeight)
+    this.fixBody = false;
+    window.removeEventListener('resize', this.updateViePixelHeight);
   },
   methods: {
     updateViePixelHeight() {
       if (window) {
-        const windowHeight = window.innerHeight
-        const windowWidth = window.innerWidth
-        const headerHeight = this.$refs.headerView.$el.clientHeight
+        const windowHeight = window.innerHeight;
+        const windowWidth = window.innerWidth;
+        const headerHeight = this.$refs.headerView.$el.clientHeight;
         // calc height
-        this.vuePixelHeight = windowHeight - headerHeight
+        this.vuePixelHeight = windowHeight - headerHeight;
         // calc width
-        let tmpWidth = (this.vuePixelHeight * 14) / 16
-        if (tmpWidth > windowWidth) tmpWidth = windowWidth
-        this.vuePixelWidth = tmpWidth
+        let tmpWidth = (this.vuePixelHeight * 14) / 16;
+        if (tmpWidth > windowWidth) tmpWidth = windowWidth;
+        this.vuePixelWidth = tmpWidth;
       }
     }
   }
-})
+});
 </script>
 
 <style scoped lang="sass">

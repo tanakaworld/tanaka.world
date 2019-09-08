@@ -55,15 +55,15 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { mapGetters } from 'vuex'
-import randomcolor from 'randomcolor'
-import * as VuePixelStore from './store'
-import VuePixelXel from '~/components/vue-pixel/VuePixelXel.vue'
+import Vue from 'vue';
+import { mapGetters } from 'vuex';
+import randomcolor from 'randomcolor';
+import * as VuePixelStore from './store';
+import VuePixelXel from '~/components/vue-pixel/VuePixelXel.vue';
 
 const generateSuggestColors = () => {
-  return [randomcolor(), randomcolor(), randomcolor(), randomcolor()]
-}
+  return [randomcolor(), randomcolor(), randomcolor(), randomcolor()];
+};
 
 export default Vue.extend({
   name: 'VuePixelBoard',
@@ -85,7 +85,7 @@ export default Vue.extend({
     return {
       showBoard: true,
       suggestColors: generateSuggestColors()
-    }
+    };
   },
   computed: {
     ...mapGetters({
@@ -94,50 +94,54 @@ export default Vue.extend({
     })
   },
   mounted() {
-    this.initPixels()
+    this.initPixels();
   },
   methods: {
     // For touch devices
-    handleTouchMove(e) {
+    handleTouchMove(e: MouseEvent) {
       if (e && e.target) {
-        const { pageX, pageY } = e
-        const xelId = document.elementFromPoint(pageX, pageY).dataset.xelId
-        const xelComponent = this.$refs[xelId]
-
+        const { pageX, pageY } = e;
+        const elm: any = document.elementFromPoint(pageX, pageY);
+        if (!elm) return;
+        const xelId = elm.dataset.xelId;
+        if (!xelId) return;
+        const xelComponent = this.$refs[xelId];
         if (xelComponent && xelComponent[0] instanceof Vue) {
-          xelComponent[0].handleHover()
+          xelComponent[0].handleHover();
         }
       }
     },
     skipAnimation() {
-      const xels = []
+      const xels: HTMLElement[] = [];
       Object.keys(this.$refs).forEach(key => {
-        const component = this.$refs[key]
+        const component = this.$refs[key];
         if (key.startsWith('xel.') && component[0] instanceof Vue) {
-          xels.push(component[0])
+          xels.push(component[0]);
         }
-      })
+      });
       xels
         .sort(() => Math.random() - 0.5)
-        .forEach(xel => setTimeout(() => xel.handleHover(), Math.random() * 2))
+        .forEach((xel: any) =>
+          setTimeout(() => xel.handleHover(), Math.random() * 2)
+        );
     },
     goToRandom() {
-      this.showBoard = false
+      this.showBoard = false;
 
       // refresh
-      const color = randomcolor()
-      this.$router.push(`/?color=${color.slice(1)}`) // remove '#'
-      this.suggestColors = generateSuggestColors()
-      this.initPixels()
+      const color = randomcolor();
+      this.$router.push(`/?color=${color.slice(1)}`); // remove '#'
+      this.suggestColors = generateSuggestColors();
+      this.initPixels();
 
       this.$nextTick(() => {
-        this.showBoard = true
-      })
+        this.showBoard = true;
+      });
     },
     initPixels() {
       const pixelCount = Object.keys(this.$refs).filter(
         k => !this.$refs[k][0].static
-      ).length
+      ).length;
       this.$store.commit(
         VuePixelStore.SetPixelTotal(
           {
@@ -145,10 +149,10 @@ export default Vue.extend({
           },
           { namespace: VuePixelStore.namespace }
         )
-      )
+      );
     }
   }
-})
+});
 </script>
 
 <style scoped lang="sass">

@@ -3,50 +3,57 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { mapGetters } from 'vuex'
-import randomcolor from 'randomcolor'
-import colorConverter from 'color-convert'
-import * as VuePixelStore from './store'
-import VuePixelBoard from '~/components/vue-pixel/VuePixelBoard.vue'
+import Vue from 'vue';
+import { mapGetters } from 'vuex';
+import randomcolor from 'randomcolor';
+import colorConverter from 'color-convert';
+import * as VuePixelStore from './store';
+import VuePixelBoard from '~/components/vue-pixel/VuePixelBoard.vue';
 
-const COLOR_MIN = 0
-const COLOR_MAX = 255
-const COLOR_DIFF = 45
-const DEFAULT_COLOR = '#008cc8'
-const castInRange = n => {
-  if (n < COLOR_MIN) return COLOR_MIN
-  if (n > COLOR_MAX) return COLOR_MAX
-  return n
-}
+const COLOR_MIN = 0;
+const COLOR_MAX = 255;
+const COLOR_DIFF = 45;
+const DEFAULT_COLOR = '#008cc8';
+const castInRange = (n: number) => {
+  if (n < COLOR_MIN) return COLOR_MIN;
+  if (n > COLOR_MAX) return COLOR_MAX;
+  return n;
+};
 
 const getMainColor = (mainColor: string) => {
   if (mainColor === 'random') {
-    return randomcolor({ hue: 'random', luminosity: 'random' })
+    return randomcolor({ hue: 'random', luminosity: 'random' });
   }
-  return `#${mainColor}`
-}
+  return `#${mainColor}`;
+};
 
 const getMainThinColor = (mainColor: string) => {
-  const [red, green, blue] = colorConverter.hex.rgb(mainColor)
+  const [red, green, blue] = colorConverter.hex.rgb(mainColor);
   const hex = colorConverter.rgb.hex(
     castInRange(red + COLOR_DIFF),
     castInRange(green + COLOR_DIFF),
     castInRange(blue + COLOR_DIFF)
-  )
-  return `#${hex}`
-}
+  );
+  return `#${hex}`;
+};
 
-const generateSeed = (mainColor: string) => {
-  const BG = '#555555'
-  const MAIN = mainColor ? getMainColor(mainColor) : DEFAULT_COLOR
-  const SUB = getMainThinColor(MAIN)
-  const LIGHT_GRAY = '#f5f5f5'
-  const WHITE = '#FFFFFF'
-  const HAIR = '#50340a'
-  const SKIN = '#fec878'
-  const YELLOW = '#fbed29'
-  const PINK = '#e75e00'
+export type Xel = {
+  debug?: boolean;
+  static?: boolean;
+  before: string;
+  after?: string;
+};
+
+const generateSeed = (mainColor: string): Xel[][] => {
+  const BG = '#555555';
+  const MAIN = mainColor ? getMainColor(mainColor) : DEFAULT_COLOR;
+  const SUB = getMainThinColor(MAIN);
+  const LIGHT_GRAY = '#f5f5f5';
+  const WHITE = '#FFFFFF';
+  const HAIR = '#50340a';
+  const SKIN = '#fec878';
+  const YELLOW = '#fbed29';
+  const PINK = '#e75e00';
 
   return [
     [
@@ -337,8 +344,8 @@ const generateSeed = (mainColor: string) => {
       { before: BG, static: true },
       { before: BG, static: true }
     ]
-  ]
-}
+  ];
+};
 
 export default Vue.extend({
   name: 'VuePixel',
@@ -351,10 +358,10 @@ export default Vue.extend({
       default: null
     }
   },
-  data() {
+  data(): { seed: Xel[][] } {
     return {
       seed: []
-    }
+    };
   },
   computed: {
     ...mapGetters({
@@ -364,7 +371,7 @@ export default Vue.extend({
   watch: {
     mainColor: {
       handler(val) {
-        this.seed = generateSeed(val)
+        this.seed = generateSeed(val);
       },
       immediate: true
     }
@@ -375,9 +382,9 @@ export default Vue.extend({
         { isEnd: false },
         { namespace: VuePixelStore.namespace }
       )
-    )
+    );
   }
-})
+});
 </script>
 
 <style scoped lang="sass">

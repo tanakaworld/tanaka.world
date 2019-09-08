@@ -1,4 +1,6 @@
-module.exports = {
+import { Configuration as NuxtConfiguration } from '@nuxt/types';
+
+const config: NuxtConfiguration = {
   mode: 'universal',
   head: {
     title: 'tanaka.world',
@@ -43,6 +45,7 @@ module.exports = {
         name: 'apple-mobile-web-app-title',
         content: 'tanaka.world'
       },
+
       {
         hid: 'msapplication-TileColor',
         name: 'msapplication-TileColor',
@@ -79,23 +82,10 @@ module.exports = {
   loading: { color: '#91C3DC' },
   css: [],
   plugins: [],
-  modules: ['~/modules/typescript.js'],
-  buildModules: [
-    '@nuxtjs/eslint-module'
-  ],
+  buildModules: ['@nuxtjs/eslint-module', '@nuxt/typescript-build'],
   build: {
-    publicPath: '/assets/',
-    extractCSS: true,
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
+    extractCSS: true
   }
-}
+};
+
+export default config;

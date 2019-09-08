@@ -3,7 +3,7 @@
     <header-view />
     <div id="gallery">
       <div v-for="(c, index) in photos" :key="index" class="thumbnail">
-        <p class="description" v-html="c.description" />
+        <p class="description">{{ c.description }}</p>
         <img :src="c.file" :alt="c.description" class="gallery-icon" />
       </div>
     </div>
@@ -11,11 +11,11 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import HeaderView from '~/components/common/HeaderView.vue'
+import Vue from 'vue';
+import HeaderView from '~/components/common/HeaderView.vue';
 
-const title = 'Gallery - The TANAKA WORLD'
-const description = 'Arts made by me'
+const title = 'Gallery - The TANAKA WORLD';
+const description = 'Arts made by me';
 
 export default Vue.extend({
   head: {
@@ -183,9 +183,9 @@ export default Vue.extend({
           file: '/img/deno.gif'
         }
       ]
-    }
+    };
   }
-})
+});
 </script>
 
 <style scoped lang="sass">
