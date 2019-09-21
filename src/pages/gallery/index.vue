@@ -147,27 +147,27 @@ export default Vue.extend({
           file: '/img/tanakaworld-2019-iee.png'
         },
         {
-          description: '<span class="description-at">@</span>__syumai',
+          description: '@__syumai',
           file: '/img/syumai.png'
         },
         {
-          description: '<span class="description-at">@</span>tenntenn',
+          description: '@tenntenn',
           file: '/img/tenntenn.png'
         },
         {
-          description: '<span class="description-at">@</span>swaaan',
+          description: '@swaaan',
           file: '/img/swaaan-sm.png'
         },
         {
-          description: '<span class="description-at">@</span>swaaan',
+          description: '@swaaan',
           file: '/img/swaaan-dash.png'
         },
         {
-          description: '<span class="description-at">@</span>codehex',
+          description: '@codehex',
           file: '/img/codehex.png'
         },
         {
-          description: '<span class="description-at">@</span>8saki',
+          description: '@8saki',
           file: '/img/8saki.png'
         },
         {
@@ -175,11 +175,11 @@ export default Vue.extend({
           file: '/img/ms-dia.png'
         },
         {
-          description: '<span class="description-at">@</span>peranikov',
+          description: '@peranikov',
           file: '/img/peranikov.png'
         },
         {
-          description: '<span class="description-at">@</span>denoland',
+          description: '@denoland',
           file: '/img/deno.gif'
         }
       ]
