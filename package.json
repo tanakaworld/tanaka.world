@@ -15,6 +15,12 @@
     "serve": "firebase serve --only hosting",
     "deploy": "firebase use tanaka-world && firebase deploy --only hosting"
   },
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "3000"
+    }
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -35,7 +41,7 @@
     ]
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "^0.1.5",
+    "@nuxt/typescript-runtime": "^0.1.6",
     "@nuxtjs/google-analytics": "^2.0.2",
     "color-convert": "^1.9.3",
     "cross-env": "^5.2.0",
@@ -47,7 +53,7 @@
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
-    "@nuxt/typescript-build": "^0.2.6",
+    "@nuxt/typescript-build": "^0.2.9",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@types/node": "^12.7.4",
