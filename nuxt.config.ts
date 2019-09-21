@@ -2,6 +2,7 @@ import { Configuration as NuxtConfiguration } from '@nuxt/types';
 
 const config: NuxtConfiguration = {
   mode: 'universal',
+  srcDir: 'src',
   head: {
     title: 'tanaka.world',
     meta: [

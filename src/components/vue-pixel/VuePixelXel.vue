@@ -10,7 +10,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { mapGetters } from 'vuex';
-import * as VuePixelStore from '~/store/moduels/vue-pixel';
+import * as VuePixelStore from '~/store/modules/vue-pixel';
 
 export default Vue.extend({
   name: 'VuePixelXel',
