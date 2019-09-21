@@ -9,7 +9,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import * as VuePixelStore from './store';
+import { mapGetters } from 'vuex';
+import * as VuePixelStore from '~/store/moduels/vue-pixel';
 
 export default Vue.extend({
   name: 'VuePixelXel',
@@ -37,13 +38,19 @@ export default Vue.extend({
       transformed: false
     };
   },
+  computed: {
+    ...mapGetters({
+      showMenu: `${VuePixelStore.namespace}/showMenu`,
+      pixelCount: `${VuePixelStore.namespace}/pixelCount`
+    })
+  },
   methods: {
     async handleHover() {
       if (!this.static && !this.transformed) {
         this.bgColor = this.afterColor;
         this.transformed = true;
 
-        if (!this.$store.getters['vuePixel/showMenu']) {
+        if (!this.showMenu) {
           await this.$store.dispatch(
             VuePixelStore.ToggleMenu(
               { flag: true },
@@ -58,7 +65,7 @@ export default Vue.extend({
           })
         );
 
-        if (this.$store.getters['vuePixel/pixelCount'] === 0) {
+        if (this.pixelCount === 0) {
           await this.$store.dispatch(
             VuePixelStore.ToggleMenu(
               { flag: false },

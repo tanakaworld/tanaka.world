@@ -1,4 +1,4 @@
-import * as PixelApp from '~/components/vue-pixel/store';
+import * as PixelApp from '~/store/moduels/vue-pixel';
 
 export interface RootState {
   [PixelApp.namespace]: PixelApp.State;

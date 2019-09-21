@@ -58,7 +58,7 @@
 import Vue from 'vue';
 import { mapGetters } from 'vuex';
 import randomcolor from 'randomcolor';
-import * as VuePixelStore from './store';
+import * as VuePixelStore from '~/store/moduels/vue-pixel';
 import VuePixelXel from '~/components/vue-pixel/VuePixelXel.vue';
 
 const generateSuggestColors = () => {

@@ -7,7 +7,7 @@ import Vue from 'vue';
 import { mapGetters } from 'vuex';
 import randomcolor from 'randomcolor';
 import colorConverter from 'color-convert';
-import * as VuePixelStore from './store';
+import * as VuePixelStore from '~/store/moduels/vue-pixel';
 import VuePixelBoard from '~/components/vue-pixel/VuePixelBoard.vue';
 
 const COLOR_MIN = 0;
