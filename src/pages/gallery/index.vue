@@ -1,32 +1,21 @@
 <template>
   <div>
-    <header-view/>
+    <header-view />
     <div id="gallery">
-      <div
-        v-for="(c, index) in photos"
-        :key="index"
-        class="thumbnail"
-      >
-        <p
-          class="description"
-          v-html="c.description"
-        />
-        <img
-          :src="c.file"
-          :alt="c.description"
-          class="gallery-icon"
-        >
+      <div v-for="(c, index) in photos" :key="index" class="thumbnail">
+        <p class="description">{{ c.description }}</p>
+        <img :src="c.file" :alt="c.description" class="gallery-icon" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import HeaderView from '~/components/common/HeaderView.vue'
+import Vue from 'vue';
+import HeaderView from '~/components/common/HeaderView.vue';
 
-const title = 'Gallery - The TANAKA WORLD'
-const description = 'Arts made by me'
+const title = 'Gallery - The TANAKA WORLD';
+const description = 'Arts made by me';
 
 export default Vue.extend({
   head: {
@@ -158,27 +147,27 @@ export default Vue.extend({
           file: '/img/tanakaworld-2019-iee.png'
         },
         {
-          description: '<span class="description-at">@</span>__syumai',
+          description: '@__syumai',
           file: '/img/syumai.png'
         },
         {
-          description: '<span class="description-at">@</span>tenntenn',
+          description: '@tenntenn',
           file: '/img/tenntenn.png'
         },
         {
-          description: '<span class="description-at">@</span>swaaan',
+          description: '@swaaan',
           file: '/img/swaaan-sm.png'
         },
         {
-          description: '<span class="description-at">@</span>swaaan',
+          description: '@swaaan',
           file: '/img/swaaan-dash.png'
         },
         {
-          description: '<span class="description-at">@</span>codehex',
+          description: '@codehex',
           file: '/img/codehex.png'
         },
         {
-          description: '<span class="description-at">@</span>8saki',
+          description: '@8saki',
           file: '/img/8saki.png'
         },
         {
@@ -186,42 +175,42 @@ export default Vue.extend({
           file: '/img/ms-dia.png'
         },
         {
-          description: '<span class="description-at">@</span>peranikov',
+          description: '@peranikov',
           file: '/img/peranikov.png'
         },
         {
-          description: '<span class="description-at">@</span>denoland',
+          description: '@denoland',
           file: '/img/deno.gif'
         }
       ]
-    }
+    };
   }
-})
+});
 </script>
 
 <style scoped lang="sass">
-  @import ../../styles/color
+@import ../../styles/color
 
-  #gallery
-    width: 90%
-    margin: 0 auto
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    justify-content: center
-    padding: 24px
-    box-sizing: border-box
-    .thumbnail
-      height: 200px
-      .gallery-icon
-        width: 100px
-        margin: 15px 10px
-      .description
-        width: 120px
-        margin-top: -10px
-        padding: 0 10px
-        text-align: center
-        line-height: 20px
-        max-height: 20px
-        overflow-wrap: break-word
+#gallery
+  width: 90%
+  margin: 0 auto
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: center
+  padding: 24px
+  box-sizing: border-box
+  .thumbnail
+    height: 200px
+    .gallery-icon
+      width: 100px
+      margin: 15px 10px
+    .description
+      width: 120px
+      margin-top: -10px
+      padding: 0 10px
+      text-align: center
+      line-height: 20px
+      max-height: 20px
+      overflow-wrap: break-word
 </style>

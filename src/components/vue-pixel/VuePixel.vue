@@ -1,55 +1,59 @@
 <template>
-  <vue-pixel-board
-    :class="{'gameEnd': isGameEnd}"
-    :seed="seed"
-  />
+  <vue-pixel-board :class="{ gameEnd: isGameEnd }" :seed="seed" />
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { mapGetters } from 'vuex'
-import randomcolor from 'randomcolor'
-import colorConverter from 'color-convert'
-import VuePixelBoard from '~/components/vue-pixel/VuePixelBoard.vue'
-import * as VuePixelStore from './store'
+import Vue from 'vue';
+import { mapGetters } from 'vuex';
+import randomcolor from 'randomcolor';
+import colorConverter from 'color-convert';
+import * as VuePixelStore from '~/store/modules/vue-pixel';
+import VuePixelBoard from '~/components/vue-pixel/VuePixelBoard.vue';
 
-const COLOR_MIN = 0
-const COLOR_MAX = 255
-const COLOR_DIFF = 45
-const DEFAULT_COLOR = '#008cc8'
-const castInRange = n => {
-  if (n < COLOR_MIN) return COLOR_MIN
-  if (n > COLOR_MAX) return COLOR_MAX
-  return n
-}
+const COLOR_MIN = 0;
+const COLOR_MAX = 255;
+const COLOR_DIFF = 45;
+const DEFAULT_COLOR = '#008cc8';
+const castInRange = (n: number) => {
+  if (n < COLOR_MIN) return COLOR_MIN;
+  if (n > COLOR_MAX) return COLOR_MAX;
+  return n;
+};
 
 const getMainColor = (mainColor: string) => {
   if (mainColor === 'random') {
-    return randomcolor({ hue: 'random', luminosity: 'random' })
+    return randomcolor({ hue: 'random', luminosity: 'random' });
   }
-  return `#${mainColor}`
-}
+  return `#${mainColor}`;
+};
 
 const getMainThinColor = (mainColor: string) => {
-  const [red, green, blue] = colorConverter.hex.rgb(mainColor)
+  const [red, green, blue] = colorConverter.hex.rgb(mainColor);
   const hex = colorConverter.rgb.hex(
     castInRange(red + COLOR_DIFF),
     castInRange(green + COLOR_DIFF),
     castInRange(blue + COLOR_DIFF)
-  )
-  return `#${hex}`
-}
+  );
+  return `#${hex}`;
+};
 
-const generateSeed = (mainColor: string) => {
-  const BG = '#555555'
-  const MAIN = mainColor ? getMainColor(mainColor) : DEFAULT_COLOR
-  const SUB = getMainThinColor(MAIN)
-  const LIGHT_GRAY = '#f5f5f5'
-  const WHITE = '#FFFFFF'
-  const HAIR = '#50340a'
-  const SKIN = '#fec878'
-  const YELLOW = '#fbed29'
-  const PINK = '#e75e00'
+export type Xel = {
+  debug?: boolean;
+  static?: boolean;
+  before: string;
+  after?: string;
+};
+
+const generateSeed = (mainColor: string): Xel[][] => {
+  const BG = '#555555';
+  const MAIN = mainColor ? getMainColor(mainColor) : DEFAULT_COLOR;
+  const SUB = getMainThinColor(MAIN);
+  const LIGHT_GRAY = '#f5f5f5';
+  const WHITE = '#FFFFFF';
+  const HAIR = '#50340a';
+  const SKIN = '#fec878';
+  const YELLOW = '#fbed29';
+  const PINK = '#e75e00';
 
   return [
     [
@@ -340,8 +344,8 @@ const generateSeed = (mainColor: string) => {
       { before: BG, static: true },
       { before: BG, static: true }
     ]
-  ]
-}
+  ];
+};
 
 export default Vue.extend({
   name: 'VuePixel',
@@ -354,10 +358,10 @@ export default Vue.extend({
       default: null
     }
   },
-  data() {
+  data(): { seed: Xel[][] } {
     return {
       seed: []
-    }
+    };
   },
   computed: {
     ...mapGetters({
@@ -366,8 +370,8 @@ export default Vue.extend({
   },
   watch: {
     mainColor: {
-      handler: function(val) {
-        this.seed = generateSeed(val)
+      handler(val) {
+        this.seed = generateSeed(val);
       },
       immediate: true
     }
@@ -378,46 +382,46 @@ export default Vue.extend({
         { isEnd: false },
         { namespace: VuePixelStore.namespace }
       )
-    )
+    );
   }
-})
+});
 </script>
 
 <style scoped lang="sass">
-  .gameEnd
-    animation: swing .4s ease
-    animation-iteration-count: infinite
+.gameEnd
+  animation: swing .4s ease
+  animation-iteration-count: infinite
 
-    @keyframes swing
-      15%
-        -webkit-transform: translateX(5px)
-        transform: translateX(5px)
+  @keyframes swing
+    15%
+      -webkit-transform: translateX(5px)
+      transform: translateX(5px)
 
-      30%
-        -webkit-transform: translateX(-5px)
-        transform: translateX(-5px)
+    30%
+      -webkit-transform: translateX(-5px)
+      transform: translateX(-5px)
 
-      50%
-        -webkit-transform: translateX(3px)
-        transform: translateX(3px)
+    50%
+      -webkit-transform: translateX(3px)
+      transform: translateX(3px)
 
-      65%
-        -webkit-transform: translateX(-3px)
-        transform: translateX(-3px)
+    65%
+      -webkit-transform: translateX(-3px)
+      transform: translateX(-3px)
 
-      80%
-        -webkit-transform: translateX(2px)
-        transform: translateX(2px)
+    80%
+      -webkit-transform: translateX(2px)
+      transform: translateX(2px)
 
-      100%
-        -webkit-transform: translateX(0)
-        transform: translateX(0)
+    100%
+      -webkit-transform: translateX(0)
+      transform: translateX(0)
 
-    @keyframes shrink
-      0%
-        transform: scale(1)
-      30%
-        transform: scale(1.2)
-      100%
-        transform: scale(0)
+  @keyframes shrink
+    0%
+      transform: scale(1)
+    30%
+      transform: scale(1.2)
+    100%
+      transform: scale(0)
 </style>
