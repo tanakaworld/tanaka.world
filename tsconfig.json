@@ -19,7 +19,7 @@
     "paths": {
       "~/*": ["./src/*"]
     },
-    "types": ["@types/node", "@nuxt/types"]
+    "types": ["@types/node", "@nuxt/types", "@types/jest"]
   },
   "exclude": ["node_modules"],
   "includes": ["./src/**/*.ts", "/src/**/*.vue"]

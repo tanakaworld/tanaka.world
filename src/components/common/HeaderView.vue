@@ -1,21 +1,21 @@
 <template>
   <header>
     <h1 id="title">
-      <router-link to="/">
+      <n-link to="/">
         TANAKA WORLD
-      </router-link>
+      </n-link>
     </h1>
     <nav id="nav">
       <ul>
         <li>
-          <router-link to="/about">
+          <n-link to="/about">
             About
-          </router-link>
+          </n-link>
         </li>
         <li>
-          <router-link to="/gallery">
+          <n-link to="/gallery">
             Gallery
-          </router-link>
+          </n-link>
         </li>
       </ul>
     </nav>
