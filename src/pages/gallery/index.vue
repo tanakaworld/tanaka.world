@@ -4,7 +4,13 @@
     <div id="gallery">
       <div v-for="(c, index) in photos" :key="index" class="thumbnail">
         <p class="description">{{ c.description }}</p>
-        <img :src="c.file" :alt="c.description" class="gallery-icon" />
+        <img
+          loading="lazy"
+          width="100"
+          :src="c.file"
+          :alt="c.description"
+          class="gallery-icon"
+        />
       </div>
     </div>
   </div>
