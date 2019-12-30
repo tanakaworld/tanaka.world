@@ -51,7 +51,7 @@
     "vuex-typescript-fsa": "0.4.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.5.2",
+    "@commitlint/cli": "^8.3.3",
     "@commitlint/config-conventional": "^7.5.0",
     "@nuxt/typescript-build": "^0.2.9",
     "@nuxtjs/eslint-config": "^1.0.1",
