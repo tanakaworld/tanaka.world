@@ -140,5 +140,13 @@ export const photos: Photo[] = [
   {
     description: '@denoland',
     file: '/img/deno.gif'
+  },
+  {
+    description: 'USA 2019',
+    file: '/img/tanakaworld-usa-2019.png'
+  },
+  {
+    description: 'XMAS 2019',
+    file: '/img/tanakaworld-xmas-2019.png'
   }
 ];
