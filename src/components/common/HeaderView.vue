@@ -31,15 +31,13 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-@import ../../styles/color
-
 header
   display: flex
   flex-flow: row
   flex-wrap: wrap
 
-  color: $color-white
-  background: $color-dark-gray
+  color: var(--color-white)
+  background: var(--color-dark-gray)
 
   margin-bottom: 48px
 
@@ -60,9 +58,9 @@ header
         padding: 10px
   a
     display: inline-block
-    color: $color-white
+    color: var(--color-white)
     text-decoration: none
     border-radius: 3px
     &.active, &:hover
-      background-color: $color-gray
+      background-color: var(--color-gray)
 </style>

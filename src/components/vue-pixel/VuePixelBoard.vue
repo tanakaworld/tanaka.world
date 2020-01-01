@@ -156,8 +156,6 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-@import ../../styles/color
-
 .vue-pixel-board
   position: relative
 

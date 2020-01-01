@@ -64,8 +64,6 @@ export default Vue.extend({
 </script>
 
 <style lang="sass">
-@import '../styles/color'
-
 @font-face
   font-family: 'Misaki Gothic'
   src: url('../assets/fonts/misaki_gothic.ttf') format('truetype')
@@ -84,15 +82,15 @@ body
   color:
   margin: 0
   padding: 0
-  background: $color-dark-gray
-  color: $color-white
+  background: var(--color-dark-gray)
+  color: var(--color-white)
 
   &.no-scroll
     overflow: hidden
 
 a
   text-decoration: none
-  color: $color-sky-blue
+  color: var(--color-sky-blue)
 
 main
   display: flex
@@ -101,7 +99,7 @@ main
 
 section
   padding: 20px
-  color: $color-white
+  color: var(--color-white)
 
 @media screen and (max-width: 730px)
   header

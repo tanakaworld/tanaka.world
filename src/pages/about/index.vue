@@ -132,8 +132,6 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-@import "../../styles/color"
-
 #about
   display: flex
   justify-items: center
@@ -145,7 +143,7 @@ export default Vue.extend({
     line-height: 1.5em
 
     &:not(:first-child)
-      border-top: solid 1px $color-sky-blue
+      border-top: solid 1px var(--color-sky-blue)
 
     &.no-border
       border-top: none
@@ -205,7 +203,7 @@ export default Vue.extend({
     width: 100%
     padding: 4px
     text-decoration: none
-    color: $color-gray
+    color: var(--color-gray)
 
   .makeUnownTextInputDisplay
     width: 100%

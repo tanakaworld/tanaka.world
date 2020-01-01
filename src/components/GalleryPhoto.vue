@@ -26,8 +26,6 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-@import ../styles/color
-
 .GalleryPhoto
   height: 200px
 
