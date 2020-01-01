@@ -1,19 +1,17 @@
 <template>
-  <div>
-    <header-view />
-
+  <div class="Gallery">
     <h2 class="Gallery__SubTitle">干支</h2>
-    <div class="gallery">
+    <div class="Gallery__Section">
       <GalleryPhoto v-for="p in etos" :key="p.file" :photo="p" />
     </div>
 
     <h2 class="Gallery__SubTitle">ME</h2>
-    <div class="gallery">
+    <div class="Gallery__Section">
       <GalleryPhoto v-for="p in me" :key="p.file" :photo="p" />
     </div>
 
     <h2 class="Gallery__SubTitle">Others</h2>
-    <div class="gallery">
+    <div class="Gallery__Section">
       <GalleryPhoto v-for="p in photos" :key="p.file" :photo="p" />
     </div>
   </div>
@@ -21,7 +19,6 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import HeaderView from '~/components/common/HeaderView.vue';
 import GalleryPhoto from '~/components/GalleryPhoto.vue';
 import { etos, me, photos } from '~/utils/gallery';
 
@@ -30,7 +27,6 @@ const description = 'Arts made by me';
 
 export default Vue.extend({
   components: {
-    HeaderView,
     GalleryPhoto
   },
   data() {
@@ -63,29 +59,29 @@ export default Vue.extend({
 <style scoped lang="sass">
 @import ../../styles/color
 
-.Gallery__SubTitle
-  text-align: center
+.Gallery
+  .Gallery__SubTitle
+    text-align: center
 
-.gallery
-  width: 90%
-  margin: 0 auto
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  justify-content: center
-  padding: 24px
-  box-sizing: border-box
-  .thumbnail
-    height: 200px
-    .gallery-icon
-      width: 100px
-      margin: 15px 10px
-    .description
-      width: 120px
-      margin-top: -10px
-      padding: 0 10px
-      text-align: center
-      line-height: 20px
-      max-height: 20px
-      overflow-wrap: break-word
+  .Gallery__Section
+    margin: 0 auto
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    padding: 24px
+    box-sizing: border-box
+    .thumbnail
+      height: 200px
+      .gallery-icon
+        width: 100px
+        margin: 15px 10px
+      .description
+        width: 120px
+        margin-top: -10px
+        padding: 0 10px
+        text-align: center
+        line-height: 20px
+        max-height: 20px
+        overflow-wrap: break-word
 </style>

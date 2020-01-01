@@ -1,95 +1,92 @@
 <template>
-  <div>
-    <header-view />
-    <div id="about">
-      <div class="profile-wrap">
-        <div class="profile-row profile-row-has-child">
+  <div id="about">
+    <div class="profile-wrap">
+      <div class="profile-row profile-row-has-child">
+        <div>
+          <img
+            class="profile-icon"
+            alt="Profile Icon"
+            src="/img/tanakaworld-2018.png"
+          />
+        </div>
+        <div class="profile-property">
           <div>
-            <img
-              class="profile-icon"
-              alt="Profile Icon"
-              src="/img/tanakaworld-2018.png"
-            />
+            <router-link to="http://tanaka.world">
+              tanakaworld
+            </router-link>
           </div>
-          <div class="profile-property">
-            <div>
-              <router-link to="http://tanaka.world">
-                tanakaworld
-              </router-link>
-            </div>
-            <div>Software Engineer</div>
-            <div>LV.{{ level }}</div>
-            <div>
-              たかさ 1.74 m
-            </div>
-            <div>
-              おもさ 58.0 kg
-            </div>
+          <div>Software Engineer</div>
+          <div>LV.{{ level }}</div>
+          <div>
+            たかさ 1.74 m
+          </div>
+          <div>
+            おもさ 58.0 kg
           </div>
         </div>
-        <div class="profile-row">
-          Web
-          に関することは何でもやるマン。上場企業・スタートアップ・個人事業主を経て、フロントエンドからインフラまで多くのプロジェクトに携わる。JavaScript・C#・Ruby
-          を用いたアプリケーション開発を得意としている。
-          ピクセルアート、ルービックキューブ、イヌが好き。趣味は、
+      </div>
+      <div class="profile-row">
+        Web
+        に関することは何でもやるマン。上場企業・スタートアップ・個人事業主を経て、フロントエンドからインフラまで多くのプロジェクトに携わる。JavaScript・C#・Ruby
+        を用いたアプリケーション開発を得意としている。
+        ピクセルアート、ルービックキューブ、イヌが好き。趣味は、
+        <a
+          href="https://www.youtube.com/watch?v=qpkCstorMxs&t=1207s"
+          target="_blank"
+        >
+          パズル
+        </a>
+        ・将棋（ウォーズ初段）。
+      </div>
+      <div class="profile-row no-border sns-links-wrap">
+        <h2 class="profile-row-title">
+          SNS
+        </h2>
+        <div v-for="(account, index) in snsAccounts" :key="index">
           <a
-            href="https://www.youtube.com/watch?v=qpkCstorMxs&t=1207s"
+            :class="`sns-link-${account.name.toLowerCase()}`"
+            :href="account.url"
+            class="sns-link sns-link-twitter"
             target="_blank"
           >
-            パズル
+            {{ account.name }}
           </a>
-          ・将棋（ウォーズ初段）。
         </div>
-        <div class="profile-row no-border sns-links-wrap">
-          <h2 class="profile-row-title">
-            SNS
-          </h2>
-          <div v-for="(account, index) in snsAccounts" :key="index">
-            <a
-              :class="`sns-link-${account.name.toLowerCase()}`"
-              :href="account.url"
-              class="sns-link sns-link-twitter"
-              target="_blank"
-            >
-              {{ account.name }}
-            </a>
-          </div>
-        </div>
-        <div class="profile-row no-border sns-links-wrap">
-          <h2 class="profile-row-title">
-            Product
-          </h2>
-          <div v-for="(p, index) in products" :key="index">
-            <a
-              :class="`sns-link-${p.name.toLowerCase()}`"
-              :href="p.url"
-              class="sns-link sns-link-twitter"
-              target="_blank"
-            >
-              {{ p.name }}
-            </a>
-          </div>
-        </div>
-        <div class="profile-row no-border histories-wrap">
-          <h2 class="profile-row-title">
-            History
-          </h2>
-          <div
-            v-for="(history, index) in histories"
-            :key="index"
-            class="history-item"
+      </div>
+      <div class="profile-row no-border sns-links-wrap">
+        <h2 class="profile-row-title">
+          Product
+        </h2>
+        <div v-for="(p, index) in products" :key="index">
+          <a
+            :class="`sns-link-${p.name.toLowerCase()}`"
+            :href="p.url"
+            class="sns-link sns-link-twitter"
+            target="_blank"
           >
-            <div class="history-item-range">
-              {{ history.range }}
-            </div>
-            <div>
-              <a :href="history.link" class="history-item-link" target="_blank">
-                {{ history.linkLabel }}
-              </a>
-            </div>
-            <div v-if="history.role" class="history-item-role">
-              - {{ history.role }}
-            </div>
+            {{ p.name }}
+          </a>
+        </div>
+      </div>
+      <div class="profile-row no-border histories-wrap">
+        <h2 class="profile-row-title">
+          History
+        </h2>
+        <div
+          v-for="(history, index) in histories"
+          :key="index"
+          class="history-item"
+        >
+          <div class="history-item-range">
+            {{ history.range }}
+          </div>
+          <div>
+            <a :href="history.link" class="history-item-link" target="_blank">
+              {{ history.linkLabel }}
+            </a>
+          </div>
+          <div v-if="history.role" class="history-item-role">
+            - {{ history.role }}
           </div>
         </div>
       </div>
@@ -99,16 +96,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import HeaderView from '~/components/common/HeaderView.vue';
 
 const title = 'About - The TANAKA WORLD';
 const description = 'Who am I ?';
 const brithday = new Date('1990-11-07');
 
 export default Vue.extend({
-  components: {
-    HeaderView
-  },
   data() {
     return {
       histories: [
