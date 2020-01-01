@@ -31,11 +31,14 @@
           Web
           に関することは何でもやるマン。上場企業・スタートアップ・個人事業主を経て、フロントエンドからインフラまで多くのプロジェクトに携わる。JavaScript・C#・Ruby
           を用いたアプリケーション開発を得意としている。
-          ピクセルアート、ルービックキューブ、イヌが好き。趣味は、<a
+          ピクセルアート、ルービックキューブ、イヌが好き。趣味は、
+          <a
             href="https://www.youtube.com/watch?v=qpkCstorMxs&t=1207s"
             target="_blank"
-            >パズル</a
-          >・将棋（ウォーズ初段）。
+          >
+            パズル
+          </a>
+          ・将棋（ウォーズ初段）。
         </div>
         <div class="profile-row no-border sns-links-wrap">
           <h2 class="profile-row-title">
@@ -80,12 +83,9 @@
               {{ history.range }}
             </div>
             <div>
-              <a
-                :href="history.link"
-                class="history-item-link"
-                target="_blank"
-                >{{ history.linkLabel }}</a
-              >
+              <a :href="history.link" class="history-item-link" target="_blank">
+                {{ history.linkLabel }}
+              </a>
             </div>
             <div v-if="history.role" class="history-item-role">
               - {{ history.role }}
@@ -106,24 +106,6 @@ const description = 'Who am I ?';
 const brithday = new Date('1990-11-07');
 
 export default Vue.extend({
-  head: {
-    title,
-    meta: [
-      { hid: 'description', name: 'description', content: description },
-      { hid: 'og:title', property: 'og:title', content: title },
-      {
-        hid: 'og:url',
-        property: 'og:url',
-        content: 'https://tanaka.world/about'
-      },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: description
-      }
-    ]
-  },
-  name: 'About',
   components: {
     HeaderView
   },
@@ -205,7 +187,24 @@ export default Vue.extend({
       );
     }
   },
-  methods: {}
+  methods: {},
+  head: {
+    title,
+    meta: [
+      { hid: 'description', name: 'description', content: description },
+      { hid: 'og:title', property: 'og:title', content: title },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://tanaka.world/about'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: description
+      }
+    ]
+  }
 });
 </script>
 
@@ -221,8 +220,10 @@ export default Vue.extend({
   .profile-row
     padding: 16px
     line-height: 1.5em
+
     &:not(:first-child)
       border-top: solid 1px $color-sky-blue
+
     &.no-border
       border-top: none
 
@@ -249,6 +250,7 @@ export default Vue.extend({
     max-width: 700px
     padding: 24px
     box-sizing: border-box
+
     > div
       &:not(:first-child)
         margin-top: 12px
@@ -317,6 +319,7 @@ export default Vue.extend({
 
     &-link
       margin-left: 16px
+
     &-role
       margin-left: 8px
 
@@ -328,8 +331,10 @@ export default Vue.extend({
       .history-item
         &:not(:first-child)
           margin-top: 8px
+
         &-range
           width: 100%
+
         &-link
           margin-left: 0
 </style>

@@ -12,14 +12,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-// import { Photo } from '~/types/app/gallery';
+import Vue, { PropType } from 'vue';
+import { Photo } from '~/types/app/gallery';
 
 export default Vue.extend({
   props: {
     photo: {
-      // TODO type
-      type: Object,
+      type: Object as PropType<Photo>,
       required: true
     }
   }

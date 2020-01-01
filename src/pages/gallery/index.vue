@@ -29,6 +29,17 @@ const title = 'Gallery - The TANAKA WORLD';
 const description = 'Arts made by me';
 
 export default Vue.extend({
+  components: {
+    HeaderView,
+    GalleryPhoto
+  },
+  data() {
+    return {
+      etos,
+      me,
+      photos
+    };
+  },
   head: {
     title,
     meta: [
@@ -45,18 +56,6 @@ export default Vue.extend({
         content: description
       }
     ]
-  },
-  name: 'Gallery',
-  components: {
-    HeaderView,
-    GalleryPhoto
-  },
-  data() {
-    return {
-      etos,
-      me,
-      photos
-    };
   }
 });
 </script>

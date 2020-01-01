@@ -18,15 +18,6 @@ import HeaderView from '~/components/common/HeaderView.vue';
 import VuePixel from '~/components/vue-pixel/VuePixel.vue';
 
 export default Vue.extend({
-  name: 'Home',
-  head() {
-    return {
-      bodyAttrs: {
-        // @ts-ignore
-        class: this.fixBody ? 'no-scrodll' : ''
-      }
-    };
-  },
   components: {
     HeaderView,
     VuePixel
@@ -67,6 +58,14 @@ export default Vue.extend({
         this.vuePixelWidth = tmpWidth;
       }
     }
+  },
+  head() {
+    return {
+      bodyAttrs: {
+        // @ts-ignore
+        class: this.fixBody ? 'no-scrodll' : ''
+      }
+    };
   }
 });
 </script>
