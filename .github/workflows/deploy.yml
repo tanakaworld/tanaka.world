@@ -3,12 +3,11 @@ on:
   push:
     branches:
       - master
+      - release/*
 
 jobs:
-  deploy:
-    name: Deploy
-
-    needs: build
+  lint-build-test:
+    name: Lint & Build & Test
 
     runs-on: ubuntu-latest
     strategy:
@@ -21,12 +20,42 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: npm install, build, and test
+        run: |
+          npm ci
+          npm run lint
+          npm run test
+          npm run generate
+        env:
+          CI: true
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: dist
+          path: dist
+
+  deploy:
+    name: Deploy
+
+    needs: lint-build-test
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.10.0]
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
           name: dist
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@develop
+        uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
         env:
