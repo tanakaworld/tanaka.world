@@ -1,0 +1,33 @@
+{
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/strongly-recommended",
+    "plugin:prettier/recommended",
+    "prettier/vue"
+  ],
+  "rules": {
+    "vue/max-attributes-per-line": [
+      "error",
+      {
+        "singleline": 20,
+        "multiline": {
+          "max": 1,
+          "allowFirstLine": false
+        }
+      }
+    ],
+    "vue/html-closing-bracket-newline": [
+      "error",
+      {
+        "singleline": "never",
+        "multiline": "always"
+      }
+    ],
+    "no-var": 0,
+    "no-unused-vars": 0,
+    "no-undef": 0
+  }
+}

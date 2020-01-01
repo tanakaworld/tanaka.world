@@ -9,7 +9,8 @@
     "build": "NODE_ENV=production nuxt-ts build",
     "start": "NODE_ENV=production nuxt-ts start",
     "generate": "NODE_ENV=production nuxt-ts generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "eslint --ext .vue,.ts .",
+    "lintfix": "npm run lint -- --fix",
     "test": "jest",
     "precommit": "npm run lint",
     "serve": "firebase serve --only hosting",
@@ -32,9 +33,6 @@
       "eslint --fix",
       "git add"
     ],
-    "*.css": [
-      "git add"
-    ],
     "*.vue": [
       "eslint --fix",
       "git add"
@@ -53,9 +51,10 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.3",
     "@commitlint/config-conventional": "^7.5.0",
-    "@nuxt/typescript-build": "^0.2.9",
-    "@nuxtjs/eslint-config": "^1.0.1",
-    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxt/typescript-build": "^0.5.4",
+    "@nuxtjs/eslint-config": "^2.0.0",
+    "@nuxtjs/eslint-config-typescript": "^1.0.0",
+    "@nuxtjs/eslint-module": "^1.1.0",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.4",
     "@vue/test-utils": "^1.0.0-beta.27",
@@ -63,8 +62,8 @@
     "babel-jest": "^24.1.0",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-nuxt": "^0.5.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "husky": "^2.6.0",
     "jest": "^24.1.0",
     "lint-staged": "^8.2.1",
