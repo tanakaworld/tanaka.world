@@ -12,11 +12,5 @@ module.exports = {
   transform: {
     '^.+\\.ts?$': 'ts-jest',
     '^.+\\.vue?$': 'vue-jest'
-  },
-  collectCoverage: true,
-  collectCoverageFrom: [
-    'src/**/*.{vue,ts}',
-    '!src/**/*.d.ts',
-    '!src/pages/debug/**/*'
-  ]
+  }
 };
