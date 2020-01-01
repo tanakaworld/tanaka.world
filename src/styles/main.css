@@ -4,3 +4,54 @@
   --color-gray: #888888;
   --color-dark-gray: #555555;
 }
+
+@font-face {
+  font-family: 'Misaki Gothic';
+  src: url('../assets/fonts/misaki_gothic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Misaki Mincho';
+  src: url('../assets/fonts/misaki_mincho.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Misaki Gothic, Misaki Mincho, Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--color-dark-gray);
+  color: var(--color-white);
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-sky-blue);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+section {
+  padding: 20px;
+  color: var(--color-white);
+}
+
+.nuxt-link-exact-active {
+  background-color: var(--color-gray);
+}

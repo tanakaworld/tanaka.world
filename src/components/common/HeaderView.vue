@@ -63,4 +63,14 @@ header
     border-radius: 3px
     &.active, &:hover
       background-color: var(--color-gray)
+
+@media screen and (max-width: 730px)
+  header
+    #title, #nav
+      text-align: center
+    #nav
+      width: 100%
+      ul
+        margin: 0
+        padding: 0
 </style>
