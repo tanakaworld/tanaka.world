@@ -1,13 +1,36 @@
 import { Photo } from '~/types/app/gallery';
 
-export const photos: Photo[] = [
+export const etos: Photo[] = [
+  {
+    description: '2020 子',
+    file: '/img/tanakaworld-2020-ne.png'
+  },
+  {
+    description: '2019 亥',
+    file: '/img/tanakaworld-2019-iee.png'
+  },
+  {
+    description: '2018 戌',
+    file: '/img/tanakaworld-2018-inu.png'
+  },
+  {
+    description: '2017 酉',
+    file: '/img/me-2017-tori-v1.0.0.500.png'
+  },
+  {
+    description: '2016 申',
+    file: '/img/8bit-me-mon-2016.png'
+  },
+  {
+    description: '2015 未',
+    file: '/img/8bit-me-sheep.png'
+  }
+];
+
+export const me: Photo[] = [
   {
     description: 'me',
     file: '/img/me-real.png'
-  },
-  {
-    description: 'Blog Logo',
-    file: '/img/ForXDevelopersLogo.png'
   },
   {
     description: '2D',
@@ -22,20 +45,8 @@ export const photos: Photo[] = [
     file: '/img/8bit-me-santa.png'
   },
   {
-    description: '2015 未',
-    file: '/img/8bit-me-sheep.png'
-  },
-  {
     description: '2014 Me',
     file: '/img/8bit_me_clear.jpg'
-  },
-  {
-    description: 'MacBook',
-    file: '/img/mac_sq.png'
-  },
-  {
-    description: 'Megumi Katoh',
-    file: '/img/megumi-katoh.png'
   },
   {
     description: 'Full Body',
@@ -54,24 +65,8 @@ export const photos: Photo[] = [
     file: '/img/8bit-me-santa-2015.png'
   },
   {
-    description: '2016 申',
-    file: '/img/8bit-me-mon-2016.png'
-  },
-  {
-    description: '2017 酉',
-    file: '/img/me-2017-tori-v1.0.0.500.png'
-  },
-  {
-    description: 'ツラタン',
-    file: '/img/tsura-tang.png'
-  },
-  {
     description: 'Fly up 2017',
     file: '/img/me-tori-2017-gif.gif'
-  },
-  {
-    description: 'Humans Seq',
-    file: '/img/sequence-human.gif'
   },
   {
     description: 'Cap',
@@ -94,16 +89,40 @@ export const photos: Photo[] = [
     file: '/img/tanakaworld-2018-helloween.png'
   },
   {
+    description: 'USA 2019',
+    file: '/img/tanakaworld-usa-2019.png'
+  },
+  {
+    description: 'XMAS 2019',
+    file: '/img/tanakaworld-xmas-2019.png'
+  }
+];
+
+export const photos: Photo[] = [
+  {
+    description: 'Blog Logo',
+    file: '/img/ForXDevelopersLogo.png'
+  },
+  {
+    description: 'MacBook',
+    file: '/img/mac_sq.png'
+  },
+  {
+    description: 'Megumi Katoh',
+    file: '/img/megumi-katoh.png'
+  },
+
+  {
+    description: 'ツラタン',
+    file: '/img/tsura-tang.png'
+  },
+  {
+    description: 'Humans Seq',
+    file: '/img/sequence-human.gif'
+  },
+  {
     description: 'Chick',
     file: '/img/hiyoko.png'
-  },
-  {
-    description: '2018 戌',
-    file: '/img/tanakaworld-2018-inu.png'
-  },
-  {
-    description: '2019 亥',
-    file: '/img/tanakaworld-2019-iee.png'
   },
   {
     description: '@__syumai',
@@ -140,13 +159,5 @@ export const photos: Photo[] = [
   {
     description: '@denoland',
     file: '/img/deno.gif'
-  },
-  {
-    description: 'USA 2019',
-    file: '/img/tanakaworld-usa-2019.png'
-  },
-  {
-    description: 'XMAS 2019',
-    file: '/img/tanakaworld-xmas-2019.png'
   }
 ];

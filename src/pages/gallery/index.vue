@@ -1,17 +1,20 @@
 <template>
   <div>
     <header-view />
-    <div id="gallery">
-      <div v-for="(c, index) in photos" :key="index" class="thumbnail">
-        <p class="description">{{ c.description }}</p>
-        <img
-          loading="lazy"
-          width="100"
-          :src="c.file"
-          :alt="c.description"
-          class="gallery-icon"
-        />
-      </div>
+
+    <h2 class="Gallery__SubTitle">干支</h2>
+    <div class="gallery">
+      <GalleryPhoto v-for="p in etos" :key="p.file" :photo="p" />
+    </div>
+
+    <h2 class="Gallery__SubTitle">ME</h2>
+    <div class="gallery">
+      <GalleryPhoto v-for="p in me" :key="p.file" :photo="p" />
+    </div>
+
+    <h2 class="Gallery__SubTitle">Others</h2>
+    <div class="gallery">
+      <GalleryPhoto v-for="p in photos" :key="p.file" :photo="p" />
     </div>
   </div>
 </template>
@@ -19,7 +22,8 @@
 <script lang="ts">
 import Vue from 'vue';
 import HeaderView from '~/components/common/HeaderView.vue';
-import { photos } from '~/utils/gallery';
+import GalleryPhoto from '~/components/GalleryPhoto.vue';
+import { etos, me, photos } from '~/utils/gallery';
 
 const title = 'Gallery - The TANAKA WORLD';
 const description = 'Arts made by me';
@@ -44,10 +48,13 @@ export default Vue.extend({
   },
   name: 'Gallery',
   components: {
-    HeaderView
+    HeaderView,
+    GalleryPhoto
   },
   data() {
     return {
+      etos,
+      me,
       photos
     };
   }
@@ -57,7 +64,10 @@ export default Vue.extend({
 <style scoped lang="sass">
 @import ../../styles/color
 
-#gallery
+.Gallery__SubTitle
+  text-align: center
+
+.gallery
   width: 90%
   margin: 0 auto
   display: flex
