@@ -73,7 +73,7 @@
           History
         </h2>
         <div
-          v-for="(history, index) in histories"
+          v-for="(history, index) in jobHistories"
           :key="index"
           class="history-item"
         >
@@ -96,91 +96,21 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { jobHistories, products, snsAccounts } from '~/utils/about';
+import { getAgeLocal } from '~/utils/date';
 
 const title = 'About - The TANAKA WORLD';
 const description = 'Who am I ?';
-const brithday = new Date('1990-11-07');
 
 export default Vue.extend({
   data() {
     return {
-      histories: [
-        {
-          range: '2018.8 ~',
-          link: 'https://merpay.com/',
-          linkLabel: 'Merpay, Inc.',
-          role: 'Software Engineer (Frontend)'
-        },
-        {
-          range: '2017.8 ~',
-          link: 'https://iki.mn/',
-          linkLabel: 'IKIMONO Inc.',
-          role: 'Software Engineer'
-        },
-        {
-          range: '2016.8 ~ 2018.7',
-          link: 'https://www.curiosity-inc.jp/',
-          linkLabel: 'curiosity, inc.',
-          role: 'Software Engineer'
-        },
-        {
-          range: '2016.2 ~',
-          link: 'https://tanaka.world',
-          linkLabel: 'TANAKA WORLD (Self Employed Project)',
-          role: null
-        },
-        {
-          range: '2016.8 ~ 2017.8',
-          link: 'https://returnees.jp/',
-          linkLabel: 'RETURNEES, Inc.',
-          role: 'Lead Engineer'
-        },
-        {
-          range: '2015.3 ~ 2016.7',
-          link: 'http://fukurou-labo.co.jp/',
-          linkLabel: 'Fukurou Labo',
-          role: 'Web Engineer'
-        },
-        {
-          range: '2013.4 ~ 2015.2',
-          link: 'http://www.mti.co.jp/',
-          linkLabel: 'MTI Ltd.',
-          role: 'Backend Developer'
-        }
-      ]
+      jobHistories,
+      snsAccounts,
+      products,
+      level: getAgeLocal('1990-11-07')
     };
   },
-  computed: {
-    snsAccounts() {
-      return [
-        { name: 'Blog', url: 'https://blog.tanaka.world' },
-        { name: 'Twitter', url: 'https://twitter.com/_tanakaworld' },
-        { name: 'Github', url: 'https://github.com/tanakaworld' },
-        { name: 'Slides', url: 'https://speakerdeck.com/tanakaworld' },
-        { name: 'Qiita', url: 'http://qiita.com/tanakaworld' },
-        { name: 'Facebook', url: 'https://www.facebook.com/tanaka.world' },
-        {
-          name: 'LinkedIn',
-          url: 'https://www.linkedin.com/in/yutaro-tanaka-world-7863b249/'
-        }
-      ];
-    },
-    products() {
-      return [
-        { name: 'Proff.io', url: 'https://proff.io' },
-        { name: 'RubyGems', url: 'https://rubygems.org/profiles/tanakaworld' },
-        { name: 'NPM', url: 'https://www.npmjs.com/~tanakaworld' }
-      ];
-    },
-    level(): number {
-      return Math.floor(
-        Math.abs(Date.now() - brithday.getMilliseconds()) /
-          (1000 * 3600 * 24) /
-          365
-      );
-    }
-  },
-  methods: {},
   head: {
     title,
     meta: [
