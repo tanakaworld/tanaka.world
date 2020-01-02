@@ -82,11 +82,31 @@ const config: NuxtConfiguration = {
   },
   loading: { color: '#91C3DC' },
   css: ['~/styles/main.css'],
-  plugins: [],
+  plugins: ['~/plugins/i18n'],
   buildModules: ['@nuxtjs/eslint-module', '@nuxt/typescript-build'],
   build: {
     extractCSS: true
-  }
+  },
+  modules: [
+    [
+      'nuxt-i18n',
+      {
+        locales: ['en', 'ja'],
+        defaultLocale: 'en',
+        vueI18n: {
+          fallbackLocale: 'en',
+          messages: {
+            en: {
+              greeting: 'Hello world!'
+            },
+            ja: {
+              greeting: 'こんにちは'
+            }
+          }
+        }
+      }
+    ]
+  ]
 };
 
 export default config;
