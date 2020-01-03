@@ -1,7 +1,7 @@
 <template>
   <div class="vue-pixel-board">
     <div v-show="showMenu" class="pixel-menu color">
-      <a v-if="showMenu" class="color-button" @click="goToRandom">
+      <button v-if="showMenu" class="color-button" @click="goToRandom">
         <div class="color-button-row">
           <div
             :style="{ 'background-color': suggestColors[0] }"
@@ -22,13 +22,13 @@
             class="color-button-item"
           />
         </div>
-      </a>
+      </button>
     </div>
     <div class="pixel-menu skip">
-      <a v-if="showMenu" class="skip-button" @click="skipAnimation">
-        <div class="skip-button-text">{{ $t('skip') }}</div>
-        <div class="pixel-count-text">{{ pixelCount }}</div>
-      </a>
+      <button v-if="showMenu" class="skip-button" @click="skipAnimation">
+        <div class="skip-button-text" v-text="$t('skip')" />
+        <div class="pixel-count-text" v-text="pixelCount" />
+      </button>
     </div>
     <template v-if="showBoard">
       <div
@@ -158,6 +158,8 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
+@import "~/styles/mixin.sass"
+
 .vue-pixel-board
   position: relative
 
@@ -178,10 +180,12 @@ export default Vue.extend({
 
   .skip-button-text
     color: #fbed29
+    white-space: nowrap
   .pixel-count-text
     color: #d9edf7
 
   .skip-button
+    @include reset-button
     cursor: pointer
     display: flex
     flex-direction: column
@@ -190,6 +194,7 @@ export default Vue.extend({
       margin-top: 0.4rem
 
   .color-button
+    @include reset-button
     cursor: pointer
     display: flex
     &-row

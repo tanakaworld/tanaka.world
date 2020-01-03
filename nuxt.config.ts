@@ -15,7 +15,7 @@ const config: NuxtConfiguration = {
       {
         hid: 'description',
         name: 'description',
-        content: 'tanakaworld is a Software Engineer in Japan.'
+        content: 'tanakaworld is a Software Engineer based in Tokyo.'
       },
       {
         hid: 'keywords',

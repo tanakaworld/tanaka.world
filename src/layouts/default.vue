@@ -4,8 +4,8 @@
     <main>
       <nuxt
         :style="{
-          width: `${mainWidth}px`,
-          height: `${mainHeight}px`
+          width: isScaleMode ? `${mainWidth}px` : 'auto',
+          height: isScaleMode ? `${mainHeight}px` : 'auto'
         }"
       />
     </main>
@@ -39,6 +39,11 @@ export default Vue.extend({
   beforeDestroy() {
     this.fixBody = false;
     window.removeEventListener('resize', this.updateViePixelHeight);
+  },
+  computed: {
+    isScaleMode() {
+      return this.$route.path === this.localePath('index');
+    }
   },
   methods: {
     updateViePixelHeight() {

@@ -58,6 +58,8 @@ export default Vue.extend({
 
 <style scoped lang="sass">
 .Gallery
+  max-width: 900px
+
   .Gallery__SubTitle
     text-align: center
 

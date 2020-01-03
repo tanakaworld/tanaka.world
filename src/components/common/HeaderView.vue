@@ -11,6 +11,9 @@
         <li>
           <n-link :to="localePath('gallery')" v-text="$t('gallery')" />
         </li>
+        <li>
+          <LocalSwitchButton />
+        </li>
       </ul>
     </nav>
   </header>
@@ -19,7 +22,13 @@
 <script lang="ts">
 import Vue from 'vue';
 
-export default Vue.extend({});
+import LocalSwitchButton from '~/components/LocaleSwitchButton.vue';
+
+export default Vue.extend({
+  components: {
+    LocalSwitchButton
+  }
+});
 </script>
 
 <style scoped lang="sass">
@@ -37,6 +46,8 @@ header
     flex: 2
     a
       padding: 10px
+    .nuxt-link-exact-active
+      background-color: initial
   #nav
     ul
       display: flex
@@ -50,6 +61,7 @@ header
         padding: 10px
   a
     display: inline-block
+    white-space: nowrap
     color: var(--color-white)
     text-decoration: none
     border-radius: 3px
