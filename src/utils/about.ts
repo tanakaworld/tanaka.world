@@ -53,7 +53,7 @@ export const snsAccounts: Account[] = [
   { name: 'Facebook', url: 'https://www.facebook.com/tanaka.world' },
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/yutaro-tanaka-world-7863b249/'
+    url: 'https://www.linkedin.com/in/yutaro-tanaka-7863b249/'
   },
   {
     name: 'YouTube',
