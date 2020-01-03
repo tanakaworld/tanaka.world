@@ -28,7 +28,8 @@ export default Vue.extend({
       mainWidth: 0,
       mainWidthMax: 600,
       mainHeight: 0,
-      fixBody: true
+      fixBody: true,
+      isScaleMode: true
     };
   },
   mounted() {
@@ -39,11 +40,6 @@ export default Vue.extend({
   beforeDestroy() {
     this.fixBody = false;
     window.removeEventListener('resize', this.updateViePixelHeight);
-  },
-  computed: {
-    isScaleMode() {
-      return this.$route.path === this.localePath('index');
-    }
   },
   methods: {
     updateViePixelHeight() {
@@ -67,6 +63,13 @@ export default Vue.extend({
         class: this.fixBody ? 'no-scrodll' : ''
       }
     };
+  },
+  watch: {
+    $route(to) {
+      this.$nextTick(() => {
+        this.isScaleMode = to.path === this.localePath('index');
+      });
+    }
   }
 });
 </script>
