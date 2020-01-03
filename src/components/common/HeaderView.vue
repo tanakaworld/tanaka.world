@@ -1,21 +1,15 @@
 <template>
   <header>
     <h1 id="title">
-      <n-link to="/">
-        TANAKA WORLD
-      </n-link>
+      <n-link :to="localePath('index')" v-text="$t('title')" />
     </h1>
     <nav id="nav">
       <ul>
         <li>
-          <n-link to="/about">
-            About
-          </n-link>
+          <n-link :to="localePath('about')" v-text="$t('about')" />
         </li>
         <li>
-          <n-link to="/gallery">
-            Gallery
-          </n-link>
+          <n-link :to="localePath('gallery')" v-text="$t('gallery')" />
         </li>
       </ul>
     </nav>
@@ -25,9 +19,7 @@
 <script lang="ts">
 import Vue from 'vue';
 
-export default Vue.extend({
-  name: 'HeaderView'
-});
+export default Vue.extend({});
 </script>
 
 <style scoped lang="sass">

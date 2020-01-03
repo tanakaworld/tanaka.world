@@ -26,7 +26,7 @@
     </div>
     <div class="pixel-menu skip">
       <a v-if="showMenu" class="skip-button" @click="skipAnimation">
-        <div class="skip-button-text">Skip</div>
+        <div class="skip-button-text">{{ $t('skip') }}</div>
         <div class="pixel-count-text">{{ pixelCount }}</div>
       </a>
     </div>
@@ -130,7 +130,9 @@ export default Vue.extend({
 
       // refresh
       const color = randomcolor();
-      this.$router.push(`/?color=${color.slice(1)}`); // remove '#'
+      this.$router.push(
+        this.localePath({ name: 'index', query: { color: color.slice(1) } })
+      ); // remove '#'
       this.suggestColors = generateSuggestColors();
       this.initPixels();
 

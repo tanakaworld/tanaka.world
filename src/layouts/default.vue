@@ -9,16 +9,19 @@
         }"
       />
     </main>
+    <footer-view />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import HeaderView from '~/components/common/HeaderView.vue';
+import FooterView from '~/components/common/FooterView.vue';
 
 export default Vue.extend({
   components: {
-    HeaderView
+    HeaderView,
+    FooterView
   },
   data() {
     return {

@@ -41,6 +41,10 @@ a {
   color: var(--color-sky-blue);
 }
 
+a:hover {
+  background-color: var(--color-gray);
+}
+
 main {
   display: flex;
   align-items: center;
@@ -50,6 +54,10 @@ main {
 section {
   padding: 20px;
   color: var(--color-white);
+}
+
+.nuxt-link-exact-active {
+  background-color: var(--color-gray);
 }
 
 .nuxt-link-exact-active {

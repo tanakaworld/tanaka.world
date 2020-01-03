@@ -54,6 +54,10 @@ export const snsAccounts: Account[] = [
   {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/yutaro-tanaka-world-7863b249/'
+  },
+  {
+    name: 'YouTube',
+    url: 'https://www.youtube.com/channel/UCO4zZE1KFP3_VA33aEzXgFg'
   }
 ];
 

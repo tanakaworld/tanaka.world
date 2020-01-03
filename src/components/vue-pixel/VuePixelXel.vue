@@ -80,7 +80,7 @@ export default Vue.extend({
               )
             );
             setTimeout(() => {
-              this.$router.push('/about');
+              this.$router.push(this.localePath('about'));
             }, 1000);
           }, 500);
         }

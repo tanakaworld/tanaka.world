@@ -1,18 +1,18 @@
 <template>
   <div class="Gallery">
-    <h2 class="Gallery__SubTitle">干支</h2>
+    <h2 class="Gallery__SubTitle" v-text="$t('zodiac')" />
     <div class="Gallery__Section">
-      <GalleryPhoto v-for="p in etos" :key="p.file" :photo="p" />
+      <GalleryPhoto v-for="p in zodiacs" :key="p.file" :photo="p" />
     </div>
 
-    <h2 class="Gallery__SubTitle">ME</h2>
+    <h2 class="Gallery__SubTitle" v-text="$t('me')" />
     <div class="Gallery__Section">
-      <GalleryPhoto v-for="p in me" :key="p.file" :photo="p" />
+      <GalleryPhoto v-for="p in portraits" :key="p.file" :photo="p" />
     </div>
 
-    <h2 class="Gallery__SubTitle">Others</h2>
+    <h2 class="Gallery__SubTitle" v-text="$t('friends')" />
     <div class="Gallery__Section">
-      <GalleryPhoto v-for="p in photos" :key="p.file" :photo="p" />
+      <GalleryPhoto v-for="p in friends" :key="p.file" :photo="p" />
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import GalleryPhoto from '~/components/GalleryPhoto.vue';
-import { etos, me, photos } from '~/utils/gallery';
+import { zodiacs, portraits, friends } from '~/utils/gallery';
 
 const title = 'Gallery - The TANAKA WORLD';
 const description = 'Arts made by me';
@@ -31,9 +31,9 @@ export default Vue.extend({
   },
   data() {
     return {
-      etos,
-      me,
-      photos
+      zodiacs,
+      portraits,
+      friends
     };
   },
   head: {

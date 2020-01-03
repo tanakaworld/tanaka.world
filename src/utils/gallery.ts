@@ -1,163 +1,159 @@
 import { Photo } from '~/types/app/gallery';
 
-export const etos: Photo[] = [
+export const zodiacs: Photo[] = [
   {
-    description: '2020 子',
+    description: 'gallery_photo.zodiac.rat',
     file: '/img/tanakaworld-2020-ne.png'
   },
   {
-    description: '2019 亥',
+    description: 'gallery_photo.zodiac.boar',
     file: '/img/tanakaworld-2019-iee.png'
   },
   {
-    description: '2018 戌',
+    description: 'gallery_photo.zodiac.dog',
     file: '/img/tanakaworld-2018-inu.png'
   },
   {
-    description: '2017 酉',
+    description: 'gallery_photo.zodiac.rooster',
     file: '/img/me-2017-tori-v1.0.0.500.png'
   },
   {
-    description: '2016 申',
+    description: 'gallery_photo.zodiac.monkey',
     file: '/img/8bit-me-mon-2016.png'
   },
   {
-    description: '2015 未',
+    description: 'gallery_photo.zodiac.sheep',
     file: '/img/8bit-me-sheep.png'
   }
 ];
 
-export const me: Photo[] = [
+export const portraits: Photo[] = [
   {
-    description: 'me',
+    description: 'gallery_photo.portraits.me_first',
     file: '/img/me-real.png'
   },
   {
-    description: '2D',
+    description: 'gallery_photo.portraits.two_d',
     file: '/img/tanakaworld-2d.png'
   },
   {
-    description: 'Dash',
+    description: 'gallery_photo.portraits.dash',
     file: '/img/tanakaworld-2d-dash.gif'
   },
   {
-    description: 'santa',
+    description: 'gallery_photo.portraits.santa',
     file: '/img/8bit-me-santa.png'
   },
   {
-    description: '2014 Me',
+    description: 'gallery_photo.portraits.me_2014',
     file: '/img/8bit_me_clear.jpg'
   },
   {
-    description: 'Full Body',
+    description: 'gallery_photo.portraits.me_full',
     file: '/img/me-pixel-all.png'
   },
   {
-    description: 'Face',
+    description: 'gallery_photo.portraits.me_face',
     file: '/img/me-real-face.png'
   },
   {
-    description: 'Face (secret)',
+    description: 'gallery_photo.portraits.me_face_secret',
     file: '/img/me-real-face-secret.png'
   },
   {
-    description: '2015 X-mas',
+    description: 'gallery_photo.portraits.xmas_2015',
     file: '/img/8bit-me-santa-2015.png'
   },
   {
-    description: 'Fly up 2017',
+    description: 'gallery_photo.portraits.flying_2017',
     file: '/img/me-tori-2017-gif.gif'
   },
   {
-    description: 'Cap',
+    description: 'gallery_photo.portraits.cap',
     file: '/img/me-real-face-cap.png'
   },
   {
-    description: '2018 Me',
+    description: 'gallery_photo.portraits.me_2018',
     file: '/img/tanakaworld-2018.png'
   },
   {
-    description: '2018 No Cap',
+    description: 'gallery_photo.portraits.me_2018_no_cap',
     file: '/img/tanakaworld-2018-no-cap.png'
   },
   {
-    description: '2018 Naked',
+    description: 'gallery_photo.portraits.me_2018_naked',
     file: '/img/tanakaworld-2018-nkd.png'
   },
   {
-    description: '2018 Halloween',
+    description: 'gallery_photo.portraits.me_2018_halloween',
     file: '/img/tanakaworld-2018-helloween.png'
   },
   {
-    description: 'USA 2019',
+    description: 'gallery_photo.portraits.me_2019_usa',
     file: '/img/tanakaworld-usa-2019.png'
   },
   {
-    description: 'XMAS 2019',
+    description: 'gallery_photo.portraits.xmas_2019',
     file: '/img/tanakaworld-xmas-2019.png'
   }
 ];
 
-export const photos: Photo[] = [
+export const friends: Photo[] = [
   {
-    description: 'Blog Logo',
+    description: 'gallery_photo.friends.blog_logo',
     file: '/img/ForXDevelopersLogo.png'
   },
   {
-    description: 'MacBook',
+    description: 'gallery_photo.friends.macbook',
     file: '/img/mac_sq.png'
   },
   {
-    description: 'Megumi Katoh',
+    description: 'gallery_photo.friends.megumi_katoh',
     file: '/img/megumi-katoh.png'
   },
 
   {
-    description: 'ツラタン',
+    description: 'gallery_photo.friends.tsuratan',
     file: '/img/tsura-tang.png'
   },
   {
-    description: 'Humans Seq',
+    description: 'gallery_photo.friends.humans_seq',
     file: '/img/sequence-human.gif'
   },
   {
-    description: 'Chick',
+    description: 'gallery_photo.friends.icon_chick',
     file: '/img/hiyoko.png'
   },
   {
-    description: '@__syumai',
+    description: 'gallery_photo.friends.icon_syumai',
     file: '/img/syumai.png'
   },
   {
-    description: '@tenntenn',
+    description: 'gallery_photo.friends.icon_tenntenn',
     file: '/img/tenntenn.png'
   },
   {
-    description: '@swaaan',
-    file: '/img/swaaan-sm.png'
-  },
-  {
-    description: '@swaaan',
+    description: 'gallery_photo.friends.icon_swaaan',
     file: '/img/swaaan-dash.png'
   },
   {
-    description: '@codehex',
+    description: 'gallery_photo.friends.icon_codehex',
     file: '/img/codehex.png'
   },
   {
-    description: '@8saki',
+    description: 'gallery_photo.friends.icon_8saki',
     file: '/img/8saki.png'
   },
   {
-    description: 'Ms. Dyamond',
+    description: 'gallery_photo.friends.icon_ms_dyamond',
     file: '/img/ms-dia.png'
   },
   {
-    description: '@peranikov',
+    description: 'gallery_photo.friends.icon_peranikov',
     file: '/img/peranikov.png'
   },
   {
-    description: '@denoland',
+    description: 'gallery_photo.friends.icon_denoland',
     file: '/img/deno.gif'
   }
 ];

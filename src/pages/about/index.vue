@@ -11,83 +11,60 @@
         </div>
         <div class="profile-property">
           <div>
-            <router-link to="http://tanaka.world">
-              tanakaworld
-            </router-link>
+            <n-link :to="localePath('index')" v-text="$t('name')" />
           </div>
-          <div>Software Engineer</div>
-          <div>LV.{{ level }}</div>
-          <div>
-            たかさ 1.74 m
-          </div>
-          <div>
-            おもさ 58.0 kg
-          </div>
+          <div v-text="$t('job')" />
+          <div v-text="$t('level', [level])" />
+          <div v-text="$t('height', ['1.74'])" />
+          <div v-text="$t('weight', ['57.0'])" />
         </div>
       </div>
-      <div class="profile-row">
-        Web
-        に関することは何でもやるマン。上場企業・スタートアップ・個人事業主を経て、フロントエンドからインフラまで多くのプロジェクトに携わる。JavaScript・C#・Ruby
-        を用いたアプリケーション開発を得意としている。
-        ピクセルアート、ルービックキューブ、イヌが好き。趣味は、
-        <a
-          href="https://www.youtube.com/watch?v=qpkCstorMxs&t=1207s"
-          target="_blank"
-        >
-          パズル
-        </a>
-        ・将棋（ウォーズ初段）。
-      </div>
+      <div class="profile-row">{{ $t('bio') }}</div>
       <div class="profile-row no-border sns-links-wrap">
-        <h2 class="profile-row-title">
-          SNS
-        </h2>
+        <h2 class="profile-row-title" v-text="$t('links')" />
         <div v-for="(account, index) in snsAccounts" :key="index">
           <a
             :class="`sns-link-${account.name.toLowerCase()}`"
             :href="account.url"
-            class="sns-link sns-link-twitter"
+            class="sns-link"
             target="_blank"
-          >
-            {{ account.name }}
-          </a>
+            v-text="account.name"
+          />
         </div>
       </div>
       <div class="profile-row no-border sns-links-wrap">
-        <h2 class="profile-row-title">
-          Product
-        </h2>
+        <h2 class="profile-row-title" v-text="$t('products')" />
         <div v-for="(p, index) in products" :key="index">
           <a
             :class="`sns-link-${p.name.toLowerCase()}`"
             :href="p.url"
-            class="sns-link sns-link-twitter"
+            class="sns-link"
             target="_blank"
-          >
-            {{ p.name }}
-          </a>
+            v-text="p.name"
+          />
         </div>
       </div>
       <div class="profile-row no-border histories-wrap">
-        <h2 class="profile-row-title">
-          History
-        </h2>
+        <h2 class="profile-row-title" v-text="$t('timeline')" />
         <div
           v-for="(history, index) in jobHistories"
           :key="index"
           class="history-item"
         >
-          <div class="history-item-range">
-            {{ history.range }}
-          </div>
+          <div class="history-item-range" v-text="history.range" />
           <div>
-            <a :href="history.link" class="history-item-link" target="_blank">
-              {{ history.linkLabel }}
-            </a>
+            <a
+              :href="history.link"
+              class="history-item-link"
+              target="_blank"
+              v-text="history.linkLabel"
+            />
           </div>
-          <div v-if="history.role" class="history-item-role">
-            - {{ history.role }}
-          </div>
+          <div
+            v-if="history.role"
+            class="history-item-role"
+            v-text="`- ${history.role}`"
+          />
         </div>
       </div>
     </div>
