@@ -13,7 +13,6 @@ import { mapGetters } from 'vuex';
 import * as VuePixelStore from '~/store/modules/vue-pixel';
 
 export default Vue.extend({
-  name: 'VuePixelXel',
   props: {
     debug: {
       type: Boolean,

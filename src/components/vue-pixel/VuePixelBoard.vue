@@ -60,13 +60,9 @@ import { mapGetters } from 'vuex';
 import randomcolor from 'randomcolor';
 import * as VuePixelStore from '~/store/modules/vue-pixel';
 import VuePixelXel from '~/components/vue-pixel/VuePixelXel.vue';
-
-const generateSuggestColors = () => {
-  return [randomcolor(), randomcolor(), randomcolor(), randomcolor()];
-};
+import { generateSuggestColors } from '~/utils/pixel';
 
 export default Vue.extend({
-  name: 'VuePixelBoard',
   components: {
     VuePixelXel
   },
