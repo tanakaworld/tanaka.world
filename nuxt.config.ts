@@ -91,7 +91,12 @@ const config: NuxtConfiguration = {
     [
       'nuxt-i18n',
       {
-        locales: [{ code: 'en', file: 'en.ts' }, { code: 'ja', file: 'ja.ts' }],
+        baseUrl: 'https://tanaka.world',
+        seo: true,
+        locales: [
+          { code: 'en', file: 'en.ts', iso: 'en-US' },
+          { code: 'ja', file: 'ja.ts', iso: 'ja-JP' }
+        ],
         lazy: true,
         langDir: 'locales/',
         defaultLocale: 'en',
