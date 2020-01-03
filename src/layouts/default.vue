@@ -61,7 +61,8 @@ export default Vue.extend({
       bodyAttrs: {
         // @ts-ignore
         class: this.fixBody ? 'no-scrodll' : ''
-      }
+      },
+      ...this.$nuxtI18nSeo()
     };
   },
   watch: {

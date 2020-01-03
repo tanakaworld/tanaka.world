@@ -92,7 +92,8 @@ const config: NuxtConfiguration = {
       'nuxt-i18n',
       {
         baseUrl: 'https://tanaka.world',
-        seo: true,
+        // used `this.$nuxtI18nSeo()` in layouts/default.vue
+        seo: false,
         locales: [
           { code: 'en', file: 'en.ts', iso: 'en-US' },
           { code: 'ja', file: 'ja.ts', iso: 'ja-JP' }
