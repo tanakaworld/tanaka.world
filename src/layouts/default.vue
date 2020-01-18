@@ -66,10 +66,13 @@ export default Vue.extend({
     };
   },
   watch: {
-    $route(to) {
-      this.$nextTick(() => {
-        this.isScaleMode = to.path === this.localePath('index');
-      });
+    $route: {
+      handler: function(to) {
+        this.$nextTick(() => {
+          this.isScaleMode = to.path === this.localePath('index');
+        });
+      },
+      immediate: true
     }
   }
 });
