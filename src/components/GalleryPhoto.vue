@@ -8,7 +8,7 @@
       loading="lazy"
       width="100"
       :src="photo.file"
-      :alt="photo.description"
+      :alt="$t(photo.description)"
       class="GalleryPhoto__Icon"
     />
   </div>
