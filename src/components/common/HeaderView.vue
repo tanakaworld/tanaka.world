@@ -37,15 +37,14 @@ header
   flex-flow: row
   flex-wrap: wrap
 
-  color: var(--color-white)
-  background: var(--color-dark-gray)
-
   margin-bottom: 48px
 
   #title
     flex: 2
     a
       padding: 10px
+      color: var(--color-link-text)
+    /* overwrite main style */
     .nuxt-link-exact-active
       background-color: initial
   #nav
@@ -59,14 +58,9 @@ header
       a
         margin: 10px
         padding: 10px
-  a
-    display: inline-block
-    white-space: nowrap
-    color: var(--color-white)
-    text-decoration: none
-    border-radius: 3px
-    &.active, &:hover
-      background-color: var(--color-gray)
+        display: inline-block
+        white-space: nowrap
+        border-radius: 3px
 
 @media screen and (max-width: 730px)
   header

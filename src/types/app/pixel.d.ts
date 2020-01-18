@@ -1,6 +1,6 @@
 export interface Xel {
   debug?: boolean;
   static?: boolean;
-  before: string;
+  before?: string;
   after?: string;
 }

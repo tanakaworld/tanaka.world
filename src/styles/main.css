@@ -1,8 +1,13 @@
 :root {
-  --color-white: #d9edf7;
+  --color-text: #14171a;
+  --color-text-sub: #657786;
+  --color-link-text: #1b95e0;
+  --color-bg: #e7e7e7;
   --color-sky-blue: #91c3dc;
   --color-gray: #888888;
-  --color-dark-gray: #555555;
+
+  --color-white: #fff;
+  --color-warning: #fbed29;
 }
 
 @font-face {
@@ -28,8 +33,8 @@ body {
   font-family: Misaki Gothic, Misaki Mincho, Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
-  background: var(--color-dark-gray);
-  color: var(--color-white);
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 
 body.no-scroll {
@@ -38,11 +43,11 @@ body.no-scroll {
 
 a {
   text-decoration: none;
-  color: var(--color-sky-blue);
+  color: var(--color-link-text);
 }
 
 a:hover {
-  background-color: var(--color-gray);
+  text-decoration: underline;
 }
 
 main {
@@ -53,9 +58,29 @@ main {
 
 section {
   padding: 20px;
-  color: var(--color-white);
 }
 
 .nuxt-link-exact-active {
-  background-color: var(--color-gray);
+  background-color: var(--color-link-text);
+  color: var(--color-white);
+}
+.nuxt-link-exact-active:hover {
+  text-decoration: none;
+  cursor: default;
+}
+
+button {
+  color: var(--color-text);
+}
+
+*.-textSub {
+  color: var(--color-text-sub);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #fff;
+    --color-text-sub: #8899a6;
+    --color-bg: #14202a;
+  }
 }

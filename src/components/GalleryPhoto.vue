@@ -1,6 +1,9 @@
 <template>
   <div class="GalleryPhoto">
-    <p class="GalleryPhoto__Description" v-text="$t(photo.description)" />
+    <p
+      class="GalleryPhoto__Description -textSub"
+      v-text="$t(photo.description)"
+    />
     <img
       loading="lazy"
       width="100"

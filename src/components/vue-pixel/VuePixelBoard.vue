@@ -175,10 +175,8 @@ export default Vue.extend({
       flex-direction: column
 
   .skip-button-text
-    color: #fbed29
+    color: var(--color-warning)
     white-space: nowrap
-  .pixel-count-text
-    color: #d9edf7
 
   .skip-button
     @include reset-button
@@ -213,9 +211,13 @@ export default Vue.extend({
     .pixelCountDisplay
       height: 10px
 
-  @media screen and (max-width: 730px)
-    .vue-pixel-board
-      margin-top: 40px
-    .pixel-menu
-      top: -40px
+@media screen and (max-width: 730px)
+  .vue-pixel-board
+    margin-top: 40px
+  .pixel-menu
+    top: -40px
+
+@media (prefers-color-scheme: light)
+  .skip-button-text
+    text-shadow: -1px 0 var(--color-text), 0 1px var(--color-text), 1px 0 var(--color-text), 0 -1px var(--color-text);
 </style>

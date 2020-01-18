@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div>
+    <div class="-textSub">
       (c) 2020 tanakaworld
     </div>
   </footer>

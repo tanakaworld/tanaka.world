@@ -13,10 +13,10 @@
           <div>
             <n-link :to="localePath('index')" v-text="$t('name')" />
           </div>
-          <div v-text="$t('job')" />
-          <div v-text="$t('level', [level])" />
-          <div v-text="$t('height', ['1.74'])" />
-          <div v-text="$t('weight', ['57.0'])" />
+          <div class="-textSub" v-text="$t('job')" />
+          <div class="-textSub" v-text="$t('level', [level])" />
+          <div class="-textSub" v-text="$t('height', ['1.74'])" />
+          <div class="-textSub" v-text="$t('weight', ['57.0'])" />
         </div>
       </div>
       <div class="profile-row">{{ $t('bio') }}</div>
@@ -51,7 +51,7 @@
           :key="index"
           class="history-item"
         >
-          <div class="history-item-range" v-text="history.range" />
+          <div class="history-item-range -textSub" v-text="history.range" />
           <div>
             <a
               :href="history.link"
@@ -62,7 +62,7 @@
           </div>
           <div
             v-if="history.role"
-            class="history-item-role"
+            class="history-item-role -textSub"
             v-text="`- ${history.role}`"
           />
         </div>

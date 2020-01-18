@@ -24,7 +24,7 @@ export default Vue.extend({
     },
     beforeColor: {
       type: String,
-      required: true
+      default: null
     },
     afterColor: {
       type: String,
