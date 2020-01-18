@@ -58,6 +58,10 @@ export const snsAccounts: Account[] = [
   {
     name: 'YouTube',
     url: 'https://www.youtube.com/channel/UCO4zZE1KFP3_VA33aEzXgFg'
+  },
+  {
+    name: 'Proff',
+    url: 'https://proff.io/p/tanakaworld'
   }
 ];
 
