@@ -48,7 +48,7 @@ export const snsAccounts: Account[] = [
   { name: 'Blog', url: 'https://blog.tanaka.world' },
   { name: 'Twitter', url: 'https://twitter.com/_tanakaworld' },
   { name: 'Github', url: 'https://github.com/tanakaworld' },
-  { name: 'Slides', url: 'https://speakerdeck.com/tanakaworld' },
+  { name: 'Speaker Deck', url: 'https://speakerdeck.com/tanakaworld' },
   { name: 'Qiita', url: 'http://qiita.com/tanakaworld' },
   { name: 'Facebook', url: 'https://www.facebook.com/tanaka.world' },
   {
