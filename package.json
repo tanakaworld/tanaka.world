@@ -71,7 +71,7 @@
     "jest": "^24.9.0",
     "jest-date-mock": "^1.0.7",
     "lint-staged": "^8.2.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "nodemon": "^1.11.0",
     "prettier": "^1.16.4",
     "sass-loader": "^7.1.0",
