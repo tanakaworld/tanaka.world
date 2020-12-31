@@ -66,7 +66,8 @@ const locale: Locale = {
       icon_8saki: '@8saki',
       icon_ms_dyamond: 'Ms. Dyamond',
       icon_peranikov: '@peranikov',
-      icon_denoland: 'denoland'
+      icon_denoland: 'denoland',
+      icon_mookjp: '@mookjp'
     }
   }
 };

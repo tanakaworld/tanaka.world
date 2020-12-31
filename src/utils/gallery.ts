@@ -2,6 +2,10 @@ import { Photo } from '~/types/app/gallery';
 
 export const zodiacs: Photo[] = [
   {
+    description: 'gallery_photo.zodiac.ox',
+    file: '/img/tanakaworld-2021-ushi.png'
+  },
+  {
     description: 'gallery_photo.zodiac.rat',
     file: '/img/tanakaworld-2020-ne.png'
   },
@@ -155,5 +159,9 @@ export const friends: Photo[] = [
   {
     description: 'gallery_photo.friends.icon_denoland',
     file: '/img/deno.gif'
+  },
+  {
+    description: 'gallery_photo.friends.icon_mookjp',
+    file: '/img/mookjp.png'
   }
 ];

@@ -64,6 +64,7 @@ export interface Locale {
       icon_ms_dyamond: string;
       icon_peranikov: string;
       icon_denoland: string;
+      icon_mookjp: string;
     };
   };
 }
