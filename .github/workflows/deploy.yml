@@ -15,12 +15,12 @@ jobs:
         node-version: [12.10.0]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, build, and test
+      - name: test and generate
         run: |
           npm ci
           npm run lint
@@ -28,8 +28,7 @@ jobs:
           npm run generate
         env:
           CI: true
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
+      - uses: actions/upload-artifact@v2
         with:
           name: dist
           path: dist
