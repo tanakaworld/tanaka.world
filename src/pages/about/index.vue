@@ -16,7 +16,7 @@
           <div class="-textSub" v-text="$t('job')" />
           <div class="-textSub" v-text="$t('level', [level])" />
           <div class="-textSub" v-text="$t('height', ['1.74'])" />
-          <div class="-textSub" v-text="$t('weight', ['57.0'])" />
+          <div class="-textSub" v-text="$t('weight', ['55.0'])" />
         </div>
       </div>
       <div class="profile-row">{{ $t('bio') }}</div>
