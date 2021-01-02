@@ -9,6 +9,7 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'js', 'vue', 'json'],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts?)$',
+  testPathIgnorePatterns: ['<rootDir>/cypress'],
   transform: {
     '^.+\\.ts?$': 'ts-jest',
     '^.+\\.vue?$': 'vue-jest',
