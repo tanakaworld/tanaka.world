@@ -43,12 +43,12 @@
     "@nuxtjs/google-analytics": "2.2.2",
     "color-convert": "2.0.1",
     "cross-env": "6.0.3",
-    "normalize.css": "^8.0.1",
+    "normalize.css": "8.0.1",
     "nuxt": "2.11.0",
-    "nuxt-i18n": "^6.4.1",
+    "nuxt-i18n": "6.4.1",
     "randomcolor": "0.5.4",
     "typescript": "3.7.4",
-    "vue-i18n": "^8.15.3",
+    "vue-i18n": "8.15.3",
     "vuex-typescript-fsa": "0.4.0"
   },
   "devDependencies": {
