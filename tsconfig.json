@@ -21,6 +21,6 @@
     },
     "types": ["@types/node", "@nuxt/types", "@types/jest", "nuxt-i18n"]
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "./cypress/**/*.ts"],
   "includes": ["./src/**/*.ts", "/src/**/*.vue"]
 }
