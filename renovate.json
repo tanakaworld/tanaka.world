@@ -1,0 +1,97 @@
+{
+  "extends": [
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases",
+    ":ignoreUnstable",
+    ":prNotPending",
+    ":renovatePrefix",
+    ":semanticPrefixFixDepsChoreOthers",
+    ":updateNotScheduled",
+    ":ignoreModulesAndTests",
+    ":maintainLockFilesDisabled",
+    ":autodetectPinVersions",
+    ":prHourlyLimit2",
+    ":prConcurrentLimit10",
+    ":pinAllExceptPeerDependencies",
+    ":timezone(Asia/Tokyo)",
+    ":label(Renovate)",
+    "group:recommended",
+    "schedule:weekly",
+    "helpers:disableTypesNodeMajor"
+  ],
+  "packageRules": [
+    {
+      "depTypeList": ["dependencies"],
+      "packagePatterns": ["*"],
+      "updateTypes": ["patch"],
+      "groupName": "all patch dependencies",
+      "paths": ["package.json", "Gemfile"]
+    },
+    {
+      "depTypeList": ["dependencies"],
+      "packagePatterns": ["*"],
+      "updateTypes": ["minor"],
+      "groupName": "all minor dependencies",
+      "paths": ["package.json", "Gemfile"]
+    },
+    {
+      "depTypeList": ["devDependencies"],
+      "packagePatterns": ["*"],
+      "updateTypes": ["patch"],
+      "groupName": "all patch devDependencies",
+      "paths": ["package.json", "Gemfile"]
+    },
+    {
+      "depTypeList": ["devDependencies"],
+      "packagePatterns": ["*"],
+      "updateTypes": ["minor"],
+      "groupName": "all minor devDependencies",
+      "paths": ["package.json", "Gemfile"]
+    },
+    {
+      "groupName": "jest sync packages",
+      "sourceUrlPrefixes": ["https://github.com/facebook/jest"],
+      "packageNames": ["@types/jest", "ts-jest"],
+      "commitMessageSuffix": "**Warning: dependencies out of sync**",
+      "prBodyNotes": "**ATTENTION:** Jest packages should be the same MAJOR version."
+    },
+    {
+      "depTypeList": ["dependencies"],
+      "labels": ["Renovate", "dependencies"],
+      "vulnerabilityAlerts": {
+        "labels": ["Renovate", "dependencies", "Security"]
+      }
+    },
+    {
+      "depTypeList": ["devDependencies"],
+      "labels": ["Renovate", "devDependencies"],
+      "vulnerabilityAlerts": {
+        "labels": ["Renovate", "devDependencies", "Security"]
+      }
+    },
+    {
+      "packageNames": ["vuex-typescript-fsa"],
+      "allowedVersions": "0.4.0"
+    }
+  ],
+  "dependencies": {
+    "extends": [":labels(Renovate, dependencies)"]
+  },
+  "devDependencies": {
+    "extends": [":automergeMinor", ":labels(Renovate, devDependencies)"],
+    "schedule": [
+      "after 12am every weekday",
+      "before 6am every weekday",
+      "every friday"
+    ]
+  },
+  "vulnerabilityAlerts": {
+    "assignees": ["@tanakaworld"],
+    "labels": ["Renovate", "dependencies", "Security"],
+    "schedule": ["at any time"]
+  },
+  "node": {
+    "supportPolicy": ["lts_latest"]
+  },
+  "bundler": { "enabled": true }
+}
