@@ -1,8 +1,6 @@
 <template>
   <footer>
-    <div class="-textSub">
-      (c) 2021 tanakaworld
-    </div>
+    <div class="-textSub">(c) 2021 tanakaworld</div>
   </footer>
 </template>
 

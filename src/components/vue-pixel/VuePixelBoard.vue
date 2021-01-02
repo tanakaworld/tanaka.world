@@ -64,30 +64,30 @@ import { generateSuggestColors } from '~/utils/pixel';
 
 export default Vue.extend({
   components: {
-    VuePixelXel
+    VuePixelXel,
   },
   props: {
     seed: {
       type: Array,
-      required: true
+      required: true,
     },
     debug: {
       type: Boolean,
       required: false,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       showBoard: true,
-      suggestColors: generateSuggestColors()
+      suggestColors: generateSuggestColors(),
     };
   },
   computed: {
     ...mapGetters({
       showMenu: `${VuePixelStore.namespace}/showMenu`,
-      pixelCount: `${VuePixelStore.namespace}/pixelCount`
-    })
+      pixelCount: `${VuePixelStore.namespace}/pixelCount`,
+    }),
   },
   mounted() {
     this.initPixels();
@@ -109,7 +109,7 @@ export default Vue.extend({
     },
     skipAnimation() {
       const xels: HTMLElement[] = [];
-      Object.keys(this.$refs).forEach(key => {
+      Object.keys(this.$refs).forEach((key) => {
         const component = this.$refs[key];
         if (key.startsWith('xel.') && component[0] instanceof Vue) {
           xels.push(component[0]);
@@ -138,18 +138,18 @@ export default Vue.extend({
     },
     initPixels() {
       const pixelCount = Object.keys(this.$refs).filter(
-        k => !this.$refs[k][0].static
+        (k) => !this.$refs[k][0].static
       ).length;
       this.$store.commit(
         VuePixelStore.SetPixelTotal(
           {
-            pixelCount
+            pixelCount,
           },
           { namespace: VuePixelStore.namespace }
         )
       );
-    }
-  }
+    },
+  },
 });
 </script>
 

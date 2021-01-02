@@ -12,31 +12,31 @@ import { Xel } from '~/types/app/pixel';
 
 export default Vue.extend({
   components: {
-    VuePixelBoard
+    VuePixelBoard,
   },
   props: {
     mainColor: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   data(): { seed: Xel[][] } {
     return {
-      seed: []
+      seed: [],
     };
   },
   computed: {
     ...mapGetters({
-      isGameEnd: `${VuePixelStore.namespace}/gameEnd`
-    })
+      isGameEnd: `${VuePixelStore.namespace}/gameEnd`,
+    }),
   },
   watch: {
     mainColor: {
       handler(val) {
         this.seed = generateSeed(val);
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
   mounted() {
     this.$store.dispatch(
@@ -45,7 +45,7 @@ export default Vue.extend({
         { namespace: VuePixelStore.namespace }
       )
     );
-  }
+  },
 });
 </script>
 

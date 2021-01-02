@@ -27,13 +27,13 @@ const description = 'Arts made by me';
 
 export default Vue.extend({
   components: {
-    GalleryPhoto
+    GalleryPhoto,
   },
   data() {
     return {
       zodiacs,
       portraits,
-      friends
+      friends,
     };
   },
   head: {
@@ -44,15 +44,15 @@ export default Vue.extend({
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://tanaka.world/gallery'
+        content: 'https://tanaka.world/gallery',
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: description
-      }
-    ]
-  }
+        content: description,
+      },
+    ],
+  },
 });
 </script>
 

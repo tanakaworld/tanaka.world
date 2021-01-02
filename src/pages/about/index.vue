@@ -85,7 +85,7 @@ export default Vue.extend({
       jobHistories,
       snsAccounts,
       products,
-      level: getAgeLocal('1990-11-07')
+      level: getAgeLocal('1990-11-07'),
     };
   },
   head: {
@@ -96,15 +96,15 @@ export default Vue.extend({
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://tanaka.world/about'
+        content: 'https://tanaka.world/about',
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: description
-      }
-    ]
-  }
+        content: description,
+      },
+    ],
+  },
 });
 </script>
 

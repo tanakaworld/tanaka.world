@@ -8,13 +8,13 @@ import VuePixel from '~/components/vue-pixel/VuePixel.vue';
 
 export default Vue.extend({
   components: {
-    VuePixel
+    VuePixel,
   },
   computed: {
     mainColor() {
       return this.$route.query.color;
-    }
-  }
+    },
+  },
 });
 </script>
 

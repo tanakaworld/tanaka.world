@@ -16,32 +16,32 @@ export default Vue.extend({
   props: {
     debug: {
       type: Boolean,
-      default: false
+      default: false,
     },
     static: {
       type: Boolean,
-      default: false
+      default: false,
     },
     beforeColor: {
       type: String,
-      default: null
+      default: null,
     },
     afterColor: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   data() {
     return {
       bgColor: this.beforeColor,
-      transformed: false
+      transformed: false,
     };
   },
   computed: {
     ...mapGetters({
       showMenu: `${VuePixelStore.namespace}/showMenu`,
-      pixelCount: `${VuePixelStore.namespace}/pixelCount`
-    })
+      pixelCount: `${VuePixelStore.namespace}/pixelCount`,
+    }),
   },
   methods: {
     async handleHover() {
@@ -60,7 +60,7 @@ export default Vue.extend({
 
         await this.$store.dispatch(
           VuePixelStore.DecrementPixelCount(null, {
-            namespace: VuePixelStore.namespace
+            namespace: VuePixelStore.namespace,
           })
         );
 
@@ -84,8 +84,8 @@ export default Vue.extend({
           }, 500);
         }
       }
-    }
-  }
+    },
+  },
 });
 </script>
 

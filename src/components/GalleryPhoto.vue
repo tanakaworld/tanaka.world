@@ -22,9 +22,9 @@ export default Vue.extend({
   props: {
     photo: {
       type: Object as PropType<Photo>,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 });
 </script>
 

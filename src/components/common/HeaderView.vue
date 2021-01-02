@@ -26,8 +26,8 @@ import LocalSwitchButton from '~/components/LocaleSwitchButton.vue';
 
 export default Vue.extend({
   components: {
-    LocalSwitchButton
-  }
+    LocalSwitchButton,
+  },
 });
 </script>
 

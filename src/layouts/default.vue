@@ -5,7 +5,7 @@
       <nuxt
         :style="{
           width: isScaleMode ? `${mainWidth}px` : 'auto',
-          height: isScaleMode ? `${mainHeight}px` : 'auto'
+          height: isScaleMode ? `${mainHeight}px` : 'auto',
         }"
       />
     </main>
@@ -21,7 +21,7 @@ import FooterView from '~/components/common/FooterView.vue';
 export default Vue.extend({
   components: {
     HeaderView,
-    FooterView
+    FooterView,
   },
   data() {
     return {
@@ -29,8 +29,18 @@ export default Vue.extend({
       mainWidthMax: 600,
       mainHeight: 0,
       fixBody: true,
-      isScaleMode: true
+      isScaleMode: true,
     };
+  },
+  watch: {
+    $route: {
+      handler(to) {
+        this.$nextTick(() => {
+          this.isScaleMode = to.path === this.localePath('index');
+        });
+      },
+      immediate: true,
+    },
   },
   mounted() {
     window.addEventListener('resize', this.updateViePixelHeight);
@@ -54,26 +64,16 @@ export default Vue.extend({
         if (tmpWidth > windowWidth) tmpWidth = windowWidth;
         this.mainWidth = tmpWidth;
       }
-    }
+    },
   },
   head() {
     return {
       bodyAttrs: {
         // @ts-ignore
-        class: this.fixBody ? 'no-scrodll' : ''
+        class: this.fixBody ? 'no-scrodll' : '',
       },
-      ...this.$nuxtI18nSeo()
+      ...this.$nuxtI18nSeo(),
     };
   },
-  watch: {
-    $route: {
-      handler: function(to) {
-        this.$nextTick(() => {
-          this.isScaleMode = to.path === this.localePath('index');
-        });
-      },
-      immediate: true
-    }
-  }
 });
 </script>
