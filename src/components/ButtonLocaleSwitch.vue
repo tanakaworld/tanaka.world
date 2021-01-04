@@ -1,10 +1,12 @@
 <template>
   <div class="ButtonLocaleSwitch">
-    <nuxt-link class="ButtonLocaleSwitch__Link" :to="switchLocalePath('en')">
-      🇺🇸
-    </nuxt-link>
+    <nuxt-link
+      class="ButtonLocaleSwitch__Link"
+      :to="switchLocalePath('en')"
+      v-text="'🇺🇸'"
+    />
     <span>/</span>
-    <nuxt-link :to="switchLocalePath('ja')">🇯🇵</nuxt-link>
+    <nuxt-link :to="switchLocalePath('ja')" v-text="'🇯🇵'" />
   </div>
 </template>
 

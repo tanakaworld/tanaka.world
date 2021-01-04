@@ -6,13 +6,21 @@
     <nav class="Header__Nav">
       <ul>
         <li>
-          <n-link :to="localePath('about')" v-text="$t('about')" />
+          <n-link
+            class="Header__NavLink"
+            :to="localePath('about')"
+            v-text="$t('about')"
+          />
         </li>
         <li>
-          <n-link :to="localePath('gallery')" v-text="$t('gallery')" />
+          <n-link
+            class="Header__NavLink"
+            :to="localePath('gallery')"
+            v-text="$t('gallery')"
+          />
         </li>
         <li>
-          <ButtonLocaleSwitch />
+          <ButtonLocaleSwitch class="Header__NavLink" />
         </li>
       </ul>
     </nav>
@@ -55,12 +63,13 @@ export default Vue.extend({
     list-style: none
   li
     flex: 1
-  a
-    margin: 10px
-    padding: 10px
-    display: inline-block
-    white-space: nowrap
-    border-radius: 3px
+
+.Header__NavLink
+  margin: 10px
+  padding: 10px
+  display: inline-block
+  white-space: nowrap
+  border-radius: 3px
 
 @media screen and (max-width: 730px)
   .Header__Title, .Header__Nav
