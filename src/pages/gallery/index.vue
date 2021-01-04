@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import GalleryPhoto from '~/components/GalleryPhoto.vue';
+import GalleryPhoto from '~/pages/gallery/-components/GalleryPhoto.vue';
 import { zodiacs, portraits, friends } from '~/utils/gallery';
 
 const title = 'Gallery - The TANAKA WORLD';
@@ -60,28 +60,28 @@ export default Vue.extend({
 .Gallery
   max-width: 900px
 
-  .Gallery__SubTitle
-    text-align: center
+.Gallery__SubTitle
+  text-align: center
 
-  .Gallery__Section
-    margin: 0 auto
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    justify-content: center
-    padding: 24px
-    box-sizing: border-box
-    .thumbnail
-      height: 200px
-      .gallery-icon
-        width: 100px
-        margin: 15px 10px
-      .description
-        width: 120px
-        margin-top: -10px
-        padding: 0 10px
-        text-align: center
-        line-height: 20px
-        max-height: 20px
-        overflow-wrap: break-word
+.Gallery__Section
+  margin: 0 auto
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: center
+  padding: 24px
+  box-sizing: border-box
+  .thumbnail
+    height: 200px
+    .gallery-icon
+      width: 100px
+      margin: 15px 10px
+    .description
+      width: 120px
+      margin-top: -10px
+      padding: 0 10px
+      text-align: center
+      line-height: 20px
+      max-height: 20px
+      overflow-wrap: break-word
 </style>

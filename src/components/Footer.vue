@@ -1,17 +1,23 @@
 <template>
-  <footer>
-    <div class="-textSub">(c) 2021 tanakaworld</div>
+  <footer class="Footer">
+    <div class="-textSub">(c) {{ year }} tanakaworld</div>
   </footer>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 
-export default Vue.extend({});
+export default Vue.extend({
+  data() {
+    return {
+      year: new Date().getFullYear(),
+    };
+  },
+});
 </script>
 
 <style scoped lang="sass">
-footer
+.Footer
   width: 100%
   padding: 12px
   display: flex

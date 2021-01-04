@@ -5,7 +5,7 @@ describe('home', () => {
 
   describe('main', () => {
     it('should transition to the about page after hovering', () => {
-      cy.get('.xel').each(($xel) => {
+      cy.findAllByTestId('VuePixelXel').each(($xel) => {
         cy.wrap($xel).trigger('mouseover', { force: true });
       });
       cy.location('pathname').should('eq', '/about');
@@ -23,16 +23,16 @@ describe('home', () => {
       // show the menu
       cy.findByTestId('HomeVuePixel').trigger('mouseover');
 
-      cy.get('.color-button').click();
+      cy.findByTestId('ButtonColor').click();
       cy.url().should('match', /\?color=[a-fA-F0-9]{6}/);
 
-      cy.get('.color-button').click();
+      cy.findByTestId('ButtonColor').click();
       cy.url().should('match', /\?color=[a-fA-F0-9]{6}/);
 
-      cy.get('.color-button').click();
-      cy.get('.color-button').click();
-      cy.get('.color-button').click();
-      cy.get('.color-button').click();
+      cy.findByTestId('ButtonColor').click();
+      cy.findByTestId('ButtonColor').click();
+      cy.findByTestId('ButtonColor').click();
+      cy.findByTestId('ButtonColor').click();
     });
 
     it('should support i18n', () => {

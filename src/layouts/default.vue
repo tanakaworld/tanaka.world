@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header-view ref="headerView" />
+    <Header ref="headerView" />
     <main>
       <nuxt
         :style="{
@@ -9,19 +9,19 @@
         }"
       />
     </main>
-    <footer-view />
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import HeaderView from '~/components/common/HeaderView.vue';
-import FooterView from '~/components/common/FooterView.vue';
+import Header from '~/components/Header.vue';
+import Footer from '~/components/Footer.vue';
 
 export default Vue.extend({
   components: {
-    HeaderView,
-    FooterView,
+    Header,
+    Footer,
   },
   data() {
     return {

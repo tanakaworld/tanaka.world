@@ -4,5 +4,5 @@ export interface RootState {
   [PixelApp.namespace]: PixelApp.State;
 }
 export const modules = {
-  [PixelApp.namespace]: PixelApp.module
+  [PixelApp.namespace]: PixelApp.module,
 };
