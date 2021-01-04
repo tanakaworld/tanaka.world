@@ -38,14 +38,16 @@ describe('home', () => {
     it('should support i18n', () => {
       cy.findByText('🇯🇵').click();
       cy.location('pathname').should('eq', '/ja');
-      // show the menu
-      cy.get('#vue-pixel-board').trigger('mouseover');
+      // show the menu with preventing from failing due to DOM detach
+      cy.get('#vue-pixel-board').as('VuePixelBoard');
+      cy.get('@VuePixelBoard').trigger('mouseover');
       cy.findByText(/スキップ/);
 
       cy.findByText('🇺🇸').click();
       cy.location('pathname').should('eq', '/');
-      // show the menu
-      cy.get('#vue-pixel-board').trigger('mouseover');
+      // show the menu with preventing from failing due to DOM detach
+      cy.get('#vue-pixel-board').as('VuePixelBoard');
+      cy.get('@VuePixelBoard').trigger('mouseover');
       cy.findByText(/Skip/);
     });
   });
