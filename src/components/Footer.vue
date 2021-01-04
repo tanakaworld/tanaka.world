@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="Footer">
     <div class="-textSub">(c) {{ year }} tanakaworld</div>
   </footer>
 </template>
@@ -17,7 +17,7 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-footer
+.Footer
   width: 100%
   padding: 12px
   display: flex

@@ -1,6 +1,6 @@
 <template>
   <VuePixel
-    class="vue-pixel"
+    class="VuePixel"
     data-test="HomeVuePixel"
     :is-game-end="isGameEnd"
     :main-color="mainColor"
@@ -8,6 +8,7 @@
     :seed="seed"
     :show-board="showBoard"
     :show-menu="showMenu"
+    :debug="isDebug"
     @click-random="onClickRandom"
     @init-pixels="initXels"
     @transform-xel="onTransformXel"
@@ -40,6 +41,9 @@ export default Vue.extend({
     }),
     mainColor() {
       return this.$route.query.color;
+    },
+    isDebug() {
+      return !!this.$route.query.debug;
     },
   },
   watch: {
@@ -123,9 +127,6 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-.vue-pixel
+.VuePixel
   margin: 0 auto
-
-  .actions
-    display: flex
 </style>

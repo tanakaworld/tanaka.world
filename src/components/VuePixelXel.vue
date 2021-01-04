@@ -1,8 +1,8 @@
 <template>
   <div
-    :class="{ debug: debug }"
+    :class="{ '-debug': debug }"
     :style="{ background: bgColor }"
-    class="xel"
+    class="VuePixelXel"
     @mouseover="onMouseOver"
   />
 </template>
@@ -36,10 +36,6 @@ export default Vue.extend({
       type: Boolean,
       required: true,
     },
-    forceTransform: {
-      type: Boolean,
-      default: false,
-    },
   },
   data() {
     return {
@@ -60,19 +56,19 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-.xel
+.VuePixelXel
   flex: 1
   font-size: 10px
   cursor: pointer
-  &.debug
-    border: 1px solid gray
-
   position: relative
   width: 100%
-  &:before
+  transition: all .3s ease
+
+.VuePixelXel.-debug
+  border: 1px solid gray
+
+.VuePixelXel:before
     content: ''
     display: block
     padding-top: 100%
-
-  transition: all .3s ease
 </style>

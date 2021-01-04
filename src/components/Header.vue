@@ -1,9 +1,9 @@
 <template>
-  <header>
-    <h1 id="title">
+  <header class="Header">
+    <h1 class="Header__Title">
       <n-link :to="localePath('index')" v-text="$t('title')" />
     </h1>
-    <nav id="nav">
+    <nav class="Header__Nav">
       <ul>
         <li>
           <n-link :to="localePath('about')" v-text="$t('about')" />
@@ -32,43 +32,43 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-header
+.Header
   display: flex
   flex-flow: row
   flex-wrap: wrap
-
   margin-bottom: 48px
 
-  #title
-    flex: 2
-    a
-      padding: 10px
-      color: var(--color-link-text)
-    /* overwrite main style */
-    .nuxt-link-exact-active
-      background-color: initial
-  #nav
-    ul
-      display: flex
-      flex-flow: row
-      flex-wrap: wrap
-      list-style: none
-    li
-      flex: 1
-      a
-        margin: 10px
-        padding: 10px
-        display: inline-block
-        white-space: nowrap
-        border-radius: 3px
+.Header__Title
+  flex: 2
+  a
+    padding: 10px
+    color: var(--color-link-text)
+  /* overwrite main style */
+  .nuxt-link-exact-active
+    background-color: initial
+
+.Header__Nav
+  ul
+    display: flex
+    flex-flow: row
+    flex-wrap: wrap
+    list-style: none
+  li
+    flex: 1
+  a
+    margin: 10px
+    padding: 10px
+    display: inline-block
+    white-space: nowrap
+    border-radius: 3px
 
 @media screen and (max-width: 730px)
-  header
-    #title, #nav
-      text-align: center
-    #nav
-      width: 100%
-      ul
-        margin: 0
-        padding: 0
+  .Header__Title, .Header__Nav
+    text-align: center
+
+  .Header__Nav
+    width: 100%
+    ul
+      margin: 0
+      padding: 0
 </style>

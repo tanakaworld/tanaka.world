@@ -1,9 +1,9 @@
 <template>
-  <div class="vue-pixel-board" :class="{ gameEnd: isGameEnd }">
-    <div v-show="showMenu" class="pixel-menu color">
+  <div class="VuePixel" :class="{ '-gameEnd': isGameEnd }">
+    <div v-show="showMenu" class="VuePixel__Menu -left">
       <ButtonRandomColor v-if="showMenu" @click="onClickRandom" />
     </div>
-    <div class="pixel-menu skip">
+    <div class="VuePixel__Menu -right">
       <ButtonSkipPixel
         v-if="showMenu"
         :pixel-count="pixelCount"
@@ -14,10 +14,10 @@
       <div
         v-for="(s, i) in seed"
         :key="`board.${i}`"
-        class="board"
+        class="VuePixel__Board"
         @touchmove="handleTouchMove($event)"
       >
-        <div class="row">
+        <div class="VuePixel__BoardRow">
           <VuePixelXel
             v-for="(xel, j) in s"
             :key="`row.${j}`"
@@ -120,77 +120,44 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="sass">
-.gameEnd
+@import "~/styles/animation.sass"
+
+.VuePixel
+  position: relative
+
+.VuePixel.-gameEnd
   animation: swing .4s ease
   animation-iteration-count: infinite
 
-  @keyframes swing
-    15%
-      -webkit-transform: translateX(5px)
-      transform: translateX(5px)
+.VuePixel__Menu
+  position: absolute
+  top: 0
+  width: 30px
+  height: 30px
+  font-size: 1.5rem
+  z-index: 10
 
-    30%
-      -webkit-transform: translateX(-5px)
-      transform: translateX(-5px)
+.VuePixel__Menu.-left
+  left: 42px
 
-    50%
-      -webkit-transform: translateX(3px)
-      transform: translateX(3px)
+.VuePixel__Menu.-right
+  right: 42px
+  display: flex
+  flex-direction: column
 
-    65%
-      -webkit-transform: translateX(-3px)
-      transform: translateX(-3px)
+.VuePixel__Board
+  z-index: 5
+  max-width: 600px
+  margin: 0 auto
 
-    80%
-      -webkit-transform: translateX(2px)
-      transform: translateX(2px)
-
-    100%
-      -webkit-transform: translateX(0)
-      transform: translateX(0)
-
-  @keyframes shrink
-    0%
-      transform: scale(1)
-    30%
-      transform: scale(1.2)
-    100%
-      transform: scale(0)
-
-.vue-pixel-board
-  position: relative
-
-  .pixel-menu
-    position: absolute
-    top: 0
-    width: 30px
-    height: 30px
-    font-size: 1.5rem
-    z-index: 10
-
-    &.color
-      left: 42px
-    &.skip
-      right: 42px
-      display: flex
-      flex-direction: column
-
-  .board
-    z-index: 5
-    max-width: 600px
-    margin: 0 auto
-
-    .row
-      display: flex
-      flex-direction: row
-      justify-content: center
-
-    .pixelCountDisplay
-      height: 10px
+.VuePixel__BoardRow
+  display: flex
+  flex-direction: row
+  justify-content: center
 
 @media screen and (max-width: 730px)
-  .vue-pixel-board
+  .VuePixel
     margin-top: 40px
-  .pixel-menu
+  .VuePixel__Menu
     top: -40px
 </style>

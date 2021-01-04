@@ -1,7 +1,7 @@
 <template>
-  <button class="skip-button" @click.prevent="onClick">
-    <div class="skip-button-text" v-text="$t('skip')" />
-    <div class="pixel-count-text" v-text="pixelCount" />
+  <button class="ButtonSkipPixel" @click.prevent="onClick">
+    <div class="ButtonSkipPixel__Text" v-text="$t('skip')" />
+    <div class="ButtonSkipPixel__Count" v-text="pixelCount" />
   </button>
 </template>
 
@@ -26,11 +26,11 @@ export default Vue.extend({
 <style scoped lang="sass">
 @import "~/styles/mixin.sass"
 
-.skip-button-text
+.ButtonSkipPixel__Text
   color: var(--color-warning)
   white-space: nowrap
 
-.skip-button
+.ButtonSkipPixel
   @include reset-button
   cursor: pointer
   display: flex
@@ -40,6 +40,6 @@ export default Vue.extend({
     margin-top: 0.4rem
 
 @media (prefers-color-scheme: light)
-  .skip-button-text
+  .ButtonSkipPixel__Text
     text-shadow: -1px 0 var(--color-text), 0 1px var(--color-text), 1px 0 var(--color-text), 0 -1px var(--color-text);
 </style>

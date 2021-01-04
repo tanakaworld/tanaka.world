@@ -1,6 +1,8 @@
 <template>
   <div class="ButtonLocaleSwitch">
-    <nuxt-link :to="switchLocalePath('en')">🇺🇸</nuxt-link>
+    <nuxt-link class="ButtonLocaleSwitch__Link" :to="switchLocalePath('en')">
+      🇺🇸
+    </nuxt-link>
     <span>/</span>
     <nuxt-link :to="switchLocalePath('ja')">🇯🇵</nuxt-link>
   </div>
@@ -20,10 +22,10 @@ export default Vue.extend({});
   align-items: center
   justify-content: center
 
-  a
-    padding: 4px
-    border-radius: 4px
-    height: 24px
-    line-height: 24px
-    text-align: center
+.ButtonLocaleSwitch__Link
+  padding: 4px
+  border-radius: 4px
+  height: 24px
+  line-height: 24px
+  text-align: center
 </style>
