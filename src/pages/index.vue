@@ -86,7 +86,8 @@ export default Vue.extend({
       );
     },
     async onTransformXel() {
-      if (!this.showMenu) {
+      // @ts-ignore FIXME
+      if (!this.isShowMenu) {
         await this.$store.dispatch(
           VuePixelStore.ToggleMenu(
             { flag: true },
@@ -101,6 +102,7 @@ export default Vue.extend({
         })
       );
 
+      // @ts-ignore FIXME
       if (this.pixelCount === 0) {
         await this.$store.dispatch(
           VuePixelStore.ToggleMenu(
