@@ -1,50 +1,120 @@
 <template>
-  <vue-pixel-board :class="{ gameEnd: isGameEnd }" :seed="seed" />
+  <div class="vue-pixel-board" :class="{ gameEnd: isGameEnd }">
+    <div v-show="showMenu" class="pixel-menu color">
+      <ButtonRandomColor v-if="showMenu" @click="onClickRandom" />
+    </div>
+    <div class="pixel-menu skip">
+      <ButtonSkipPixel
+        v-if="showMenu"
+        :pixel-count="pixelCount"
+        @click="skipAnimation"
+      />
+    </div>
+    <template v-if="showBoard">
+      <div
+        v-for="(s, i) in seed"
+        :key="`board.${i}`"
+        class="board"
+        @touchmove="handleTouchMove($event)"
+      >
+        <div class="row">
+          <vue-pixel-xel
+            v-for="(xel, j) in s"
+            :key="`row.${j}`"
+            :ref="`xel.${i}.${j}`"
+            :data-xel-id="`xel.${i}.${j}`"
+            :before-color="xel.before"
+            :after-color="xel.after"
+            :static="xel.static === true"
+            :debug="debug"
+            :pixel-count="pixelCount"
+            :show-menu="showMenu"
+            @transform-xel="onTransformXel"
+          />
+        </div>
+      </div>
+    </template>
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { mapGetters } from 'vuex';
-import * as VuePixelStore from '~/store/modules/vue-pixel';
-import VuePixelBoard from '~/components/vue-pixel/VuePixelBoard.vue';
-import { generateSeed } from '~/utils/pixel';
+import Vue, { PropType } from 'vue';
 import { Xel } from '~/types/app/pixel';
+import VuePixelXel from '~/components/vue-pixel/VuePixelXel.vue';
+import ButtonRandomColor from '~/components/ButtonRandomColor.vue';
+import ButtonSkipPixel from '~/components/ButtonSkipPixel.vue';
 
 export default Vue.extend({
   components: {
-    VuePixelBoard,
+    VuePixelXel,
+    ButtonRandomColor,
+    ButtonSkipPixel,
   },
   props: {
+    debug: {
+      type: Boolean,
+      default: false,
+    },
+    isGameEnd: {
+      type: Boolean,
+      default: false,
+    },
     mainColor: {
       type: String,
       default: null,
     },
-  },
-  data(): { seed: Xel[][] } {
-    return {
-      seed: [],
-    };
-  },
-  computed: {
-    ...mapGetters({
-      isGameEnd: `${VuePixelStore.namespace}/gameEnd`,
-    }),
-  },
-  watch: {
-    mainColor: {
-      handler(val) {
-        this.seed = generateSeed(val);
-      },
-      immediate: true,
+    pixelCount: {
+      type: Number,
+      required: true,
+    },
+    seed: {
+      type: Array as PropType<Xel>,
+      required: true,
+    },
+    showBoard: {
+      type: Boolean,
+      required: true,
+    },
+    showMenu: {
+      type: Boolean,
+      required: true,
     },
   },
-  mounted() {
-    this.$store.dispatch(
-      VuePixelStore.GameEnd(
-        { isEnd: false },
-        { namespace: VuePixelStore.namespace }
-      )
-    );
+  methods: {
+    // For touch devices
+    handleTouchMove(e: MouseEvent) {
+      if (e && e.target) {
+        const { pageX, pageY } = e;
+        const elm: any = document.elementFromPoint(pageX, pageY);
+        if (!elm) return;
+        const xelId = elm.dataset.xelId;
+        if (!xelId) return;
+        const xelComponent = this.$refs[xelId];
+        if (xelComponent && xelComponent[0] instanceof Vue) {
+          xelComponent[0].handleHover();
+        }
+      }
+    },
+    skipAnimation() {
+      const xels: HTMLElement[] = [];
+      Object.keys(this.$refs).forEach((key) => {
+        const component = this.$refs[key];
+        if (key.startsWith('xel.') && component[0] instanceof Vue) {
+          xels.push(component[0]);
+        }
+      });
+      xels
+        .sort(() => Math.random() - 0.5)
+        .forEach((xel: any) =>
+          setTimeout(() => xel.onMouseOver(), Math.random() * 2)
+        );
+    },
+    onClickRandom() {
+      this.$emit('click-random');
+    },
+    onTransformXel() {
+      this.$emit('transform-xel');
+    },
   },
 });
 </script>
@@ -86,4 +156,41 @@ export default Vue.extend({
       transform: scale(1.2)
     100%
       transform: scale(0)
+
+.vue-pixel-board
+  position: relative
+
+  .pixel-menu
+    position: absolute
+    top: 0
+    width: 30px
+    height: 30px
+    font-size: 1.5rem
+    z-index: 10
+
+    &.color
+      left: 42px
+    &.skip
+      right: 42px
+      display: flex
+      flex-direction: column
+
+  .board
+    z-index: 5
+    max-width: 600px
+    margin: 0 auto
+
+    .row
+      display: flex
+      flex-direction: row
+      justify-content: center
+
+    .pixelCountDisplay
+      height: 10px
+
+@media screen and (max-width: 730px)
+  .vue-pixel-board
+    margin-top: 40px
+  .pixel-menu
+    top: -40px
 </style>

@@ -30,7 +30,7 @@ function getMainThinColor(mainColor: string) {
   return `#${hex}`;
 }
 
-export function generateSeed(mainColor: string): Xel[][] {
+export function generateSeed(mainColor?: string): Xel[][] {
   const MAIN = mainColor ? getMainColor(mainColor) : DEFAULT_COLOR;
   const SUB = getMainThinColor(MAIN);
   const LIGHT_GRAY = '#f5f5f5';
@@ -57,7 +57,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { static: true },
       { static: true },
       { static: true },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -75,7 +75,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { before: MAIN },
       { static: true },
       { static: true },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -93,7 +93,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { static: true },
       { static: true },
       { static: true },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -111,7 +111,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { static: true },
       { static: true },
       { static: true },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -129,7 +129,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { before: SKIN, static: true },
       { static: true },
       { static: true },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -147,7 +147,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { static: true },
       { static: true },
       { static: true },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -165,7 +165,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { static: true },
       { static: true },
       { static: true },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -183,7 +183,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { static: true },
       { static: true },
       { static: true },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -201,7 +201,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { before: SUB, after: SKIN },
       { static: true },
       { static: true },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -219,7 +219,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { before: SUB, after: SKIN },
       { before: SUB, after: SKIN },
       { static: true },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -237,7 +237,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { before: WHITE, after: SKIN },
       { before: WHITE, after: SKIN },
       { before: WHITE, after: SKIN },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -255,7 +255,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { before: WHITE, after: SKIN },
       { before: WHITE, after: SKIN },
       { before: WHITE, after: SKIN },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -273,7 +273,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { before: WHITE, after: SKIN },
       { before: WHITE, after: SKIN },
       { before: WHITE, after: SKIN },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -291,7 +291,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { static: true },
       { static: true },
       { static: true },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -309,7 +309,7 @@ export function generateSeed(mainColor: string): Xel[][] {
       { before: SUB, after: SKIN },
       { static: true },
       { static: true },
-      { static: true }
+      { static: true },
     ],
     [
       { static: true },
@@ -327,9 +327,16 @@ export function generateSeed(mainColor: string): Xel[][] {
       { before: MAIN, after: SKIN },
       { before: MAIN, after: SKIN },
       { static: true },
-      { static: true }
-    ]
+      { static: true },
+    ],
   ];
+}
+
+export function countXels(xels: Xel[][]) {
+  return xels.reduce((count, row) => {
+    const staticXelsCount = row.filter((c) => !c.static).length;
+    return count + staticXelsCount;
+  }, 0);
 }
 
 export function generateSuggestColors() {
