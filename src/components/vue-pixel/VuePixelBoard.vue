@@ -1,5 +1,5 @@
 <template>
-  <div id="vue-pixel-board">
+  <div class="vue-pixel-board">
     <div v-show="showMenu" class="pixel-menu color">
       <button v-if="showMenu" class="color-button" @click="goToRandom">
         <div class="color-button-row">
@@ -156,7 +156,7 @@ export default Vue.extend({
 <style scoped lang="sass">
 @import "~/styles/mixin.sass"
 
-#vue-pixel-board
+.vue-pixel-board
   position: relative
 
   .pixel-menu
@@ -212,7 +212,7 @@ export default Vue.extend({
       height: 10px
 
 @media screen and (max-width: 730px)
-  #vue-pixel-board
+  .vue-pixel-board
     margin-top: 40px
   .pixel-menu
     top: -40px

@@ -1,5 +1,9 @@
 <template>
-  <vue-pixel :main-color="mainColor" class="vue-pixel" />
+  <vue-pixel
+    data-test="HomeVuePixel"
+    :main-color="mainColor"
+    class="vue-pixel"
+  />
 </template>
 
 <script lang="ts">
