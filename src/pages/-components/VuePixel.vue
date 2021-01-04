@@ -1,11 +1,16 @@
 <template>
   <div class="VuePixel" :class="{ '-gameEnd': isGameEnd }">
     <div v-show="isShowMenu" class="VuePixel__Menu -left">
-      <ButtonRandomColor v-if="isShowMenu" @click="onClickRandom" />
+      <ButtonRandomColor
+        v-if="isShowMenu"
+        data-test="ButtonColor"
+        @click="onClickRandom"
+      />
     </div>
     <div class="VuePixel__Menu -right">
       <ButtonSkipPixel
         v-if="isShowMenu"
+        data-test="ButtonSkipPixel"
         :pixel-count="pixelCount"
         @click="skipAnimation"
       />
@@ -22,6 +27,7 @@
             v-for="(xel, j) in s"
             :key="`row.${j}`"
             :ref="`xel.${i}.${j}`"
+            data-test="VuePixelXel"
             :data-xel-id="`xel.${i}.${j}`"
             :before-color="xel.before"
             :after-color="xel.after"
