@@ -10,8 +10,6 @@
     ":ignoreModulesAndTests",
     ":maintainLockFilesDisabled",
     ":autodetectPinVersions",
-    ":prHourlyLimit2",
-    ":prConcurrentLimit10",
     ":pinAllExceptPeerDependencies",
     ":timezone(Asia/Tokyo)",
     ":label(Renovate)",
@@ -79,11 +77,7 @@
   },
   "devDependencies": {
     "extends": [":automergeMinor", ":labels(Renovate, devDependencies)"],
-    "schedule": [
-      "after 12am every weekday",
-      "before 6am every weekday",
-      "every friday"
-    ]
+    "schedule": ["after 6pm"]
   },
   "vulnerabilityAlerts": {
     "assignees": ["@tanakaworld"],
@@ -92,6 +86,5 @@
   },
   "node": {
     "supportPolicy": ["lts_latest"]
-  },
-  "bundler": { "enabled": true }
+  }
 }
