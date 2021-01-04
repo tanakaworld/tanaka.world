@@ -82,3 +82,7 @@ dist
 
 # firebase
 .firebase
+
+# Cypress
+cypress/screenshots
+cypress/videos
