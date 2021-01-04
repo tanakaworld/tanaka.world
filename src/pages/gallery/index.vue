@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import GalleryPhoto from '~/components/GalleryPhoto.vue';
+import GalleryPhoto from '~/pages/gallery/-components/GalleryPhoto.vue';
 import { zodiacs, portraits, friends } from '~/utils/gallery';
 
 const title = 'Gallery - The TANAKA WORLD';
