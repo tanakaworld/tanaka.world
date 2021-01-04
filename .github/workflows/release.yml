@@ -1,0 +1,106 @@
+name: Release
+on:
+  push:
+    branches:
+      - master
+      - release/*
+
+jobs:
+  lint-test-build:
+    name: Lint, Unit Test and Build
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 14.15.3 ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Cache node modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node-v${{ matrix.node-version }}-pkg-${{ hashFiles(format('{0}{1}', github.workspace, '/package-lock.json')) }}
+      - name: Lint and Unit Test
+        run: |
+          npm run lint
+          npm run test
+      - name: Generate
+        run: npm run generate
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist
+          if-no-files-found: error
+
+  test-e2e:
+    name: E2E Test
+
+    needs: lint-test-build
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 14.15.3 ]
+        browser: [ chrome, firefox, edge ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: dist
+          path: dist
+      - name: E2E by Cypress
+        uses: cypress-io/github-action@v2
+        with:
+          browser: ${{ matrix.browser }}
+          command: npm run e2e:ci
+      - uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-${{ matrix.browser }}
+          path: |
+            cypress/videos
+            cypress/screenshots
+
+
+  deploy:
+    name: Deploy
+
+    needs: test-e2e
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 14.15.3 ]
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: dist
+          path: dist
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
