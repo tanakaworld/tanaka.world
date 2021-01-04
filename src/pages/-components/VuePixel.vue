@@ -1,16 +1,16 @@
 <template>
   <div class="VuePixel" :class="{ '-gameEnd': isGameEnd }">
-    <div v-show="showMenu" class="VuePixel__Menu -left">
-      <ButtonRandomColor v-if="showMenu" @click="onClickRandom" />
+    <div v-show="isShowMenu" class="VuePixel__Menu -left">
+      <ButtonRandomColor v-if="isShowMenu" @click="onClickRandom" />
     </div>
     <div class="VuePixel__Menu -right">
       <ButtonSkipPixel
-        v-if="showMenu"
+        v-if="isShowMenu"
         :pixel-count="pixelCount"
         @click="skipAnimation"
       />
     </div>
-    <template v-if="showBoard">
+    <template v-if="isShowBoard">
       <div
         v-for="(s, i) in seed"
         :key="`board.${i}`"
@@ -28,7 +28,7 @@
             :static="xel.static === true"
             :debug="debug"
             :pixel-count="pixelCount"
-            :show-menu="showMenu"
+            :show-menu="isShowMenu"
             @transform-xel="onTransformXel"
           />
         </div>
@@ -59,6 +59,14 @@ export default Vue.extend({
       type: Boolean,
       default: false,
     },
+    isShowBoard: {
+      type: Boolean,
+      required: true,
+    },
+    isShowMenu: {
+      type: Boolean,
+      required: true,
+    },
     mainColor: {
       type: String,
       default: null,
@@ -69,14 +77,6 @@ export default Vue.extend({
     },
     seed: {
       type: Array as PropType<Xel>,
-      required: true,
-    },
-    showBoard: {
-      type: Boolean,
-      required: true,
-    },
-    showMenu: {
-      type: Boolean,
       required: true,
     },
   },

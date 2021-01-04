@@ -2,12 +2,12 @@
   <VuePixel
     class="VuePixel"
     data-test="HomeVuePixel"
-    :is-game-end="isGameEnd"
     :main-color="mainColor"
     :pixel-count="pixelCount"
     :seed="seed"
-    :show-board="showBoard"
-    :show-menu="showMenu"
+    :is-game-end="isGameEnd"
+    :is-show-board="isShowBoard"
+    :is-show-menu="isShowMenu"
     :debug="isDebug"
     @click-random="onClickRandom"
     @init-pixels="initXels"
@@ -30,13 +30,13 @@ export default Vue.extend({
   data() {
     return {
       seed: generateSeed(),
-      showBoard: true,
+      isShowBoard: true,
     };
   },
   computed: {
     ...mapGetters({
       isGameEnd: `${VuePixelStore.namespace}/gameEnd`,
-      showMenu: `${VuePixelStore.namespace}/showMenu`,
+      isShowMenu: `${VuePixelStore.namespace}/showMenu`,
       pixelCount: `${VuePixelStore.namespace}/pixelCount`,
     }),
     mainColor() {
@@ -59,14 +59,14 @@ export default Vue.extend({
   },
   methods: {
     onClickRandom() {
-      this.showBoard = false;
+      this.isShowBoard = false;
       // refresh
       const color = randomcolor();
       this.$router.push(
         this.localePath({ name: 'index', query: { color: color.slice(1) } })
       ); // remove '#'
       this.$nextTick(() => {
-        this.showBoard = true;
+        this.isShowBoard = true;
       });
     },
     initXels() {
