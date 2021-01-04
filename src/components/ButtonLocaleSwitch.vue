@@ -1,5 +1,5 @@
 <template>
-  <div class="LocaleSwitchButton">
+  <div class="ButtonLocaleSwitch">
     <nuxt-link :to="switchLocalePath('en')">🇺🇸</nuxt-link>
     <span>/</span>
     <nuxt-link :to="switchLocalePath('ja')">🇯🇵</nuxt-link>
@@ -13,7 +13,7 @@ export default Vue.extend({});
 </script>
 
 <style scoped lang="sass">
-.LocaleSwitchButton
+.ButtonLocaleSwitch
   padding: 12px
   display: flex
   flex-flow: row

@@ -1,5 +1,5 @@
 <template>
-  <vue-pixel
+  <VuePixel
     class="vue-pixel"
     data-test="HomeVuePixel"
     :is-game-end="isGameEnd"
@@ -18,7 +18,7 @@
 import Vue from 'vue';
 import { mapGetters } from 'vuex';
 import randomcolor from 'randomcolor';
-import VuePixel from '~/components/vue-pixel/VuePixel.vue';
+import VuePixel from '~/components/VuePixel.vue';
 import * as VuePixelStore from '~/store/modules/vue-pixel';
 import { countXels, generateSeed } from '~/utils/pixel';
 

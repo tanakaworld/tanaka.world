@@ -18,7 +18,7 @@
         @touchmove="handleTouchMove($event)"
       >
         <div class="row">
-          <vue-pixel-xel
+          <VuePixelXel
             v-for="(xel, j) in s"
             :key="`row.${j}`"
             :ref="`xel.${i}.${j}`"
@@ -40,7 +40,7 @@
 <script lang="ts">
 import Vue, { PropType } from 'vue';
 import { Xel } from '~/types/app/pixel';
-import VuePixelXel from '~/components/vue-pixel/VuePixelXel.vue';
+import VuePixelXel from '~/components/VuePixelXel.vue';
 import ButtonRandomColor from '~/components/ButtonRandomColor.vue';
 import ButtonSkipPixel from '~/components/ButtonSkipPixel.vue';
 

@@ -12,7 +12,7 @@
           <n-link :to="localePath('gallery')" v-text="$t('gallery')" />
         </li>
         <li>
-          <LocalSwitchButton />
+          <ButtonLocaleSwitch />
         </li>
       </ul>
     </nav>
@@ -22,11 +22,11 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import LocalSwitchButton from '~/components/LocaleSwitchButton.vue';
+import ButtonLocaleSwitch from '~/components/ButtonLocaleSwitch.vue';
 
 export default Vue.extend({
   components: {
-    LocalSwitchButton,
+    ButtonLocaleSwitch,
   },
 });
 </script>
