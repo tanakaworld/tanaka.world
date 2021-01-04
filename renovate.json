@@ -25,28 +25,28 @@
       "packagePatterns": ["*"],
       "updateTypes": ["patch"],
       "groupName": "all patch dependencies",
-      "paths": ["package.json", "Gemfile"]
+      "paths": ["package.json"]
     },
     {
       "depTypeList": ["dependencies"],
       "packagePatterns": ["*"],
       "updateTypes": ["minor"],
       "groupName": "all minor dependencies",
-      "paths": ["package.json", "Gemfile"]
+      "paths": ["package.json"]
     },
     {
       "depTypeList": ["devDependencies"],
       "packagePatterns": ["*"],
       "updateTypes": ["patch"],
       "groupName": "all patch devDependencies",
-      "paths": ["package.json", "Gemfile"]
+      "paths": ["package.json"]
     },
     {
       "depTypeList": ["devDependencies"],
       "packagePatterns": ["*"],
       "updateTypes": ["minor"],
       "groupName": "all minor devDependencies",
-      "paths": ["package.json", "Gemfile"]
+      "paths": ["package.json"]
     },
     {
       "groupName": "jest sync packages",
