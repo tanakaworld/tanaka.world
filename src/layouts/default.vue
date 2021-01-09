@@ -32,6 +32,15 @@ export default Vue.extend({
       isScaleMode: true,
     };
   },
+  head() {
+    return {
+      bodyAttrs: {
+        // @ts-ignore
+        class: this.fixBody ? 'no-scrodll' : '',
+      },
+      ...this.$nuxtI18nSeo(),
+    };
+  },
   watch: {
     $route: {
       handler(to) {
@@ -65,15 +74,6 @@ export default Vue.extend({
         this.mainWidth = tmpWidth;
       }
     },
-  },
-  head() {
-    return {
-      bodyAttrs: {
-        // @ts-ignore
-        class: this.fixBody ? 'no-scrodll' : '',
-      },
-      ...this.$nuxtI18nSeo(),
-    };
   },
 });
 </script>
