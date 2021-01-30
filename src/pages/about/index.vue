@@ -5,6 +5,7 @@
       <div class="About__Row -border">{{ $t('bio') }}</div>
       <ProfileSns class="About__Row" />
       <ProfileProduct class="About__Row" />
+      <ProfileActivity class="About__Row" />
       <ProfileTimeline class="About__Row" />
     </div>
   </div>
@@ -17,6 +18,7 @@ import { getAgeLocal } from '~/utils/date';
 import ProfileShort from '~/pages/about/-components/ProfileShort.vue';
 import ProfileSns from '~/pages/about/-components/ProfileSns.vue';
 import ProfileProduct from '~/pages/about/-components/ProfileProduct.vue';
+import ProfileActivity from '~/pages/about/-components/ProfileActivity.vue';
 import ProfileTimeline from '~/pages/about/-components/ProfileTimeline.vue';
 
 const title = 'About - The TANAKA WORLD';
@@ -27,6 +29,7 @@ export default Vue.extend({
     ProfileShort,
     ProfileSns,
     ProfileProduct,
+    ProfileActivity,
     ProfileTimeline,
   },
   data() {

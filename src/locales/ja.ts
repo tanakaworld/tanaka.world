@@ -15,9 +15,10 @@ const locale: Locale = {
   weight: 'おもさ {0} kg',
   bio:
     'Web に関することは何でもやるマン。上場企業・スタートアップ・個人事業主を経て、Web バックエンドからフロントエンドまで多くのプロジェクトに携わる。ピクセルアート、ルービックキューブ、イヌが好き。趣味は、パズル・将棋（ウォーズ初段）。',
-  links: 'リンク',
-  products: 'プロダクト',
-  timeline: 'タイムライン',
+  links: '🔗 リンク',
+  products: '🚀 プロダクト',
+  timeline: '👨‍💻 タイムライン',
+  activity: '🎙 アクティビティ',
   gallery_photo: {
     zodiac: {
       rat: '2020 子',
@@ -31,7 +32,7 @@ const locale: Locale = {
       monkey: '2016 申',
       rooster: '2017 酉',
       dog: '2018 戌',
-      boar: '2019 亥'
+      boar: '2019 亥',
     },
     portraits: {
       me_first: '2013',
@@ -50,7 +51,7 @@ const locale: Locale = {
       me_2018_naked: '(裸)',
       me_2018_halloween: 'ハロウィン 2018',
       me_2019_usa: '米国 2019',
-      xmas_2019: 'クリスマス 2019'
+      xmas_2019: 'クリスマス 2019',
     },
     friends: {
       blog_logo: 'ブログ ロゴ',
@@ -67,9 +68,9 @@ const locale: Locale = {
       icon_ms_dyamond: 'Ms. Dyamond',
       icon_peranikov: '@peranikov',
       icon_denoland: 'denoland',
-      icon_mookjp: '@mookjp'
-    }
-  }
+      icon_mookjp: '@mookjp',
+    },
+  },
 };
 
 export default locale;

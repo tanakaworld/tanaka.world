@@ -17,9 +17,10 @@ const locale: Locale = {
     'Hi! I\'m Yutaro Tanaka a.k.a "tanakaworld", a software engineer based in Tokyo.' +
     ' I worked for listed companies, startup companies and self-employed projects,' +
     ' widely involved in both backend and frontend web applications.',
-  links: 'Links',
-  products: 'Products',
-  timeline: 'Timeline',
+  links: '🔗 Links',
+  products: '🚀 Products',
+  timeline: '👨‍💻 Timeline',
+  activity: '🎙 Activity',
   gallery_photo: {
     zodiac: {
       rat: '2020 Rat',
@@ -33,7 +34,7 @@ const locale: Locale = {
       monkey: '2016 Monkey',
       rooster: '2017 Rooster',
       dog: '2018 Dog',
-      boar: '2019 Boar'
+      boar: '2019 Boar',
     },
     portraits: {
       me_first: 'Me 2013',
@@ -52,7 +53,7 @@ const locale: Locale = {
       me_2018_naked: '(Naked)',
       me_2018_halloween: 'Halloween 2018',
       me_2019_usa: 'USA 2019',
-      xmas_2019: 'XMAS 2019'
+      xmas_2019: 'XMAS 2019',
     },
     friends: {
       blog_logo: 'Blog Logo',
@@ -69,9 +70,9 @@ const locale: Locale = {
       icon_ms_dyamond: 'Ms. Dyamond',
       icon_peranikov: '@peranikov',
       icon_denoland: 'denoland',
-      icon_mookjp: '@mookjp'
-    }
-  }
+      icon_mookjp: '@mookjp',
+    },
+  },
 };
 
 export default locale;

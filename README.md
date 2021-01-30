@@ -2,21 +2,24 @@
 
 > The TANAKA WORLD
 
-## Build Setup
+## Get Started
 
 ``` bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn run dev
-
-# build for production and launch server
-$ yarn run build
-$ yarn start
-
-# generate static project
-$ yarn run generate
+$ npm ci
+$ npm run dev
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+## Test
+
+```bash
+# Unit Test
+$ npm test
+
+# E2E
+$ npm run e2e:generate
+$ npm run e2e:local
+```
+
+## Deploy
+
+Is deployed via [GitHub Actions](https://github.com/tanakaworld/tanaka.world/actions)
