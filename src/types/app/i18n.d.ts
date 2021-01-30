@@ -15,6 +15,7 @@ export interface Locale {
   links: string;
   products: string;
   timeline: string;
+  activity: string;
   gallery_photo: {
     zodiac: {
       rat: string;

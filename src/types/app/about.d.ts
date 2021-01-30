@@ -14,3 +14,9 @@ export interface Product {
   name: string;
   url: string;
 }
+
+export interface Activity {
+  name: string;
+  url: string;
+  date: string;
+}
