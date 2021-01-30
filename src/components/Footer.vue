@@ -1,6 +1,13 @@
 <template>
   <footer class="Footer">
-    <div class="-textSub">(c) {{ year }} tanakaworld</div>
+    <div class="-textSub">
+      (c) {{ year }}
+      <a
+        target="_blank"
+        href="https://github.com/tanakaworld/tanaka.world"
+        v-text="'tanakaworld'"
+      />
+    </div>
   </footer>
 </template>
 
