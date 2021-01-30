@@ -5,43 +5,43 @@ export const jobHistories: JobHistory[] = [
     range: '2018.8 ~',
     link: 'https://merpay.com/',
     linkLabel: 'Merpay, Inc.',
-    role: 'Software Engineer (Frontend)'
+    role: 'Software Engineer (Frontend)',
   },
   {
     range: '2017.8 ~',
     link: 'https://iki.mn/',
     linkLabel: 'IKIMONO Inc.',
-    role: 'Software Engineer'
+    role: 'Software Engineer',
   },
   {
     range: '2016.8 ~ 2018.7',
     link: 'https://www.curiosity-inc.jp/',
     linkLabel: 'curiosity, inc.',
-    role: 'Software Engineer'
+    role: 'Software Engineer',
   },
   {
     range: '2016.2 ~',
     link: 'https://tanaka.world',
-    linkLabel: 'TANAKA WORLD (Self Employed Project)'
+    linkLabel: 'TANAKA WORLD (Self Employed Project)',
   },
   {
     range: '2016.8 ~ 2017.8',
     link: 'https://returnees.jp/',
     linkLabel: 'RETURNEES, Inc.',
-    role: 'Lead Engineer'
+    role: 'Lead Engineer',
   },
   {
     range: '2015.3 ~ 2016.7',
     link: 'http://fukurou-labo.co.jp/',
     linkLabel: 'Fukurou Labo',
-    role: 'Web Engineer'
+    role: 'Web Engineer',
   },
   {
     range: '2013.4 ~ 2015.2',
     link: 'http://www.mti.co.jp/',
     linkLabel: 'MTI Ltd.',
-    role: 'Backend Developer'
-  }
+    role: 'Backend Developer',
+  },
 ];
 
 export const snsAccounts: Account[] = [
@@ -53,20 +53,20 @@ export const snsAccounts: Account[] = [
   { name: 'Facebook', url: 'https://www.facebook.com/tanaka.world' },
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/yutaro-tanaka-7863b249/'
+    url: 'https://www.linkedin.com/in/yutaro-tanaka-7863b249/',
   },
   {
     name: 'YouTube',
-    url: 'https://www.youtube.com/channel/UCO4zZE1KFP3_VA33aEzXgFg'
+    url: 'https://www.youtube.com/channel/UCO4zZE1KFP3_VA33aEzXgFg',
   },
   {
     name: 'Proff',
-    url: 'https://proff.io/p/tanakaworld'
-  }
+    url: 'https://proff.io/p/tanakaworld',
+  },
 ];
 
 export const products: Product[] = [
   { name: 'Proff.io', url: 'https://proff.io' },
   { name: 'RubyGems', url: 'https://rubygems.org/profiles/tanakaworld' },
-  { name: 'NPM', url: 'https://www.npmjs.com/~tanakaworld' }
+  { name: 'NPM', url: 'https://www.npmjs.com/~tanakaworld' },
 ];
