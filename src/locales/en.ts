@@ -50,10 +50,11 @@ const locale: Locale = {
       cap: 'Cap',
       me_2018: 'Me 2018',
       me_2018_no_cap: '(Uncap)',
-      me_2018_naked: '(Naked)',
+      me_2018_naked: '(Origin)',
       me_2018_halloween: 'Halloween 2018',
       me_2019_usa: 'USA 2019',
       xmas_2019: 'XMAS 2019',
+      me_2020: 'Me 2020',
     },
     friends: {
       blog_logo: 'Blog Logo',

@@ -100,6 +100,10 @@ export const portraits: Photo[] = [
     description: 'gallery_photo.portraits.xmas_2019',
     file: '/img/tanakaworld-xmas-2019.png',
   },
+  {
+    description: 'gallery_photo.portraits.me_2020',
+    file: '/img/tanakaworld-2020.png',
+  },
 ];
 
 export const friends: Photo[] = [

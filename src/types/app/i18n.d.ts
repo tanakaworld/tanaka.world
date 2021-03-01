@@ -50,6 +50,7 @@ export interface Locale {
       me_2018_halloween: string;
       me_2019_usa: string;
       xmas_2019: string;
+      me_2020: string;
     };
     friends: {
       blog_logo: string;
