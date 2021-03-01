@@ -29,7 +29,7 @@ const config: NuxtConfig = {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://tanaka.world/img/og.png',
+        content: 'https://tanaka.world/img/cover.jpg',
       },
       {
         hid: 'og:site_name',

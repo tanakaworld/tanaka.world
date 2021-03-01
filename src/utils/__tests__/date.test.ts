@@ -1,5 +1,5 @@
-import { getAgeLocal } from '~/utils/date';
 import { advanceTo, clear } from 'jest-date-mock';
+import { getAgeLocal } from '~/utils/date';
 
 describe('getAgeLocal', () => {
   // mock date as 2019/08/01
