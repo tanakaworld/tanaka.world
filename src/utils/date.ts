@@ -10,7 +10,7 @@ export function getAgeLocal(dateStr: string): number {
 
   const birthdayHaveCome =
     now.getMonth() > birthday.getMonth() ||
-    (now.getMonth() == birthday.getMonth() &&
+    (now.getMonth() === birthday.getMonth() &&
       now.getDate() >= birthday.getDate());
 
   return (

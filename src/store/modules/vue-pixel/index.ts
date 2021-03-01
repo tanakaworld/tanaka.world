@@ -4,7 +4,7 @@ import {
   combineMutation,
   action,
   mutation,
-  actionCreatorFactory
+  actionCreatorFactory,
 } from 'vuex-typescript-fsa';
 
 import { RootState } from '~/store';
@@ -21,7 +21,7 @@ const initialState = (): State => {
   return {
     showPixelCount: false,
     pixelCount: 0,
-    gameEnd: false
+    gameEnd: false,
   };
 };
 
@@ -59,11 +59,11 @@ export const module: Module<State, RootState> = {
     mutation(SetPixelTotal, (state, context) => {
       state.pixelCount = context.payload.pixelCount;
     }),
-    mutation(DecrementPixelCount, state => state.pixelCount--)
+    mutation(DecrementPixelCount, (state) => state.pixelCount--)
   ),
   getters: {
-    showMenu: state => state.showPixelCount,
-    pixelCount: state => state.pixelCount,
-    gameEnd: state => state.gameEnd
-  }
+    showMenu: (state) => state.showPixelCount,
+    pixelCount: (state) => state.pixelCount,
+    gameEnd: (state) => state.gameEnd,
+  },
 };

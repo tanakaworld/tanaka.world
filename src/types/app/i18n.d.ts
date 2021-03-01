@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export interface Locale {
   title: string;
   about: string;
