@@ -36,15 +36,15 @@
     "*.{js,ts,vue}": "eslint"
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "2.0.2",
+    "@nuxt/typescript-runtime": "2.1.0",
     "@nuxtjs/google-analytics": "2.4.0",
     "color-convert": "2.0.1",
     "cross-env": "7.0.3",
     "normalize.css": "8.0.1",
-    "nuxt": "2.15.2",
-    "nuxt-i18n": "6.20.3",
+    "nuxt": "2.15.3",
+    "nuxt-i18n": "6.21.1",
     "randomcolor": "0.6.2",
-    "vue-i18n": "8.23.0",
+    "vue-i18n": "8.24.1",
     "vuex-typescript-fsa": "0.4.0"
   },
   "devDependencies": {
