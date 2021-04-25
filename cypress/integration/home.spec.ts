@@ -7,6 +7,9 @@ describe('home', () => {
     it('should transition to the about page after hovering', () => {
       cy.findAllByTestId('VuePixelXel').each(($xel) => {
         cy.wrap($xel).trigger('mouseover', { force: true });
+        // Wait a moment to ensure the process after mouseover finish.
+        // https://github.com/tanakaworld/tanaka.world/pull/85/checks?check_run_id=2429408222
+        cy.wait(10);
       });
       cy.location('pathname').should('eq', '/about');
     });
