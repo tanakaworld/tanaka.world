@@ -37,7 +37,7 @@
     "cross-env": "7.0.3",
     "normalize.css": "8.0.1",
     "nuxt": "2.15.4",
-    "nuxt-i18n": "6.26.0",
+    "nuxt-i18n": "6.27.0",
     "randomcolor": "0.6.2",
     "vue-i18n": "8.24.3",
     "vuex-typescript-fsa": "0.4.0"
