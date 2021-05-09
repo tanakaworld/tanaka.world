@@ -46,7 +46,7 @@
     "@commitlint/cli": "12.1.1",
     "@commitlint/config-conventional": "12.1.1",
     "@cypress/webpack-preprocessor": "5.7.0",
-    "@nuxt/types": "2.15.4",
+    "@nuxt/types": "2.15.5",
     "@nuxt/typescript-build": "2.1.0",
     "@nuxtjs/eslint-config": "6.0.0",
     "@nuxtjs/eslint-config-typescript": "6.0.0",
