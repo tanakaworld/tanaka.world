@@ -16,7 +16,6 @@
     "e2e:local": "start-server-and-test start http://localhost:3000 'cypress open'",
     "e2e:ci": "CYPRESS_video=true start-server-and-test start http://localhost:3000 'cypress run'",
     "e2e:generate": "npm run generate -- --fail-on-error",
-    "precommit": "npm run lint",
     "serve": "firebase serve --only hosting",
     "deploy": "firebase use tanaka-world && firebase deploy --only hosting",
     "prepare": "husky install"
