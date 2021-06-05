@@ -60,43 +60,56 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="sass">
-.About
-  display: flex
-  justify-items: center
-  justify-content: center
-  font-size: 20px
+<style scoped>
+.About {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
 
-.About__Inner
-  max-width: 700px
-  padding: 24px
-  box-sizing: border-box
+.About__Inner {
+  max-width: 700px;
+  padding: 24px;
+  box-sizing: border-box;
+}
 
-.About__Row
-  padding: 16px
-  line-height: 1.5em
+.About__Row {
+  padding: 16px;
+  line-height: 1.5em;
+}
 
-.About__Row:not(:first-child)
-  margin-top: 12px
+.About__Row:not(:first-child) {
+  margin-top: 12px;
+}
 
-.About__Row.-border
-  border-top: solid 1px var(--color-sky-blue)
+.About__Row.-border {
+  border-top: solid 1px var(--color-sky-blue);
+}
 
-@media screen and (max-width: 730px)
-  .About__Inner
-    width: 100%
+@media screen and (max-width: 730px) {
+  .About__Inner {
+    width: 100%;
+  }
 
-  .About__Row
-    padding: 8px
+  .About__Row {
+    padding: 8px;
+  }
+}
 
-@media screen and (max-width: 560px)
-  .About
-    font-size: 16px
+@media screen and (max-width: 560px) {
+  .About {
+    font-size: 16px;
+  }
+}
 
-@media screen and (max-width: 320px)
-  .About
-    font-size: 10px
+@media screen and (max-width: 320px) {
+  .About {
+    font-size: 10px;
+  }
 
-  .About__Row
-    flex-direction: column !important
+  .About__Row {
+    flex-direction: column !important;
+  }
+}
 </style>

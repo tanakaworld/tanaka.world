@@ -1,5 +1,5 @@
 <template>
-  <button class="ButtonRandomColor" @click="onClick">
+  <button class="Button ButtonRandomColor" @click="onClick">
     <div class="ButtonRandomColor__Row">
       <div
         :style="{ 'background-color': suggestColors[0] }"
@@ -42,19 +42,19 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="sass">
-@import "~/styles/mixin.sass"
+<style scoped>
+.ButtonRandomColor {
+  cursor: pointer;
+  display: flex;
+}
 
-.ButtonRandomColor
-  @include reset-button
-  cursor: pointer
-  display: flex
+.ButtonRandomColor__Row {
+  display: flex;
+  flex-direction: column;
+}
 
-.ButtonRandomColor__Row
-  display: flex
-  flex-direction: column
-
-.ButtonRandomColor__Item
-  width: 20px
-  height: 20px
+.ButtonRandomColor__Item {
+  width: 20px;
+  height: 20px;
+}
 </style>

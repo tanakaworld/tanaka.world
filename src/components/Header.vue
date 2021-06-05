@@ -39,45 +39,56 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="sass">
-.Header
-  display: flex
-  flex-flow: row
-  flex-wrap: wrap
-  margin-bottom: 48px
+<style scoped>
+.Header {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
 
-.Header__Title
-  flex: 2
-  a
-    padding: 10px
-    color: var(--color-link-text)
-  /* overwrite main style */
-  .nuxt-link-exact-active
-    background-color: initial
+.Header__Title {
+  flex: 2;
+}
+.Header__Title a {
+  padding: 10px;
+  color: var(--color-link-text);
+}
+/* overwrite main style */
+.Header__Title .nuxt-link-exact-active {
+  background-color: initial;
+}
 
-.Header__Nav
-  ul
-    display: flex
-    flex-flow: row
-    flex-wrap: wrap
-    list-style: none
-  li
-    flex: 1
+.Header__Nav ul {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.Header__Nav li {
+  flex: 1;
+}
 
-.Header__NavLink
-  margin: 10px
-  padding: 10px
-  display: inline-block
-  white-space: nowrap
-  border-radius: 3px
+.Header__NavLink {
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+  white-space: nowrap;
+  border-radius: 3px;
+}
 
-@media screen and (max-width: 730px)
-  .Header__Title, .Header__Nav
-    text-align: center
+@media screen and (max-width: 730px) {
+  .Header__Title,
+  .Header__Nav {
+    text-align: center;
+  }
 
-  .Header__Nav
-    width: 100%
-    ul
-      margin: 0
-      padding: 0
+  .Header__Nav {
+    width: 100%;
+  }
+  .Header__Nav ul {
+    margin: 0;
+    padding: 0;
+  }
+}
 </style>

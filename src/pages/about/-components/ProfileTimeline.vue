@@ -42,35 +42,45 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="sass">
-.ProfileTimeline__Title
-  width: 100%
-  text-align: center
+<style scoped>
+.ProfileTimeline__Title {
+  width: 100%;
+  text-align: center;
+}
 
-.ProfileTimeline__List, .ProfileTimeline__ListItem
-  list-style: none
-  margin: 0
-  padding: 0
+.ProfileTimeline__List,
+.ProfileTimeline__ListItem {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-.ProfileTimeline__ListItem
-  display: flex
-  justify-content: flex-start
-  align-items: center
-  flex-wrap: wrap
+.ProfileTimeline__ListItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-.ProfileTimeline__ListItemLink
-  margin-left: 16px
+.ProfileTimeline__ListItemLink {
+  margin-left: 16px;
+}
 
-.ProfileTimeline__ListItemRole
-  margin-left: 8px
+.ProfileTimeline__ListItemRole {
+  margin-left: 8px;
+}
 
-@media screen and (max-width: 560px)
-  .ProfileTimeline__ListItem:not(:first-child)
-    margin-top: 8px
+@media screen and (max-width: 560px) {
+  .ProfileTimeline__ListItem:not(:first-child) {
+    margin-top: 8px;
+  }
 
-  .ProfileTimeline__ListItemRange
-    width: 100%
+  .ProfileTimeline__ListItemRange {
+    width: 100%;
+  }
 
-  .ProfileTimeline__ListItemLink
-    margin-left: 0
+  .ProfileTimeline__ListItemLink {
+    margin-left: 0;
+  }
+}
 </style>

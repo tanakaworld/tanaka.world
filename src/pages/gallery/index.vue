@@ -56,32 +56,22 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="sass">
-.Gallery
-  max-width: 900px
+<style scoped>
+.Gallery {
+  max-width: 900px;
+}
 
-.Gallery__SubTitle
-  text-align: center
+.Gallery__SubTitle {
+  text-align: center;
+}
 
-.Gallery__Section
-  margin: 0 auto
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  justify-content: center
-  padding: 24px
-  box-sizing: border-box
-  .thumbnail
-    height: 200px
-    .gallery-icon
-      width: 100px
-      margin: 15px 10px
-    .description
-      width: 120px
-      margin-top: -10px
-      padding: 0 10px
-      text-align: center
-      line-height: 20px
-      max-height: 20px
-      overflow-wrap: break-word
+.Gallery__Section {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
 </style>

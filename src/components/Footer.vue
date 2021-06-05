@@ -23,11 +23,12 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="sass">
-.Footer
-  width: 100%
-  padding: 12px
-  display: flex
-  flex-flow: row
-  justify-content: center
+<style scoped>
+.Footer {
+  width: 100%;
+  padding: 12px;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
 </style>

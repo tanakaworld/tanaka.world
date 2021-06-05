@@ -55,20 +55,23 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="sass">
-.VuePixelXel
-  flex: 1
-  font-size: 10px
-  cursor: pointer
-  position: relative
-  width: 100%
-  transition: all .3s ease
+<style scoped>
+.VuePixelXel {
+  flex: 1;
+  font-size: 10px;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  transition: all 0.3s ease;
+}
 
-.VuePixelXel.-debug
-  border: 1px solid gray
+.VuePixelXel.-debug {
+  border: 1px solid gray;
+}
 
-.VuePixelXel:before
-    content: ''
-    display: block
-    padding-top: 100%
+.VuePixelXel:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
 </style>

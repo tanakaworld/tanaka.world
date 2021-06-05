@@ -70,10 +70,6 @@
     {
       "packageNames": ["vuex-typescript-fsa"],
       "allowedVersions": "0.4.0"
-    },
-    {
-      "packageNames": ["sass-loader"],
-      "allowedVersions": "^10.1.1"
     }
   ],
   "dependencies": {
