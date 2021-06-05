@@ -105,8 +105,12 @@ export default Vue.extend({
       const xels: HTMLElement[] = [];
       Object.keys(this.$refs).forEach((key) => {
         const component = this.$refs[key];
-        if (key.startsWith('xel.') && component[0] instanceof Vue) {
-          xels.push(component[0]);
+        if (
+          Array.isArray(component) &&
+          key.startsWith('xel.') &&
+          component[0] instanceof Vue
+        ) {
+          xels.push(component[0] as HTMLElement);
         }
       });
       xels
