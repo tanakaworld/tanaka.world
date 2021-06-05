@@ -127,7 +127,8 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="sass">
-.VuePixel
-  margin: 0 auto
+<style scoped>
+.VuePixel {
+  margin: 0 auto;
+}
 </style>

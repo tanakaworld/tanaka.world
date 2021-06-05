@@ -69,8 +69,14 @@ section {
   cursor: default;
 }
 
-button {
+.Button {
   color: var(--color-text);
+
+  /* Reset */
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 *.-textSub {

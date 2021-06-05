@@ -32,27 +32,32 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="sass">
-.ProfileShort
-  flex-direction: row
-  display: flex
-  align-items: center
-  justify-content: space-between
+<style scoped>
+.ProfileShort {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-.ProfileShort__IconImg
-  transform: scaleX(-1)
-  width: 100%
-  max-width: 500px
-  max-height: 500px
+.ProfileShort__IconImg {
+  transform: scaleX(-1);
+  width: 100%;
+  max-width: 500px;
+  max-height: 500px;
+}
 
-.ProfileShort__Property
-  margin-left: 12px
-  padding: 24px
-  flex-direction: column
-  align-items: center
-  justify-content: space-around
+.ProfileShort__Property {
+  margin-left: 12px;
+  padding: 24px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
 
-@media screen and (max-width: 730px)
-  .ProfileShort__IconImg
-    width: 100%
+@media screen and (max-width: 730px) {
+  .ProfileShort__IconImg {
+    width: 100%;
+  }
+}
 </style>

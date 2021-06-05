@@ -81,7 +81,7 @@ const config: NuxtConfig = {
     ],
   },
   loading: { color: '#91C3DC' },
-  css: ['normalize.css', '~/styles/main.css'],
+  css: ['normalize.css', '~/styles/main.css', '~/styles/animation.css'],
   plugins: [],
   buildModules: ['@nuxt/typescript-build'],
   build: {

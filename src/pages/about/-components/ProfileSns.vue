@@ -32,31 +32,42 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="sass">
-.ProfileSns
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: center
+<style scoped>
+.ProfileSns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-.ProfileSns__Title
-  width: 100%
-  text-align: center
+.ProfileSns__Title {
+  width: 100%;
+  text-align: center;
+}
 
-.ProfileSns__Link
-  &:not(:first-child)
-    margin-left: 12px
+.ProfileSns__Link:not(:first-child) {
+  margin-left: 12px;
+}
 
-@mixin sns-link($name, $color)
-  .ProfileSns__Link.-#{$name}
-    &:hover
-      color: $color
-
-+sns-link('blog', #ece7e7)
-+sns-link('twitter', #4A9FEC)
-+sns-link('facebook', #4966AD)
-+sns-link('github', #98a1a8)
-+sns-link('qiita', #72C23A)
-+sns-link('linkedin', #3175B0)
-+sns-link('rubygems', #D96149)
+.ProfileSns__Link.-blog:hover {
+  color: #ece7e7;
+}
+.ProfileSns__Link.-twitter:hover {
+  color: #4a9fec;
+}
+.ProfileSns__Link.-facebook:hover {
+  color: #4966ad;
+}
+.ProfileSns__Link.-github:hover {
+  color: #98a1a8;
+}
+.ProfileSns__Link.-qiita:hover {
+  color: #72c23a;
+}
+.ProfileSns__Link.-linkedin:hover {
+  color: #3175b0;
+}
+.ProfileSns__Link.-rubygems:hover {
+  color: #d96149;
+}
 </style>

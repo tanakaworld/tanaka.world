@@ -37,35 +37,41 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="sass">
-.ProfileActivities__Title
-  width: 100%
-  text-align: center
-  list-style: none
+<style scoped>
+.ProfileActivities__Title {
+  width: 100%;
+  text-align: center;
+  list-style: none;
+}
 
-.ProfileActivities__List, .ProfileActivities__ListItem
-  margin: 0
-  padding: 0
+.ProfileActivities__List,
+.ProfileActivities__ListItem {
+  margin: 0;
+  padding: 0;
+}
 
-.ProfileActivities__ListItem
-  display: flex
-  justify-content: flex-start
-  align-items: center
-  flex-wrap: wrap
+.ProfileActivities__ListItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-.ProfileActivities__ListItemLink
-  margin-left: 16px
+.ProfileActivities__ListItemLink {
+  margin-left: 16px;
+}
 
-.ProfileActivities__ListItemRole
-  margin-left: 8px
+@media screen and (max-width: 560px) {
+  .ProfileActivities__ListItem:not(:first-child) {
+    margin-top: 8px;
+  }
 
-@media screen and (max-width: 560px)
-  .ProfileActivities__ListItem:not(:first-child)
-    margin-top: 8px
+  .ProfileActivities__ListItemRange {
+    width: 100%;
+  }
 
-  .ProfileActivities__ListItemRange
-    width: 100%
-
-  .ProfileActivities__ListItemLink
-    margin-left: 0
+  .ProfileActivities__ListItemLink {
+    margin-left: 0;
+  }
+}
 </style>

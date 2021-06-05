@@ -28,20 +28,23 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="sass">
-.GalleryPhoto
-  height: 200px
+<style scoped>
+.GalleryPhoto {
+  height: 200px;
+}
 
-.GalleryPhoto__Icon
-  width: 100px
-  margin: 15px 10px
+.GalleryPhoto__Icon {
+  width: 100px;
+  margin: 15px 10px;
+}
 
-.GalleryPhoto__Description
-  width: 120px
-  margin-top: -10px
-  padding: 0 10px
-  text-align: center
-  line-height: 20px
-  max-height: 20px
-  overflow-wrap: break-word
+.GalleryPhoto__Description {
+  width: 120px;
+  margin-top: -10px;
+  padding: 0 10px;
+  text-align: center;
+  line-height: 20px;
+  max-height: 20px;
+  overflow-wrap: break-word;
+}
 </style>

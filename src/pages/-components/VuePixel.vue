@@ -125,45 +125,53 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="sass">
-@import "~/styles/animation.sass"
+<style scoped>
+.VuePixel {
+  position: relative;
+}
 
-.VuePixel
-  position: relative
+.VuePixel.-gameEnd {
+  animation: swing 0.4s ease;
+  animation-iteration-count: infinite;
+}
 
-.VuePixel.-gameEnd
-  animation: swing .4s ease
-  animation-iteration-count: infinite
+.VuePixel__Menu {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  z-index: 10;
+}
 
-.VuePixel__Menu
-  position: absolute
-  top: 0
-  width: 30px
-  height: 30px
-  font-size: 1.5rem
-  z-index: 10
+.VuePixel__Menu.-left {
+  left: 42px;
+}
 
-.VuePixel__Menu.-left
-  left: 42px
+.VuePixel__Menu.-right {
+  right: 42px;
+  display: flex;
+  flex-direction: column;
+}
 
-.VuePixel__Menu.-right
-  right: 42px
-  display: flex
-  flex-direction: column
+.VuePixel__Board {
+  z-index: 5;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-.VuePixel__Board
-  z-index: 5
-  max-width: 600px
-  margin: 0 auto
+.VuePixel__BoardRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
-.VuePixel__BoardRow
-  display: flex
-  flex-direction: row
-  justify-content: center
-
-@media screen and (max-width: 730px)
-  .VuePixel
-    margin-top: 40px
-  .VuePixel__Menu
-    top: -40px
+@media screen and (max-width: 730px) {
+  .VuePixel {
+    margin-top: 40px;
+  }
+  .VuePixel__Menu {
+    top: -40px;
+  }
+}
 </style>
