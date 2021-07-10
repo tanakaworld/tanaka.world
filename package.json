@@ -35,10 +35,10 @@
     "color-convert": "2.0.1",
     "cross-env": "7.0.3",
     "normalize.css": "8.0.1",
-    "nuxt": "2.15.6",
-    "nuxt-i18n": "6.27.0",
+    "nuxt": "2.15.7",
+    "nuxt-i18n": "6.27.3",
     "randomcolor": "0.6.2",
-    "vue-i18n": "8.24.4",
+    "vue-i18n": "8.24.5",
     "vuex-typescript-fsa": "0.4.0"
   },
   "devDependencies": {
