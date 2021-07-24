@@ -42,7 +42,7 @@
     "vuex-typescript-fsa": "0.4.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "12.1.4",
+    "@commitlint/cli": "13.1.0",
     "@commitlint/config-conventional": "12.1.4",
     "@cypress/webpack-preprocessor": "5.7.0",
     "@nuxt/types": "2.15.7",
