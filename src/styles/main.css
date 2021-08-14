@@ -13,11 +13,13 @@
 @font-face {
   font-family: 'Misaki Gothic';
   src: url('../assets/fonts/misaki_gothic.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Misaki Mincho';
   src: url('../assets/fonts/misaki_mincho.ttf') format('truetype');
+  font-display: swap;
 }
 
 * {
