@@ -27,9 +27,8 @@ const initialState = (): State => {
 
 export const ToggleMenu = actionCreator<{ flag: boolean }>('TOGGLE_MENU');
 export const GameEnd = actionCreator<{ isEnd: boolean }>('GAME_END');
-export const SetPixelTotal = actionCreator<{ pixelCount: number }>(
-  'SET_PIXEL_TOTAL'
-);
+export const SetPixelTotal =
+  actionCreator<{ pixelCount: number }>('SET_PIXEL_TOTAL');
 export const DecrementPixelCount = actionCreator<null>('DECREMENT_PIXEL_COUNT');
 
 export const module: Module<State, RootState> = {
