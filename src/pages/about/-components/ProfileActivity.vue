@@ -1,5 +1,5 @@
 <template>
-  <div class="ProfileActivities">
+  <section class="ProfileActivities">
     <h2 class="ProfileActivities__Title" v-text="$t('activity')" />
     <ul class="ProfileActivities__List">
       <li
@@ -22,7 +22,7 @@
         </div>
       </li>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">

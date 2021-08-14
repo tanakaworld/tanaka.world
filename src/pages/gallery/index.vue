@@ -1,19 +1,19 @@
 <template>
   <div class="Gallery">
     <h2 class="Gallery__SubTitle" v-text="$t('zodiac')" />
-    <div class="Gallery__Section">
+    <section class="Gallery__Section">
       <GalleryPhoto v-for="p in zodiacs" :key="p.file" :photo="p" />
-    </div>
+    </section>
 
     <h2 class="Gallery__SubTitle" v-text="$t('me')" />
-    <div class="Gallery__Section">
+    <section class="Gallery__Section">
       <GalleryPhoto v-for="p in portraits" :key="p.file" :photo="p" />
-    </div>
+    </section>
 
     <h2 class="Gallery__SubTitle" v-text="$t('friends')" />
-    <div class="Gallery__Section">
+    <section class="Gallery__Section">
       <GalleryPhoto v-for="p in friends" :key="p.file" :photo="p" />
-    </div>
+    </section>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="ProfileSns">
+  <section class="ProfileSns">
     <h2 class="ProfileSns__Title" v-text="$t('links')" />
     <div
       v-for="(account, index) in snsAccounts"
@@ -15,7 +15,7 @@
         v-text="account.name"
       />
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">
