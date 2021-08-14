@@ -9,6 +9,7 @@
       <a
         class="ProfileProduct__Link"
         :href="p.url"
+        rel="noopener noreferrer"
         target="_blank"
         v-text="p.name"
       />

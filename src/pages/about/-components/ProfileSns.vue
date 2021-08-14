@@ -10,6 +10,7 @@
         class="ProfileSns__Link"
         :class="`-${account.name.toLowerCase()}`"
         :href="account.url"
+        rel="noopener noreferrer"
         target="_blank"
         v-text="account.name"
       />

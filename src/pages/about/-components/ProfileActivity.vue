@@ -15,6 +15,7 @@
           <a
             :href="activity.url"
             class="ProfileActivities__ListItemLink"
+            rel="noopener noreferrer"
             target="_blank"
             v-text="activity.name"
           />

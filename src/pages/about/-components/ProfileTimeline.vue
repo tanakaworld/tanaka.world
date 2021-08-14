@@ -15,6 +15,7 @@
           <a
             :href="history.link"
             class="ProfileTimeline__ListItemLink"
+            rel="noopener noreferrer"
             target="_blank"
             v-text="history.linkLabel"
           />
