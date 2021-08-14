@@ -1,7 +1,7 @@
 :root {
   --color-text: #14171a;
-  --color-text-sub: #657786;
-  --color-link-text: #1b95e0;
+  --color-text-sub: #284664;
+  --color-link-text: #024D82;
   --color-bg: #e7e7e7;
   --color-sky-blue: #91c3dc;
   --color-gray: #888888;
@@ -62,7 +62,7 @@ section {
 
 .nuxt-link-exact-active {
   background-color: var(--color-link-text);
-  color: var(--color-white);
+  color: var(--color-bg);
 }
 .nuxt-link-exact-active:hover {
   text-decoration: none;
@@ -87,6 +87,7 @@ section {
   :root {
     --color-text: #fff;
     --color-text-sub: #8899a6;
+    --color-link-text: #37B2FC;
     --color-bg: #14202a;
   }
 }
