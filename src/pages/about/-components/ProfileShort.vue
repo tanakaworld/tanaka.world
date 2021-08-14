@@ -1,5 +1,5 @@
 <template>
-  <div class="ProfileShort">
+  <section class="ProfileShort">
     <div class="ProfileShort__Icon">
       <img
         class="ProfileShort__IconImg"
@@ -16,7 +16,7 @@
       <div class="-textSub" v-text="$t('height', ['1.74'])" />
       <div class="-textSub" v-text="$t('weight', ['55.0'])" />
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">

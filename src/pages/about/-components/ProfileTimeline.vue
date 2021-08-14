@@ -1,5 +1,5 @@
 <template>
-  <div class="ProfileTimeline">
+  <section class="ProfileTimeline">
     <h2 class="ProfileTimeline__Title" v-text="$t('timeline')" />
     <ul class="ProfileTimeline__List">
       <li
@@ -15,6 +15,7 @@
           <a
             :href="history.link"
             class="ProfileTimeline__ListItemLink"
+            rel="noopener noreferrer"
             target="_blank"
             v-text="history.linkLabel"
           />
@@ -26,7 +27,7 @@
         />
       </li>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">

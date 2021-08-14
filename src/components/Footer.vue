@@ -3,6 +3,7 @@
     <div class="-textSub">
       (c) {{ year }}
       <a
+        rel="noopener noreferrer"
         target="_blank"
         href="https://github.com/tanakaworld/tanaka.world"
         v-text="'tanakaworld'"

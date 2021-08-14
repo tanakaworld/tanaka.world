@@ -13,6 +13,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import locale from '~/locales/en';
 import { jobHistories, products, snsAccounts } from '~/utils/about';
 import { getAgeLocal } from '~/utils/date';
 import ProfileShort from '~/pages/about/-components/ProfileShort.vue';
@@ -22,7 +23,7 @@ import ProfileActivity from '~/pages/about/-components/ProfileActivity.vue';
 import ProfileTimeline from '~/pages/about/-components/ProfileTimeline.vue';
 
 const title = 'About - The TANAKA WORLD';
-const description = 'Who am I ?';
+const description = locale.bio;
 
 export default Vue.extend({
   components: {

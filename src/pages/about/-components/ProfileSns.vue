@@ -1,5 +1,5 @@
 <template>
-  <div class="ProfileSns">
+  <section class="ProfileSns">
     <h2 class="ProfileSns__Title" v-text="$t('links')" />
     <div
       v-for="(account, index) in snsAccounts"
@@ -10,11 +10,12 @@
         class="ProfileSns__Link"
         :class="`-${account.name.toLowerCase()}`"
         :href="account.url"
+        rel="noopener noreferrer"
         target="_blank"
         v-text="account.name"
       />
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">

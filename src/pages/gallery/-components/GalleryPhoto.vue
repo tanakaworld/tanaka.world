@@ -7,6 +7,7 @@
     <img
       loading="lazy"
       width="100"
+      height="100"
       :src="photo.file"
       :alt="$t(photo.description)"
       class="GalleryPhoto__Icon"
@@ -34,7 +35,6 @@ export default Vue.extend({
 }
 
 .GalleryPhoto__Icon {
-  width: 100px;
   margin: 15px 10px;
 }
 

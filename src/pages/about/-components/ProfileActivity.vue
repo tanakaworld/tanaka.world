@@ -1,5 +1,5 @@
 <template>
-  <div class="ProfileActivities">
+  <section class="ProfileActivities">
     <h2 class="ProfileActivities__Title" v-text="$t('activity')" />
     <ul class="ProfileActivities__List">
       <li
@@ -15,13 +15,14 @@
           <a
             :href="activity.url"
             class="ProfileActivities__ListItemLink"
+            rel="noopener noreferrer"
             target="_blank"
             v-text="activity.name"
           />
         </div>
       </li>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">

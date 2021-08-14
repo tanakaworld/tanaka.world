@@ -1,5 +1,5 @@
 <template>
-  <div class="ProfileProduct">
+  <section class="ProfileProduct">
     <h2 class="ProfileProduct__Title" v-text="$t('products')" />
     <div
       v-for="(p, index) in products"
@@ -9,11 +9,12 @@
       <a
         class="ProfileProduct__Link"
         :href="p.url"
+        rel="noopener noreferrer"
         target="_blank"
         v-text="p.name"
       />
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">
