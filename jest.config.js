@@ -12,6 +12,5 @@ module.exports = {
   testPathIgnorePatterns: ['<rootDir>/cypress'],
   transform: {
     '^.+\\.ts?$': 'ts-jest',
-    '^.+\\.vue?$': 'vue-jest',
   },
 };
