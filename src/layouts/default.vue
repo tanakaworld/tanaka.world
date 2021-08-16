@@ -45,7 +45,7 @@ export default Vue.extend({
     $route: {
       handler(to) {
         this.$nextTick(() => {
-          this.isScaleMode = to.path === this.localePath('index');
+          this.isScaleMode = `${to.path}`.includes(this.localePath('dev'));
         });
       },
       immediate: true,

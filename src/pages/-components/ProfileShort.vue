@@ -8,9 +8,7 @@
       />
     </div>
     <div class="ProfileShort__Property">
-      <div>
-        <n-link :to="localePath('index')" v-text="$t('name')" />
-      </div>
+      <div v-text="$t('name')" />
       <div class="-textSub" v-text="$t('job')" />
       <div class="-textSub" v-text="$t('level', [level])" />
       <div class="-textSub" v-text="$t('height', ['1.74'])" />

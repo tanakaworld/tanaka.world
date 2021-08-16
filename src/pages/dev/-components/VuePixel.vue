@@ -46,9 +46,9 @@
 <script lang="ts">
 import Vue, { PropType } from 'vue';
 import { Xel } from '~/types/app/pixel';
-import VuePixelXel from '~/pages/-components/VuePixelXel.vue';
-import ButtonRandomColor from '~/pages/-components/ButtonRandomColor.vue';
-import ButtonSkipPixel from '~/pages/-components/ButtonSkipPixel.vue';
+import VuePixelXel from '~/pages/dev/-components/VuePixelXel.vue';
+import ButtonRandomColor from '~/pages/dev/-components/ButtonRandomColor.vue';
+import ButtonSkipPixel from '~/pages/dev/-components/ButtonSkipPixel.vue';
 
 export default Vue.extend({
   components: {
