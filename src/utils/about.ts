@@ -73,7 +73,17 @@ export const products: Product[] = [
 
 export const activities: Activity[] = [
   {
-    name: ' Merpay Advent Calendar 2020',
+    name: 'メルペイ・メルコイン会社説明会&座談会',
+    url: 'https://mercari.connpass.com/event/220021/',
+    date: '2021.08.04',
+  },
+  {
+    name: 'Merpay Frontend Tech Talk (Q&A)',
+    url: 'https://mercari.connpass.com/event/217193/',
+    date: '2021.07.08',
+  },
+  {
+    name: 'Merpay Advent Calendar 2020',
     url: 'https://engineering.mercari.com/blog/entry/20201207-cypress-testrail-frontend-e2e-automation/',
     date: '2020.12.08',
   },
