@@ -8,7 +8,7 @@
         <li>
           <n-link
             class="Header__NavLink"
-            :to="localePath('about')"
+            :to="localePath('index')"
             v-text="$t('about')"
           />
         </li>

@@ -1,6 +1,6 @@
 describe('home', () => {
   beforeEach(() => {
-    cy.visit('/');
+    cy.visit('/dev');
   });
 
   describe('main', () => {
@@ -11,7 +11,7 @@ describe('home', () => {
         // https://github.com/tanakaworld/tanaka.world/pull/85/checks?check_run_id=2429408222
         cy.wait(10);
       });
-      cy.location('pathname').should('eq', '/about');
+      cy.location('pathname').should('eq', '/');
     });
 
     it('should skip and transition to the about page', () => {
@@ -19,7 +19,7 @@ describe('home', () => {
       cy.findByTestId('HomeVuePixel').trigger('mouseover');
 
       cy.findByText('Skip').click();
-      cy.location('pathname').should('eq', '/about');
+      cy.location('pathname').should('eq', '/');
     });
 
     it('should be able to change color', () => {
@@ -40,7 +40,7 @@ describe('home', () => {
 
     it('should support i18n', () => {
       cy.findByText('🇯🇵').click();
-      cy.location('pathname').should('eq', '/ja');
+      cy.location('pathname').should('eq', '/ja/dev');
       // FIXME failing due to DOM detach
       // https://on.cypress.io/element-has-detached-from-dom
       // https://github.com/tanakaworld/tanaka.world/runs/1642442166?check_suite_focus=true
@@ -49,7 +49,7 @@ describe('home', () => {
       // cy.findByText(/スキップ/);
 
       cy.findByText('🇺🇸').click();
-      cy.location('pathname').should('eq', '/');
+      cy.location('pathname').should('eq', '/dev');
       // FIXME failing due to DOM detach
       // https://on.cypress.io/element-has-detached-from-dom
       // https://github.com/tanakaworld/tanaka.world/runs/1642442166?check_suite_focus=true

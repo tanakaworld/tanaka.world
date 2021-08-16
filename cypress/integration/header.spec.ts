@@ -15,9 +15,6 @@ describe('header', () => {
 
   it('should navigate', () => {
     cy.get('header').within(() => {
-      cy.findByText('About').click();
-      cy.location('pathname').should('eq', '/about');
-
       cy.findByText('Gallery').click();
       cy.location('pathname').should('eq', '/gallery');
 

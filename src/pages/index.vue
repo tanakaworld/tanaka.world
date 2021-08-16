@@ -1,134 +1,116 @@
 <template>
-  <VuePixel
-    class="VuePixel"
-    data-test="HomeVuePixel"
-    :main-color="mainColor"
-    :pixel-count="pixelCount"
-    :seed="seed"
-    :is-game-end="isGameEnd"
-    :is-show-board="isShowBoard"
-    :is-show-menu="isShowMenu"
-    :debug="isDebug"
-    @click-random="onClickRandom"
-    @init-pixels="initXels"
-    @transform-xel="onTransformXel"
-  />
+  <div class="About">
+    <div class="About__Inner">
+      <ProfileShort class="About__Row" />
+      <div class="About__Row -border">{{ $t('bio') }}</div>
+      <ProfileSns class="About__Row" />
+      <ProfileProduct class="About__Row" />
+      <ProfileActivity class="About__Row" />
+      <ProfileTimeline class="About__Row" />
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { mapGetters } from 'vuex';
-import randomcolor from 'randomcolor';
-import VuePixel from '~/pages/-components/VuePixel.vue';
-import * as VuePixelStore from '~/store/modules/vue-pixel';
-import { countXels, generateSeed } from '~/utils/pixel';
+import locale from '~/locales/en';
+import { jobHistories, products, snsAccounts } from '~/utils/about';
+import { getAgeLocal } from '~/utils/date';
+import ProfileShort from '~/pages/-components/ProfileShort.vue';
+import ProfileSns from '~/pages/-components/ProfileSns.vue';
+import ProfileProduct from '~/pages/-components/ProfileProduct.vue';
+import ProfileActivity from '~/pages/-components/ProfileActivity.vue';
+import ProfileTimeline from '~/pages/-components/ProfileTimeline.vue';
+
+const title = 'About - The TANAKA WORLD';
+const description = locale.bio;
 
 export default Vue.extend({
   components: {
-    VuePixel,
+    ProfileShort,
+    ProfileSns,
+    ProfileProduct,
+    ProfileActivity,
+    ProfileTimeline,
   },
   data() {
     return {
-      seed: generateSeed(),
-      isShowBoard: true,
+      jobHistories,
+      snsAccounts,
+      products,
+      level: getAgeLocal('1990-11-07'),
     };
   },
-  computed: {
-    ...mapGetters({
-      isGameEnd: `${VuePixelStore.namespace}/gameEnd`,
-      isShowMenu: `${VuePixelStore.namespace}/showMenu`,
-      pixelCount: `${VuePixelStore.namespace}/pixelCount`,
-    }),
-    mainColor() {
-      return this.$route.query.color;
-    },
-    isDebug() {
-      return !!this.$route.query.debug;
-    },
-  },
-  watch: {
-    mainColor: {
-      handler(val) {
-        this.seed = generateSeed(val);
-        this.initXels();
+  head: {
+    title,
+    meta: [
+      { hid: 'description', name: 'description', content: description },
+      { hid: 'og:title', property: 'og:title', content: title },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://tanaka.world/about',
       },
-    },
-  },
-  mounted() {
-    this.initXels();
-  },
-  methods: {
-    onClickRandom() {
-      this.isShowBoard = false;
-      // refresh
-      const color = randomcolor();
-      this.$router.push(
-        this.localePath({ name: 'index', query: { color: color.slice(1) } })
-      ); // remove '#'
-      this.$nextTick(() => {
-        this.isShowBoard = true;
-      });
-    },
-    initXels() {
-      this.$store.dispatch(
-        VuePixelStore.GameEnd(
-          { isEnd: false },
-          { namespace: VuePixelStore.namespace }
-        )
-      );
-      this.$store.commit(
-        VuePixelStore.SetPixelTotal(
-          {
-            pixelCount: countXels(this.seed),
-          },
-          { namespace: VuePixelStore.namespace }
-        )
-      );
-    },
-    async onTransformXel() {
-      // @ts-ignore FIXME
-      if (!this.isShowMenu) {
-        await this.$store.dispatch(
-          VuePixelStore.ToggleMenu(
-            { flag: true },
-            { namespace: VuePixelStore.namespace }
-          )
-        );
-      }
-
-      await this.$store.dispatch(
-        VuePixelStore.DecrementPixelCount(null, {
-          namespace: VuePixelStore.namespace,
-        })
-      );
-
-      // @ts-ignore FIXME
-      if (this.pixelCount === 0) {
-        await this.$store.dispatch(
-          VuePixelStore.ToggleMenu(
-            { flag: false },
-            { namespace: VuePixelStore.namespace }
-          )
-        );
-        setTimeout(async () => {
-          await this.$store.dispatch(
-            VuePixelStore.GameEnd(
-              { isEnd: true },
-              { namespace: VuePixelStore.namespace }
-            )
-          );
-          setTimeout(() => {
-            this.$router.push(this.localePath('about'));
-          }, 1000);
-        }, 500);
-      }
-    },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: description,
+      },
+    ],
   },
 });
 </script>
 
 <style scoped>
-.VuePixel {
-  margin: 0 auto;
+.About {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.About__Inner {
+  max-width: 700px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.About__Row {
+  padding: 16px;
+  line-height: 1.5em;
+}
+
+.About__Row:not(:first-child) {
+  margin-top: 12px;
+}
+
+.About__Row.-border {
+  border-top: solid 1px var(--color-sky-blue);
+}
+
+@media screen and (max-width: 730px) {
+  .About__Inner {
+    width: 100%;
+  }
+
+  .About__Row {
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .About {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .About {
+    font-size: 10px;
+  }
+
+  .About__Row {
+    flex-direction: column !important;
+  }
 }
 </style>
