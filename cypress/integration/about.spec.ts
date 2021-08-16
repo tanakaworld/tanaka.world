@@ -1,6 +1,6 @@
 describe('about', () => {
   beforeEach(() => {
-    cy.visit('/about');
+    cy.visit('/');
   });
 
   describe('main', () => {
@@ -14,11 +14,11 @@ describe('about', () => {
 
     it('should support i18n', () => {
       cy.findByText('🇯🇵').click();
-      cy.location('pathname').should('eq', '/ja/about');
+      cy.location('pathname').should('eq', '/ja');
       cy.findByText(/ソフトウェア エンジニア/);
 
       cy.findByText('🇺🇸').click();
-      cy.location('pathname').should('eq', '/about');
+      cy.location('pathname').should('eq', '/');
     });
   });
 });
