@@ -5,6 +5,8 @@
         class="ProfileShort__IconImg"
         alt="Profile Icon"
         src="/img/tanakaworld-2018.png"
+        width="200"
+        height="200"
       />
     </div>
     <div class="ProfileShort__Property">
@@ -40,9 +42,6 @@ export default Vue.extend({
 
 .ProfileShort__IconImg {
   transform: scaleX(-1);
-  width: 100%;
-  max-width: 500px;
-  max-height: 500px;
 }
 
 .ProfileShort__Property {
