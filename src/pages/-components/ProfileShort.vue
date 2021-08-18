@@ -52,9 +52,10 @@ export default Vue.extend({
   justify-content: space-around;
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 400px) {
   .ProfileShort__IconImg {
-    width: 100%;
+    width: 100px;
+    height: 100px;
   }
 }
 </style>
