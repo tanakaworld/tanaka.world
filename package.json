@@ -8,7 +8,7 @@
     "dev": "NODE_ENV=development nuxt-ts",
     "build": "NODE_ENV=production nuxt-ts build",
     "start": "NODE_ENV=production nuxt-ts start",
-    "generate": "NODE_ENV=production nuxt-ts generate",
+    "generate": "NODE_ENV=production nuxt-ts export",
     "lint": "npm run lint:js",
     "lint:fix": "npm run lint:js -- --fix",
     "lint:js": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
