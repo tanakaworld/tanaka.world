@@ -16,12 +16,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Misaki Mincho';
-  src: url('../assets/fonts/misaki_mincho.ttf') format('truetype');
-  font-display: swap;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -32,7 +26,7 @@
 }
 
 body {
-  font-family: Misaki Gothic, Misaki Mincho, Arial, Helvetica, sans-serif;
+  font-family: Misaki Gothic, Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   color: var(--color-text);
