@@ -73,6 +73,11 @@ export const products: Product[] = [
 
 export const activities: Activity[] = [
   {
+    name: 'mercan - #WorkWithMerpay',
+    url: 'https://mercan.mercari.com/en/articles/29774/',
+    date: '2021.10.08',
+  },
+  {
     name: 'メルペイ・メルコイン会社説明会&座談会',
     url: 'https://mercari.connpass.com/event/220021/',
     date: '2021.08.04',
@@ -83,17 +88,17 @@ export const activities: Activity[] = [
     date: '2021.07.08',
   },
   {
-    name: 'Merpay Advent Calendar 2020',
+    name: 'Merpay Advent Calendar 2020 - Automation with Cypress and TestRail',
     url: 'https://engineering.mercari.com/blog/entry/20201207-cypress-testrail-frontend-e2e-automation/',
     date: '2020.12.08',
   },
   {
-    name: 'mercan メルカリの「人」を伝える',
+    name: 'mercan - Team Interview',
     url: 'https://mercan.mercari.com/articles/19495/',
     date: '2020.01.07',
   },
   {
-    name: ' Merpay Advent Calendar 2019',
+    name: ' Merpay Advent Calendar 2019 - Looking back Merpay Admin Dashboard',
     url: 'https://engineering.mercari.com/blog/entry/2019-12-12-202128/',
     date: '2019.08.26',
   },
