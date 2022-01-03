@@ -2,6 +2,10 @@ import { Photo } from '~/types/app/gallery';
 
 export const zodiacs: Photo[] = [
   {
+    description: 'gallery_photo.zodiac.tiger',
+    file: '/img/tanakaworld-2022-tora.png',
+  },
+  {
     description: 'gallery_photo.zodiac.ox',
     file: '/img/tanakaworld-2021-ushi.png',
   },
