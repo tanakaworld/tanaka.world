@@ -73,6 +73,11 @@ export const products: Product[] = [
 
 export const activities: Activity[] = [
   {
+    name: 'メルカリグループの英語学習大解剖',
+    url: 'https://mercari.connpass.com/event/241842/',
+    date: '2022.03.22',
+  },
+  {
     name: 'Merpay Advent Calendar 2021- Test Automation Policy in Merpay Frontend',
     url: 'https://engineering.mercari.com/en/blog/entry/20211208-test-automation-policy-in-merpay-frontend/',
     date: '2021.12.08',
