@@ -7,8 +7,9 @@
         :key="index"
         class="ProfileActivities__ListItem"
       >
-        <div
+        <time
           class="ProfileActivities__ListItemRange -textSub"
+          :datetime="activity.date"
           v-text="activity.date"
         />
         <div>
