@@ -19,7 +19,7 @@ jobs:
         with:
           path: ./.node-version
       - name: Use Node.js ${{ steps.node-version.outputs.content }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ steps.node-version.outputs.content }}
           cache: 'npm'
@@ -55,7 +55,7 @@ jobs:
         with:
           path: ./.node-version
       - name: Use Node.js ${{ steps.node-version.outputs.content }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ steps.node-version.outputs.content }}
           cache: 'npm'
