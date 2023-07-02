@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "16.3.0",
-    "@commitlint/config-conventional": "13.2.0",
+    "@commitlint/config-conventional": "17.6.6",
     "@cypress/webpack-preprocessor": "5.12.2",
     "@nuxt/types": "2.15.8",
     "@nuxt/typescript-build": "2.1.0",
