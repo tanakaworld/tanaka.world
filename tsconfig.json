@@ -19,7 +19,7 @@
     "paths": {
       "~/*": ["./src/*"]
     },
-    "types": ["@types/node", "@nuxt/types", "@types/jest", "nuxt-i18n"]
+    "types": ["@types/node", "@nuxt/types", "nuxt-i18n"]
   },
   "exclude": ["node_modules", "./cypress/**/*.ts"],
   "includes": ["./src/**/*.ts", "/src/**/*.vue"]

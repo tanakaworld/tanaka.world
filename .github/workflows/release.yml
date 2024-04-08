@@ -25,10 +25,8 @@ jobs:
           cache: 'npm'
       - name: Install
         run: npm ci
-      - name: Lint and Unit Test
-        run: |
-          npm run lint
-          npm run test
+      - name: Lint
+        run: npm run lint
       - name: Generate
         run: npm run generate
       - uses: actions/upload-artifact@v2
@@ -45,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        browser: [ chrome, firefox, edge ]
+        browser: [chrome, firefox, edge]
 
     steps:
       - uses: actions/checkout@v2
@@ -77,7 +75,6 @@ jobs:
             cypress/videos
             cypress/screenshots
 
-
   deploy:
     name: Deploy
 
@@ -86,7 +83,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 14.16.0 ]
+        node-version: [14.16.0]
 
     steps:
       - uses: actions/checkout@master
