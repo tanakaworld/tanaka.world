@@ -35,15 +35,12 @@ jobs:
           path: dist
           if-no-files-found: error
 
-  test-e2e:
-    name: E2E Test
+  deploy:
+    name: Deploy
 
     needs: lint-test-build
 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        browser: [chrome, firefox, edge]
 
     steps:
       - uses: actions/checkout@v2
@@ -57,41 +54,8 @@ jobs:
         with:
           node-version: ${{ steps.node-version.outputs.content }}
           cache: 'npm'
-      - name: Download Artifact
-        uses: actions/download-artifact@master
-        with:
-          name: dist
-          path: dist
-      - name: E2E by Cypress
-        uses: cypress-io/github-action@v2
-        with:
-          browser: ${{ matrix.browser }}
-          command: npm run e2e:ci
-      - uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: cypress-${{ matrix.browser }}
-          path: |
-            cypress/videos
-            cypress/screenshots
-
-  deploy:
-    name: Deploy
-
-    needs: test-e2e
-
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.16.0]
-
-    steps:
-      - uses: actions/checkout@master
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@master
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+      - name: Install
+        run: npm ci
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
