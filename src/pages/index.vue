@@ -15,7 +15,6 @@
 import Vue from 'vue';
 import locale from '~/locales/en';
 import { jobHistories, products, snsAccounts } from '~/utils/about';
-import { getAgeLocal } from '~/utils/date';
 import ProfileShort from '~/pages/-components/ProfileShort.vue';
 import ProfileSns from '~/pages/-components/ProfileSns.vue';
 import ProfileProduct from '~/pages/-components/ProfileProduct.vue';
@@ -38,7 +37,6 @@ export default Vue.extend({
       jobHistories,
       snsAccounts,
       products,
-      level: getAgeLocal('1990-11-07'),
     };
   },
   head: {

@@ -9,9 +9,9 @@ export interface Locale {
   friends: string;
   name: string;
   job: string;
-  level: string;
   height: string;
   weight: string;
+  place: string;
   bio: string;
   links: string;
   products: string;

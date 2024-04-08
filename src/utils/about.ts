@@ -2,10 +2,16 @@ import { Account, Activity, JobHistory, Product } from '~/types/app/about';
 
 export const jobHistories: JobHistory[] = [
   {
-    range: '2018.8 ~',
+    range: '2021.2 ~',
+    link: 'https://www.mercari.com/',
+    linkLabel: 'Mercari, Inc. (US Remote)',
+    role: 'Software Engineer',
+  },
+  {
+    range: '2018.8 ~ 2021.0',
     link: 'https://merpay.com/',
     linkLabel: 'Merpay, Inc.',
-    role: 'Software Engineer (Frontend)',
+    role: 'Software Engineer / Engineering Manager',
   },
   {
     range: '2017.8 ~',
@@ -47,7 +53,7 @@ export const jobHistories: JobHistory[] = [
 export const snsAccounts: Account[] = [
   { name: 'Blog', url: 'https://blog.tanaka.world' },
   { name: 'Twitter', url: 'https://twitter.com/_tanakaworld' },
-  { name: 'Github', url: 'https://github.com/tanakaworld' },
+  { name: 'GitHub', url: 'https://github.com/tanakaworld' },
   { name: 'Speaker Deck', url: 'https://speakerdeck.com/tanakaworld' },
   { name: 'Qiita', url: 'http://qiita.com/tanakaworld' },
   { name: 'Facebook', url: 'https://www.facebook.com/tanaka.world' },

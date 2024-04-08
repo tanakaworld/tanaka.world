@@ -10,13 +10,10 @@ const locale: Locale = {
   friends: 'Friends',
   name: 'tanakaworld',
   job: 'Software Engineer',
-  level: 'LV.{0}',
   height: 'Height {0} m',
   weight: 'Weight {0} kg',
-  bio:
-    'Hi! I\'m Yutaro Tanaka a.k.a "tanakaworld", a software engineer based in Tokyo.' +
-    ' I worked for listed companies, startup companies and self-employed projects,' +
-    ' widely involved in both backend and frontend web applications.',
+  place: 'WA 🇺🇸',
+  bio: "Hi! I'm Yutaro Tanaka, a software engineer based in WA, USA.",
   links: '🔗 Links',
   products: '🚀 Products',
   timeline: '👨‍💻 Timeline',

@@ -12,24 +12,17 @@
     <div class="ProfileShort__Property">
       <div v-text="$t('name')" />
       <div class="-textSub" v-text="$t('job')" />
-      <div class="-textSub" v-text="$t('level', [level])" />
       <div class="-textSub" v-text="$t('height', ['1.74'])" />
       <div class="-textSub" v-text="$t('weight', ['55.0'])" />
+      <div class="-textSub" v-text="$t('place')" />
     </div>
   </section>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { getAgeLocal } from '~/utils/date';
 
-export default Vue.extend({
-  data() {
-    return {
-      level: getAgeLocal('1990-11-07'),
-    };
-  },
-});
+export default Vue.extend({});
 </script>
 
 <style scoped>

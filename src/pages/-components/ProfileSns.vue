@@ -20,14 +20,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { getAgeLocal } from '~/utils/date';
 import { snsAccounts } from '~/utils/about';
 
 export default Vue.extend({
   data() {
     return {
       snsAccounts,
-      level: getAgeLocal('1990-11-07'),
     };
   },
 });
